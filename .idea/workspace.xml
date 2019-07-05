@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e0f94d96-245b-4a71-87dc-f3088a5b90f4" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="per01: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/App.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="912">
+              <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/jan/stefan/hibernate/CustomerServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="379">
+              <caret line="30" column="58" lean-forward="true" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CustomerService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="29" column="88" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/generic/AbstractGenericRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Singleton" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>paym</find>
+      <find>producer</find>
+      <find>product</find>
+      <find>CustomerOrd</find>
+      <find>Categ</find>
+      <find>Stock</find>
+      <find>Product</find>
+      <find>scanner</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/Validator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/CategoryValidation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ServiceInterfaces/ScannerInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/CustomerDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ModelMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/CategoryDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/ErrorDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/ShopDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/TradeDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/CountryDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/Producer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/PaymentDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/StockDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/ProducerDto.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/ShopRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/CustomerOrderDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/CountryRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/connection/DbConnection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ErrorService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/TradeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/StockService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/PaymentService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/MyErrorService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CustomerOrderService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CountryService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CategoryService.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/MenuService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/CustomerValidation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/ShopValidation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/ProducerValidation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/CountryValidation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/Product.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/mappers/ModelMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/CustomerOrderValidation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/ProductValidation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/PaymentValidation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/StockValidation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ProducerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CustomerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ScannerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/ProductDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ProductService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ShopService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/CountryRepositoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/generic/AbstractGenericRepository.java" />
+        <option value="$PROJECT_DIR$/src/test/java/jan/stefan/hibernate/CustomerServiceTest.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="store-management-system" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="StoreManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StoreManagementSystem" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StoreManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StoreManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StoreManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StoreManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StoreManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StoreManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StoreManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StoreManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StoreManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StoreManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StoreManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StoreManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+              <item name="generic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StoreManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StoreManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+              <item name="generic" type="462c0819:PsiDirectoryNode" />
+              <item name="AbstractGenericRepository" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="StoreManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StoreManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+              <item name="implementation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StoreManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StoreManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StoreManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StoreManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StoreManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StoreManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StoreManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StoreManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StoreManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StoreManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../zzz/Temp" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.CustomerServiceTest.saveOrUpdateTest1">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jan.stefan.hibernate.App" />
+      <module name="StoreManagementSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jan.stefan.hibernate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerServiceTest.saveOrUpdateTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StoreManagementSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jan.stefan.hibernate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="jan.stefan.hibernate" />
+      <option name="MAIN_CLASS_NAME" value="jan.stefan.hibernate.CustomerServiceTest" />
+      <option name="METHOD_NAME" value="saveOrUpdateTest1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CustomerServiceTest.saveOrUpdateTest1" />
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e0f94d96-245b-4a71-87dc-f3088a5b90f4" name="Default Changelist" comment="" />
+      <created>1555262001554</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555262001554</updated>
+      <workItem from="1555262005504" duration="905000" />
+      <workItem from="1555262922702" duration="39000" />
+      <workItem from="1555262970143" duration="3718000" />
+      <workItem from="1555432026355" duration="1070000" />
+      <workItem from="1555434026724" duration="939000" />
+      <workItem from="1555943211513" duration="599000" />
+      <workItem from="1555954009529" duration="208000" />
+      <workItem from="1555954236152" duration="2357000" />
+      <workItem from="1555960391673" duration="20000" />
+      <workItem from="1556033815751" duration="772000" />
+      <workItem from="1556035647641" duration="4192000" />
+      <workItem from="1556875609930" duration="10358000" />
+      <workItem from="1557079224936" duration="847000" />
+      <workItem from="1557247095599" duration="4013000" />
+      <workItem from="1558032868212" duration="3412000" />
+      <workItem from="1558104794437" duration="5548000" />
+      <workItem from="1558371124283" duration="4451000" />
+      <workItem from="1558458160332" duration="59000" />
+      <workItem from="1558458242620" duration="321000" />
+      <workItem from="1558459288294" duration="2288000" />
+      <workItem from="1558631635724" duration="4042000" />
+      <workItem from="1558871575924" duration="8497000" />
+      <workItem from="1559056802888" duration="8198000" />
+      <workItem from="1559316067169" duration="240000" />
+      <workItem from="1559318454160" duration="4030000" />
+      <workItem from="1559504539805" duration="638000" />
+      <workItem from="1559581437442" duration="4676000" />
+      <workItem from="1559659125297" duration="10217000" />
+      <workItem from="1559920887376" duration="756000" />
+      <workItem from="1559925734492" duration="6000" />
+      <workItem from="1560186090048" duration="25000" />
+      <workItem from="1560186496901" duration="9251000" />
+      <workItem from="1560269082865" duration="3111000" />
+      <workItem from="1560878688084" duration="7468000" />
+      <workItem from="1560961718096" duration="631000" />
+      <workItem from="1560963561352" duration="614000" />
+      <workItem from="1560970258958" duration="4978000" />
+      <workItem from="1561019274762" duration="5668000" />
+      <workItem from="1561026065719" duration="3945000" />
+      <workItem from="1561032664425" duration="4091000" />
+      <workItem from="1561485012345" duration="5901000" />
+      <workItem from="1561566585525" duration="4140000" />
+      <workItem from="1561665523986" duration="3562000" />
+      <workItem from="1562085281276" duration="4236000" />
+      <workItem from="1562352872868" duration="365000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="CustomerServiceTest_saveOrUpdateTest1 - 2019.06.27 at 22h 50m 15s.xml">
+      <configuration name="CustomerServiceTest.saveOrUpdateTest1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CustomerServiceTest_saveOrUpdateTest1 - 2019.07.02 at 18h 54m 26s.xml">
+      <configuration name="CustomerServiceTest.saveOrUpdateTest1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CustomerServiceTest_saveOrUpdateTest1 - 2019.07.02 at 18h 54m 43s.xml">
+      <configuration name="CustomerServiceTest.saveOrUpdateTest1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CustomerServiceTest_saveOrUpdateTest1 - 2019.07.02 at 18h 55m 24s.xml">
+      <configuration name="CustomerServiceTest.saveOrUpdateTest1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CustomerServiceTest_saveOrUpdateTest1 - 2019.07.02 at 19h 42m 02s.xml">
+      <configuration name="CustomerServiceTest.saveOrUpdateTest1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CustomerServiceTest_saveOrUpdateTest1 - 2019.07.02 at 19h 42m 38s.xml">
+      <configuration name="CustomerServiceTest.saveOrUpdateTest1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CustomerServiceTest_saveOrUpdateTest1 - 2019.07.02 at 19h 43m 23s.xml">
+      <configuration name="CustomerServiceTest.saveOrUpdateTest1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CustomerServiceTest_saveOrUpdateTest1 - 2019.07.02 at 19h 44m 21s.xml">
+      <configuration name="CustomerServiceTest.saveOrUpdateTest1" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="145402000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16204691" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Persistence" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="UI Designer" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30444205" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32936078" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32936078" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.3261105" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.32936078" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.32995737" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.114605546" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18443497" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Persistence" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="UI Designer" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3618635" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32936078" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32936078" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.3261105" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.32936078" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.32995737" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.13166311" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/CustomerValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1078#1079#0" expanded="true" />
+            <element signature="e#1118#1119#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1280#1281#0" expanded="true" />
+            <element signature="e#1347#1348#0" expanded="true" />
+            <element signature="e#1451#1452#0" expanded="true" />
+            <element signature="e#1514#1515#0" expanded="true" />
+            <element signature="e#1595#1596#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/ProductValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/PaymentValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#253#254#0" expanded="true" />
+            <element signature="e#280#281#0" expanded="true" />
+            <element signature="e#332#333#0" expanded="true" />
+            <element signature="e#360#361#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/CustomerOrderValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="31" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/Stock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/Validator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/StockValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#373#374#0" expanded="true" />
+            <element signature="e#401#402#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/Shop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/errors" />
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers" />
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customer_orders" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ProducerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="67" column="52" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/producers" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/ShopDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CountryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/builders/JUnit4Builder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CustomerOrderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/enums/EGuarantee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ScannerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="65" column="5" lean-forward="true" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/products" />
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/guarantees" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="34" column="4" lean-forward="true" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/ProductDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="74" column="127" selection-start-line="74" selection-start-column="127" selection-end-line="74" selection-end-column="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/ShopValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/mappers/ModelMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ShopService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="80" column="25" lean-forward="true" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/CountryRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/countries" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/CountryRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="47" column="83" selection-start-line="47" selection-start-column="83" selection-end-line="47" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#44#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/shops" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/generic/GenericRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/CustomerRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="29" column="88" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/generic/AbstractGenericRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/jan/stefan/hibernate/CustomerServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="30" column="58" lean-forward="true" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Hibernate</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>12</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>StoreManagementSystem</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
