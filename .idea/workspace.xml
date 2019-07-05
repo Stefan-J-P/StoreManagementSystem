@@ -46,19 +46,43 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/newProductDto/NewProductDto.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="512">
+              <caret line="71" column="32" lean-forward="true" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/enums/EGuarantee.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="32">
+              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/newObjectDto/NewProductDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ProductService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="674">
-              <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
+            <state relative-caret-position="560">
+              <caret line="71" column="49" selection-start-line="71" selection-start-column="49" selection-end-line="71" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -94,7 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/CategoryValidation.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ServiceInterfaces/ScannerInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/CustomerDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ModelMapper.java" />
@@ -135,7 +158,6 @@
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ProducerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CustomerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ScannerService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/ProductDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ShopService.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/CountryRepositoryImpl.java" />
@@ -143,8 +165,10 @@
         <option value="$PROJECT_DIR$/src/test/java/jan/stefan/hibernate/CustomerServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/StockDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/TradeDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ProductService.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/newProductDto/NewProductDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ProductService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/newObjectDto/NewProductDto.java" />
       </list>
     </option>
   </component>
@@ -226,8 +250,17 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="hibernate" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-              <item name="newProductDto" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StoreManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StoreManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="enums" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="StoreManagementSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -311,7 +344,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CustomerServiceTest.saveOrUpdateTest1">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="jan.stefan.hibernate.App" />
       <module name="StoreManagementSystem" />
@@ -343,8 +376,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CustomerServiceTest.saveOrUpdateTest1" />
         <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.CustomerServiceTest.saveOrUpdateTest1" />
       </list>
     </recent_temporary>
   </component>
@@ -403,7 +436,7 @@
       <workItem from="1561665523986" duration="3562000" />
       <workItem from="1562085281276" duration="4236000" />
       <workItem from="1562352872868" duration="365000" />
-      <workItem from="1562356096199" duration="329000" />
+      <workItem from="1562356096199" duration="3367000" />
     </task>
     <servers />
   </component>
@@ -434,13 +467,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145731000" />
+    <option name="totallyTimeSpent" value="148769000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16364606" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16364606" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -632,13 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/enums/EGuarantee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ScannerService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -712,16 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -829,17 +845,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/newProductDto/NewProductDto.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ProductService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="560">
+          <caret line="71" column="49" selection-start-line="71" selection-start-column="49" selection-end-line="71" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ProductService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/App.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="674">
-          <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
+        <state relative-caret-position="512">
+          <caret line="71" column="32" lean-forward="true" selection-start-line="71" selection-start-column="32" selection-end-line="71" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/enums/EGuarantee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/newObjectDto/NewProductDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

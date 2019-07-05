@@ -1,6 +1,7 @@
 package jan.stefan.hibernate.service;
 
 import jan.stefan.hibernate.dto.modelDto.*;
+import jan.stefan.hibernate.dto.newObjectDto.NewProductDto;
 import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.model.Product;
 import jan.stefan.hibernate.model.validation.ProductValidation;
@@ -60,7 +61,7 @@ public class ProductService
     }
 
 
-    public ProductDto addNewProduct()
+    public ProductDto addNewProduct(NewProductDto newProductDto)
     {
         // zrób osobną klasę DTO do przechowania danych pobranych od USERA i przekazać jako argument do metody addNewProduct() ze względu na testy jednostkowe
         ProductDto productDto = new ProductDto();

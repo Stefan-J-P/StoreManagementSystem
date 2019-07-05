@@ -2,7 +2,8 @@ package jan.stefan.hibernate;
 
 
 import jan.stefan.hibernate.connection.DbConnection;
-import jan.stefan.hibernate.dto.*;
+
+import jan.stefan.hibernate.dto.newObjectDto.NewProductDto;
 import jan.stefan.hibernate.model.validation.*;
 import jan.stefan.hibernate.repository.implementation.*;
 import jan.stefan.hibernate.service.*;
@@ -63,7 +64,12 @@ public class App
 
         // ====================================================================================================================================================
 
-        shopService.addNewShop();
+        //shopService.addNewShop();
+
+        NewProductDto newProductDto = new NewProductDto();
+
+        NewProductDto res =  newProductDto.createNewProductDto();
+        System.out.println(res);
 
 
 
