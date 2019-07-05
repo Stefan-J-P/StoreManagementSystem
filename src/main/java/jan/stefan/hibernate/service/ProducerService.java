@@ -1,11 +1,10 @@
 package jan.stefan.hibernate.service;
 
-import jan.stefan.hibernate.dto.CountryDto;
-import jan.stefan.hibernate.dto.MyErrorDto;
-import jan.stefan.hibernate.dto.ProducerDto;
-import jan.stefan.hibernate.dto.TradeDto;
+import jan.stefan.hibernate.dto.modelDto.CountryDto;
+import jan.stefan.hibernate.dto.modelDto.MyErrorDto;
+import jan.stefan.hibernate.dto.modelDto.ProducerDto;
+import jan.stefan.hibernate.dto.modelDto.TradeDto;
 import jan.stefan.hibernate.exceptions.MyException;
-import jan.stefan.hibernate.model.MyError;
 import jan.stefan.hibernate.model.Producer;
 import jan.stefan.hibernate.model.validation.ProducerValidation;
 import jan.stefan.hibernate.repository.repositoryInterfaces.ProducerRepository;

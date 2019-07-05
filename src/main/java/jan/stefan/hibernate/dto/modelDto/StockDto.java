@@ -1,11 +1,11 @@
-package jan.stefan.hibernate.dto;
+package jan.stefan.hibernate.dto.modelDto;
 
+import jan.stefan.hibernate.dto.modelDto.ProductDto;
+import jan.stefan.hibernate.dto.modelDto.ShopDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.criteria.CriteriaBuilder;
 
 @AllArgsConstructor
 @NoArgsConstructor

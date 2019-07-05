@@ -1,15 +1,13 @@
 package jan.stefan.hibernate.service;
 
-import jan.stefan.hibernate.dto.MyErrorDto;
+import jan.stefan.hibernate.dto.modelDto.MyErrorDto;
 import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.model.MyError;
 import jan.stefan.hibernate.repository.repositoryInterfaces.MyErrorRepository;
 import jan.stefan.hibernate.service.mappers.ModelMapper;
 import lombok.RequiredArgsConstructor;
 
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor

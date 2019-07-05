@@ -1,18 +1,16 @@
-package jan.stefan.hibernate.dto;
+package jan.stefan.hibernate.dto.modelDto;
 
-import jan.stefan.hibernate.model.enums.EPayment;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 @Builder
-public class PaymentDto
+public class CategoryDto
 {
     private Long id;
-    private EPayment ePayment;
-
+    private String name;
 }

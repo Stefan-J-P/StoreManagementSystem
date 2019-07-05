@@ -1,6 +1,6 @@
 package jan.stefan.hibernate.service;
 
-import jan.stefan.hibernate.dto.TradeDto;
+import jan.stefan.hibernate.dto.modelDto.TradeDto;
 import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.model.Trade;
 import jan.stefan.hibernate.repository.repositoryInterfaces.TradeRepository;

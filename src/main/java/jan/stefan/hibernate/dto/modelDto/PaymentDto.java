@@ -1,19 +1,18 @@
-package jan.stefan.hibernate.dto;
+package jan.stefan.hibernate.dto.modelDto;
 
+import jan.stefan.hibernate.model.enums.EPayment;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Builder
-public class MyErrorDto
+public class PaymentDto
 {
     private Long id;
-    private LocalDateTime dateTime;
-    private String message;
+    private EPayment ePayment;
+
 }

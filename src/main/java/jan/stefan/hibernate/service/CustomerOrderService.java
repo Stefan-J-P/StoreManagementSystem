@@ -1,6 +1,6 @@
 package jan.stefan.hibernate.service;
 
-import jan.stefan.hibernate.dto.CustomerOrderDto;
+import jan.stefan.hibernate.dto.modelDto.CustomerOrderDto;
 import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.model.CustomerOrder;
 import jan.stefan.hibernate.repository.repositoryInterfaces.CustomerOrderRepository;

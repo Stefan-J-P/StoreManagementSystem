@@ -1,8 +1,6 @@
 package jan.stefan.hibernate.model.validation;
 
-import jan.stefan.hibernate.dto.CustomerOrderDto;
-import jan.stefan.hibernate.dto.StockDto;
-import jan.stefan.hibernate.model.Stock;
+import jan.stefan.hibernate.dto.modelDto.StockDto;
 
 import java.util.HashMap;
 import java.util.Map;

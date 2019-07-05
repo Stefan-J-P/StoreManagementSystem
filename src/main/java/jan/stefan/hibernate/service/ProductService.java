@@ -1,6 +1,6 @@
 package jan.stefan.hibernate.service;
 
-import jan.stefan.hibernate.dto.*;
+import jan.stefan.hibernate.dto.modelDto.*;
 import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.model.Product;
 import jan.stefan.hibernate.model.validation.ProductValidation;

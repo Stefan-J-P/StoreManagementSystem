@@ -1,6 +1,6 @@
 package jan.stefan.hibernate.model.validation;
 
-import jan.stefan.hibernate.dto.CountryDto;
+import jan.stefan.hibernate.dto.modelDto.CountryDto;
 
 import java.util.HashMap;
 import java.util.Map;

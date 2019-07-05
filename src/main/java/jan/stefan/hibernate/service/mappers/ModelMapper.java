@@ -1,6 +1,6 @@
 package jan.stefan.hibernate.service.mappers;
 
-import jan.stefan.hibernate.dto.*;
+import jan.stefan.hibernate.dto.modelDto.*;
 import jan.stefan.hibernate.model.*;
 import jan.stefan.hibernate.model.MyError;
 

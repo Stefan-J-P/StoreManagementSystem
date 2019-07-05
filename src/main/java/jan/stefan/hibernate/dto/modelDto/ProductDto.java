@@ -1,4 +1,4 @@
-package jan.stefan.hibernate.dto;
+package jan.stefan.hibernate.dto.modelDto;
 
 import jan.stefan.hibernate.model.enums.EGuarantee;
 import lombok.AllArgsConstructor;
@@ -6,7 +6,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Access;
 import java.math.BigDecimal;
 import java.util.Set;
 

@@ -1,7 +1,7 @@
 package jan.stefan.hibernate.service;
 
-import jan.stefan.hibernate.dto.CustomerDto;
-import jan.stefan.hibernate.dto.MyErrorDto;
+import jan.stefan.hibernate.dto.modelDto.CustomerDto;
+import jan.stefan.hibernate.dto.modelDto.MyErrorDto;
 import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.model.Customer;
 import jan.stefan.hibernate.model.validation.CustomerValidation;

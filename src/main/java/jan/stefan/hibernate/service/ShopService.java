@@ -1,13 +1,12 @@
 package jan.stefan.hibernate.service;
 
-import jan.stefan.hibernate.dto.CountryDto;
-import jan.stefan.hibernate.dto.MyErrorDto;
-import jan.stefan.hibernate.dto.ShopDto;
+import jan.stefan.hibernate.dto.modelDto.CountryDto;
+import jan.stefan.hibernate.dto.modelDto.MyErrorDto;
+import jan.stefan.hibernate.dto.modelDto.ShopDto;
 import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.model.Country;
 import jan.stefan.hibernate.model.Shop;
 import jan.stefan.hibernate.model.validation.ShopValidation;
-import jan.stefan.hibernate.repository.implementation.CountryRepositoryImpl;
 import jan.stefan.hibernate.repository.repositoryInterfaces.CountryRepository;
 import jan.stefan.hibernate.repository.repositoryInterfaces.ShopRepository;
 import jan.stefan.hibernate.service.mappers.ModelMapper;
@@ -16,7 +15,6 @@ import lombok.RequiredArgsConstructor;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor

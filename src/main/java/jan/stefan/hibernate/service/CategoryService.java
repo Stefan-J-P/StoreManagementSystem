@@ -1,6 +1,6 @@
 package jan.stefan.hibernate.service;
 
-import jan.stefan.hibernate.dto.CategoryDto;
+import jan.stefan.hibernate.dto.modelDto.CategoryDto;
 import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.model.Category;
 import jan.stefan.hibernate.repository.repositoryInterfaces.CategoryRepository;

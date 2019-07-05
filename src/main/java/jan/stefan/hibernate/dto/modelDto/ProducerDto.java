@@ -1,4 +1,4 @@
-package jan.stefan.hibernate.dto;
+package jan.stefan.hibernate.dto.modelDto;
 import lombok.*;
 
 @Data

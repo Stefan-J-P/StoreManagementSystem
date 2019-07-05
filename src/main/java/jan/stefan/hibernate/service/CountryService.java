@@ -1,7 +1,6 @@
 package jan.stefan.hibernate.service;
 
-import jan.stefan.hibernate.dto.CategoryDto;
-import jan.stefan.hibernate.dto.CountryDto;
+import jan.stefan.hibernate.dto.modelDto.CountryDto;
 import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.model.Country;
 import jan.stefan.hibernate.repository.repositoryInterfaces.CountryRepository;

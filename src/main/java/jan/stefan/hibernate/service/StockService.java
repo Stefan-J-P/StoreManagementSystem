@@ -1,6 +1,6 @@
 package jan.stefan.hibernate.service;
 
-import jan.stefan.hibernate.dto.StockDto;
+import jan.stefan.hibernate.dto.modelDto.StockDto;
 import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.model.Stock;
 import jan.stefan.hibernate.repository.repositoryInterfaces.StockRepository;
