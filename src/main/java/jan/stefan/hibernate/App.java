@@ -64,7 +64,7 @@ public class App
 
         // ====================================================================================================================================================
 
-        //shopService.addNewShop();
+        shopService.addNewShop();
         /*
         NewProductDto newProductDto = new NewProductDto();
         NewProductDto res =  newProductDto.createNewProductDto();
@@ -82,54 +82,6 @@ public class App
 
 
         DbConnection.getInstance().close();
-        /*
-        customerOrderService.addOrUpdate(CustomerOrderDto.builder()
-                .quantity(3)
-                .dateTime(LocalDateTime.now())
-                .discount(new BigDecimal(0.5))
-                .customerDto(CustomerDto.builder().id(4L).build())
-                .productDto(null)
-                .paymentDto(null)
-                .build()
-        );  */
-
-
-                /*
-        shopService.addOrUpdate(ShopDto.builder()
-                .name("LEWIATAN")
-                .countryDto(CountryDto.builder().build())
-                .build());  */
-
-
-        //System.out.println(customerService.findOneById(4L));
-        //System.out.println(countryRepository.findOneByName("POLAND"));
-
-                /*
-        producerService.addOrUpdate(ProducerDto.builder()
-                .name("PHILIPS")
-                .countryDto(CountryDto.builder().id(1L).name("ANGLIA").build())
-                .tradeDto(null)
-                .build());  */
-
-
-        /*
-        CustomerDto cus1 = CustomerDto.builder()
-                .name("Jurek")
-                .surname("Nowak")
-                .email("jnowak@gmail.com")
-                .age(17)
-                .build();
-
-        CustomerValidation cv = new CustomerValidation();
-        Map<String, String> errors = cv.validate(cus1);
-        if (cv.hasErrors()) {
-            // dodaj do db blad
-        }
-        else
-        {
-            customerService.addOrUpdate(cus1);
-        }
-        */
 
         /*
         try
@@ -141,16 +93,6 @@ public class App
             System.out.println(field.get(shop));
         } catch (Exception e) {}
         */
-
-
-
-
-
-
-
-        // NOWA POZYCJA W MAGAZYNIE
-
-
 
     }
 }

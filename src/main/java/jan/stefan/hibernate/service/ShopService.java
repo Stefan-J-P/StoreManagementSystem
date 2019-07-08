@@ -63,7 +63,9 @@ public class ShopService
             3. jezeli nie ma kraju ani po id ani po nazwie a podano nazwe to wtedy dodajemy kraj a potem dodany
                kraj ustawiamy dla shop
         */
+
         Shop shop = ModelMapper.fromShopDtoToShop(shopDto);
+        /*
         Country country = shop.getCountry();
 
         if (country == null)
@@ -82,14 +84,11 @@ public class ShopService
 
             if (countryFromDb == null)
             {
-                /*System.out.println("----------------- 2 ---------------");*/
                 countryFromDb = countryRepository
                         .saveOrUpdate(country)
                         .orElseThrow(() -> new MyException("cannot add country: " + country));
             }
-            /*System.out.println("----------------------*----------------------");
-            System.out.println(countryFromDb);
-            System.out.println("----------------------+----------------------");*/
+
             System.out.println(country);
             shop.setCountry(countryFromDb);
         }
@@ -102,12 +101,50 @@ public class ShopService
                     .orElseThrow(() -> new MyException("no country with id " + country.getId()));
 
             shop.setCountry(countryFromDb);
-        }
+        }       */
+
+        Country result = checkAddOrUpdateCountry(shopDto.getCountryDto());
+        shop.setCountry(result);
 
         return ModelMapper.fromShopToShopDto(shopRepository
                 .saveOrUpdate(shop)
                 .orElseThrow(() -> new MyException("SHOP SERVICE: addOrUpdate() exception: cannot addOrUpdate customer")));
     }
+
+
+    public Country checkAddOrUpdateCountry(CountryDto countryDto)
+    {
+        if (countryDto == null)
+        {
+            throw new MyException("SHOP SERVICE: checkAddOrUpdateCountry() // countryDto object is null");
+        }
+        Country country = ModelMapper.fromCountryDtoToCountry(countryDto);
+        Country countryFromDb = null;
+
+        if (country.getId() == null)    // find country by its ID
+        {   // if country doesn't have ID ---> find country in DB by its name
+            countryFromDb = countryRepository.findOneByName(country.getName()).orElse(null);
+            System.out.println("--------------------------------");
+            System.out.println("COUNTRY FROM DB = " + countryFromDb.getName());
+            System.out.println("--------------------------------");
+
+            if (countryFromDb == null)
+            {   // if country from db doesn't have name ---> add new country to data base
+                countryFromDb = countryRepository.saveOrUpdate(country).orElseThrow(() -> new MyException("SHOP SERVICE: checkAddOrUpdateCountry() // countryFromDb EXCEPTION"));
+                return countryFromDb;
+            }
+            return countryFromDb;
+        }
+        else
+        {   // if country does have ID ---> return it
+            Country countryWithId = countryRepository.findById(country.getId()).orElseThrow(() -> new MyException("SHOP SERVICE: checkAddOrUpdateCountry() // countryFromDb EXCEPTION"));
+            System.out.println("--------------------------------");
+            System.out.println("COUNTRY WITH ID = " + countryWithId.getId());
+            System.out.println("--------------------------------");
+            return countryWithId;
+        }
+    }
+
 
 
 
