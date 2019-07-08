@@ -64,16 +64,19 @@ public class ProductService
     public ProductDto addNewProduct(NewProductDto newProductDto)
     {
         // zrób osobną klasę DTO do przechowania danych pobranych od USERA i przekazać jako argument do metody addNewProduct() ze względu na testy jednostkowe
+        /*
         ProductDto productDto = new ProductDto();
         productDto.setName(scannerService.getString("Enter name of the product:"));
         productDto.setPrice(scannerService.getBigDecimal("Enter value of the price:"));
         productDto.setCategoryDto(CategoryDto.builder().name(scannerService.getString("Enter name of the category:")).build());
         productDto.setProducerDto(ProducerDto.builder().name(scannerService.getString("Enter name of the producer:")).build());
         productDto.setTradeDto(TradeDto.builder().name(scannerService.getString("Enter name of the trade:")).build());
-        //productDto.setEGuarantee(scannerService.getEGuarantee());
+        productDto.setEGuarantee(scannerService.getEGuarantee());       */
 
         // lista wartości EGuarantee i wybór ich indeksów, które pobiorę do SET
         // pobierz  nazwy kraju, producenta etc poprzez repozytorium każdego z nich, potem ustaw setterami wartości dla obiektu
+
+        ProductDto productDto = ModelMapper.fromNewProductDtoToProductDto(newProductDto);
 
         Map<String, String> errorsProduct = productValidation.validate(productDto);
         if (!productValidation.hasErrors())

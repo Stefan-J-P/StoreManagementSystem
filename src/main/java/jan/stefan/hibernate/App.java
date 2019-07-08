@@ -65,11 +65,11 @@ public class App
         // ====================================================================================================================================================
 
         //shopService.addNewShop();
-
+        /*
         NewProductDto newProductDto = new NewProductDto();
-
         NewProductDto res =  newProductDto.createNewProductDto();
         System.out.println(res);
+        productService.addNewProduct(res);  */
 
 
 

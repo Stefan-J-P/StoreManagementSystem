@@ -1,6 +1,7 @@
 package jan.stefan.hibernate.service.mappers;
 
 import jan.stefan.hibernate.dto.modelDto.*;
+import jan.stefan.hibernate.dto.newObjectDto.NewProductDto;
 import jan.stefan.hibernate.model.*;
 import jan.stefan.hibernate.model.MyError;
 
@@ -150,6 +151,31 @@ public interface ModelMapper
                 .category(productDto.getCategoryDto() == null ? null : fromCategoryDtoToCategory(productDto.getCategoryDto()))
                 .build();
     }
+
+    static ProductDto fromNewProductDtoToProductDto(NewProductDto newProductDto)
+    {
+        return newProductDto == null ? null : ProductDto.builder()
+                .id(newProductDto.getId())
+                .name(newProductDto.getName())
+                .price(newProductDto.getPrice())
+                .categoryDto(newProductDto.getCategoryDto())
+                .producerDto(newProductDto.getProducerDto())
+                .tradeDto(newProductDto.getTradeDto())
+                .build();
+    }
+
+    static Product fromNewProductDtoToProduct(NewProductDto newProductDto)
+    {
+        return newProductDto == null ? null : Product.builder()
+                .id(newProductDto.getId())
+                .name(newProductDto.getName())
+                .price(newProductDto.getPrice())
+                .category(newProductDto.getCategoryDto() == null ? null : fromCategoryDtoToCategory(newProductDto.getCategoryDto()))
+                .producer(newProductDto.getProducerDto() == null ? null : fromProducerDtoToProducer(newProductDto.getProducerDto()))
+                .trade(newProductDto.getTradeDto() == null ? null : fromTradeDtoToTrade(newProductDto.getTradeDto()))
+                .build();
+    }
+
 
 
     // STOCK ----------------------------------------------------
