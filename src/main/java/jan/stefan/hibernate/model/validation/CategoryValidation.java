@@ -1,14 +1,14 @@
 package jan.stefan.hibernate.model.validation;
 
 import jan.stefan.hibernate.model.Category;
-import jan.stefan.hibernate.model.Country;
+import jan.stefan.hibernate.model.validation.generic.AbstractValidator;
+import jan.stefan.hibernate.model.validation.generic.Validator;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class CategoryValidation implements Validator<Category>
+public class CategoryValidation extends AbstractValidator<Category>
 {
-    private Map<String, String> errors = new HashMap<>();
 
     @Override
     public Map<String, String> validate(Category category)
@@ -28,11 +28,6 @@ public class CategoryValidation implements Validator<Category>
         return errors;
     }
 
-    @Override
-    public boolean hasErrors()
-    {
-        return !errors.isEmpty();
-    }
 
     private boolean isNameValid(Category category)
     {

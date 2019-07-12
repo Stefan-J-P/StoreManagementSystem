@@ -1,4 +1,4 @@
-package jan.stefan.hibernate.model.validation;
+package jan.stefan.hibernate.model.validation.generic;
 import java.util.Map;
 
 public interface Validator<T>

@@ -1,6 +1,7 @@
 package jan.stefan.hibernate.model.validation;
 
 import jan.stefan.hibernate.dto.modelDto.ProductDto;
+import jan.stefan.hibernate.model.validation.generic.Validator;
 
 import java.math.BigDecimal;
 import java.util.HashMap;

@@ -46,8 +46,6 @@ public abstract class AbstractGenericRepository<T, ID extends Serializable> impl
             if (tx != null) {
                 tx.rollback();
             }
-
-
             e.printStackTrace();
         } finally {
             if (entityManager != null) {

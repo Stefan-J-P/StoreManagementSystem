@@ -1,13 +1,15 @@
 package jan.stefan.hibernate.model.validation;
 
 import jan.stefan.hibernate.dto.modelDto.CountryDto;
+import jan.stefan.hibernate.model.Country;
+import jan.stefan.hibernate.model.validation.generic.AbstractValidator;
+import jan.stefan.hibernate.model.validation.generic.Validator;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class CountryValidation implements Validator<CountryDto>
+public class CountryValidation extends AbstractValidator<CountryDto>
 {
-    Map<String, String> errors = new HashMap<>();
 
     @Override
     public Map<String, String> validate(CountryDto countryDto)
@@ -23,11 +25,6 @@ public class CountryValidation implements Validator<CountryDto>
         return errors;
     }
 
-    @Override
-    public boolean hasErrors()
-    {
-        return !errors.isEmpty();
-    }
 
 
     public boolean isNameValid(CountryDto countryDto)

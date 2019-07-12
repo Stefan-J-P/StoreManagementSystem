@@ -139,6 +139,7 @@ public interface ModelMapper
                 .categoryDto(product.getCategory() == null ? null : fromCategoryToCategoryDto(product.getCategory()))
                 .producerDto(product.getProducer() == null ? null : fromProducerToProducerDto(product.getProducer()))
                 .tradeDto(product.getTrade() == null ? null : fromTradeToTradeDto(product.getTrade()))
+                .eGuarantees(product.getGuaranteeComponents())
                 .build();
     }
 
@@ -149,6 +150,11 @@ public interface ModelMapper
                 .name(productDto.getName())
                 .price(productDto.getPrice())
                 .category(productDto.getCategoryDto() == null ? null : fromCategoryDtoToCategory(productDto.getCategoryDto()))
+                .producer(productDto.getProducerDto() == null ? null : fromProducerDtoToProducer(productDto.getProducerDto()))
+                .trade(productDto.getTradeDto() == null ? null : fromTradeDtoToTrade(productDto.getTradeDto()))
+                .guaranteeComponents(productDto.getEGuarantees())
+                .customerOrders(new HashSet<>())
+                .stocks(new HashSet<>())
                 .build();
     }
 
@@ -161,6 +167,7 @@ public interface ModelMapper
                 .categoryDto(newProductDto.getCategoryDto())
                 .producerDto(newProductDto.getProducerDto())
                 .tradeDto(newProductDto.getTradeDto())
+                .eGuarantees(newProductDto.getEGuarantees())
                 .build();
     }
 
@@ -173,6 +180,7 @@ public interface ModelMapper
                 .category(newProductDto.getCategoryDto() == null ? null : fromCategoryDtoToCategory(newProductDto.getCategoryDto()))
                 .producer(newProductDto.getProducerDto() == null ? null : fromProducerDtoToProducer(newProductDto.getProducerDto()))
                 .trade(newProductDto.getTradeDto() == null ? null : fromTradeDtoToTrade(newProductDto.getTradeDto()))
+                .guaranteeComponents(newProductDto.getEGuarantees())
                 .build();
     }
 

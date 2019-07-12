@@ -4,6 +4,7 @@ import jan.stefan.hibernate.dto.modelDto.CategoryDto;
 import jan.stefan.hibernate.dto.modelDto.ProducerDto;
 import jan.stefan.hibernate.dto.modelDto.TradeDto;
 import jan.stefan.hibernate.model.enums.EGuarantee;
+import jan.stefan.hibernate.repository.repositoryInterfaces.CategoryRepository;
 import jan.stefan.hibernate.service.ScannerService;
 import lombok.*;
 import org.hibernate.tool.schema.internal.exec.ScriptTargetOutputToFile;
@@ -15,7 +16,7 @@ import java.util.Set;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-
+//@RequiredArgsConstructor
 public class NewProductDto
 {
     private Long id;
@@ -26,7 +27,8 @@ public class NewProductDto
     private TradeDto tradeDto;
     private Set<EGuarantee> eGuarantees;
 
-    private ScannerService scannerService = new ScannerService();
+    private final ScannerService scannerService = new ScannerService();
+    //private final CategoryRepository categoryRepository;
 
     /**
      * This method creates new object which will transfer data to Product or ProductDto class
@@ -34,7 +36,6 @@ public class NewProductDto
      */
     public NewProductDto createNewProductDto()
     {
-
         NewProductDto npd = NewProductDto.builder()
                 .name(scannerService.getString("Enter name of the product: "))
                 .price(scannerService.getBigDecimal("Enter the value of the price:"))
@@ -63,8 +64,6 @@ public class NewProductDto
         }
         npd.setEGuarantees(mySet);
         // scannerService = null ????
-
-
         return npd;
     }
 

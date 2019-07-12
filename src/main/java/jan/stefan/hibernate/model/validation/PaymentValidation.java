@@ -1,6 +1,7 @@
 package jan.stefan.hibernate.model.validation;
 
 import jan.stefan.hibernate.model.Payment;
+import jan.stefan.hibernate.model.validation.generic.Validator;
 
 import java.util.Map;
 

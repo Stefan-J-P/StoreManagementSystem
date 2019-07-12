@@ -22,7 +22,6 @@ public class ShopService
 {
     private final ShopRepository shopRepository;
     private final CountryRepository countryRepository;
-    private final CountryService countryService;
     private final ScannerService scannerService;
     private final MyErrorService myErrorService;
     private final ShopValidation shopValidation;
@@ -57,51 +56,9 @@ public class ShopService
             throw new MyException("SHOP SERVICE: Country object is null");
         }
 
-        /*
-            1. sprawdzam czy jest kraj po id jezeli jest pobieram go i ustawiam dla shop
-            2. sprawdz czy jest kraj po nazwie jezeli jest pobieram go i ustawiam dla shop
-            3. jezeli nie ma kraju ani po id ani po nazwie a podano nazwe to wtedy dodajemy kraj a potem dodany
-               kraj ustawiamy dla shop
-        */
 
         Shop shop = ModelMapper.fromShopDtoToShop(shopDto);
-        /*
-        Country country = shop.getCountry();
 
-        if (country == null)
-        {
-            throw new MyException("cannot add shop without country");
-        }
-
-        if (country.getId() == null)
-        {
-
-            // jezeli nie ma id - pobieramy po nazwie
-            Country countryFromDb = countryRepository
-                    .findOneByName(country.getName())
-                    // jezeli nie ma kraju o takiej nazwie to dodajemy taki do bazy
-                    .orElse(null);
-
-            if (countryFromDb == null)
-            {
-                countryFromDb = countryRepository
-                        .saveOrUpdate(country)
-                        .orElseThrow(() -> new MyException("cannot add country: " + country));
-            }
-
-            System.out.println(country);
-            shop.setCountry(countryFromDb);
-        }
-        else
-        {
-            // jezeli jest id pobieramy po id
-            Country countryFromDb = countryRepository
-                    .findById(country.getId())
-                    // jezeli nie ma kraju o takim id to rzucamy wyjatek
-                    .orElseThrow(() -> new MyException("no country with id " + country.getId()));
-
-            shop.setCountry(countryFromDb);
-        }       */
 
         Country result = checkAddOrUpdateCountry(shopDto.getCountryDto());
         shop.setCountry(result);
@@ -111,8 +68,9 @@ public class ShopService
                 .orElseThrow(() -> new MyException("SHOP SERVICE: addOrUpdate() exception: cannot addOrUpdate customer")));
     }
 
-
-    public Country checkAddOrUpdateCountry(CountryDto countryDto)
+    // osobna klasa do walidacji danych w bazie
+    // validatory pól składowych w menu
+    private Country checkAddOrUpdateCountry(CountryDto countryDto)
     {
         if (countryDto == null)
         {
@@ -124,9 +82,6 @@ public class ShopService
         if (country.getId() == null)    // find country by its ID
         {   // if country doesn't have ID ---> find country in DB by its name
             countryFromDb = countryRepository.findOneByName(country.getName()).orElse(null);
-            System.out.println("--------------------------------");
-            System.out.println("COUNTRY FROM DB = " + countryFromDb.getName());
-            System.out.println("--------------------------------");
 
             if (countryFromDb == null)
             {   // if country from db doesn't have name ---> add new country to data base

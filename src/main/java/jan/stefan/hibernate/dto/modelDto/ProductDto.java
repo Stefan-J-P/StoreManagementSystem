@@ -22,5 +22,4 @@ public class ProductDto
     private TradeDto tradeDto;
     private CategoryDto categoryDto;
     private Set<EGuarantee> eGuarantees;
-
 }

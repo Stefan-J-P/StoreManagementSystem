@@ -1,6 +1,7 @@
 package jan.stefan.hibernate.model.validation;
 
 import jan.stefan.hibernate.dto.modelDto.ShopDto;
+import jan.stefan.hibernate.model.validation.generic.Validator;
 
 import java.util.HashMap;
 import java.util.Map;

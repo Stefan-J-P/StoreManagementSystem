@@ -25,6 +25,7 @@ public class Product
     @ElementCollection
     @CollectionTable(name = "guarantees", joinColumns = @JoinColumn(name = "product_id"))
     @Column(name = "guarantee")
+    @Enumerated(EnumType.STRING)
     private Set<EGuarantee> guaranteeComponents;
 
     @ManyToOne(cascade = CascadeType.PERSIST)

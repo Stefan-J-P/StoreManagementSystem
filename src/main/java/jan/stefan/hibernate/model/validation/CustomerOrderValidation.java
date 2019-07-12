@@ -1,6 +1,7 @@
 package jan.stefan.hibernate.model.validation;
 
 import jan.stefan.hibernate.dto.modelDto.CustomerOrderDto;
+import jan.stefan.hibernate.model.validation.generic.Validator;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
