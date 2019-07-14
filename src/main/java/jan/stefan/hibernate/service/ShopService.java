@@ -1,5 +1,6 @@
 package jan.stefan.hibernate.service;
 
+import jan.stefan.hibernate.dataInDbValidation.DataBaseValidator;
 import jan.stefan.hibernate.dto.modelDto.CountryDto;
 import jan.stefan.hibernate.dto.modelDto.MyErrorDto;
 import jan.stefan.hibernate.dto.modelDto.ShopDto;
@@ -21,28 +22,10 @@ import java.util.stream.Collectors;
 public class ShopService
 {
     private final ShopRepository shopRepository;
-    private final CountryRepository countryRepository;
-    private final ScannerService scannerService;
-    private final MyErrorService myErrorService;
-    private final ShopValidation shopValidation;
-
-    public void ifCountryIsNull(ShopDto shopDto)
-    {
-        Shop shop = ModelMapper.fromShopDtoToShop(shopDto);
-        Country country = shop.getCountry();
-        // jezeli nie ma id - pobieramy po nazwie
-        Country countryFromDb = countryRepository
-                .findOneByName(country.getName())
-                // jezeli nie ma kraju o takiej nazwie to dodajemy taki do bazy
-                .orElse(null);
-        if (countryFromDb == null) {
-            countryFromDb = countryRepository
-                    .saveOrUpdate(country)
-                    .orElseThrow(() -> new MyException("cannot add country: " + country));
-        }
-        shop.setCountry(countryFromDb);
-    }
-
+    private  final DataBaseValidator dataBaseValidator;
+    //private final ScannerService scannerService;
+    //private final MyErrorService myErrorService;
+    //private final ShopValidation shopValidation;
 
     public ShopDto addOrUpdate(ShopDto shopDto)
     {
@@ -56,11 +39,8 @@ public class ShopService
             throw new MyException("SHOP SERVICE: Country object is null");
         }
 
-
         Shop shop = ModelMapper.fromShopDtoToShop(shopDto);
-
-
-        Country result = checkAddOrUpdateCountry(shopDto.getCountryDto());
+        Country result = dataBaseValidator.countryDbValidator(shopDto.getCountryDto());
         shop.setCountry(result);
 
         return ModelMapper.fromShopToShopDto(shopRepository
@@ -70,7 +50,9 @@ public class ShopService
 
     // osobna klasa do walidacji danych w bazie
     // validatory pól składowych w menu
-    private Country checkAddOrUpdateCountry(CountryDto countryDto)
+    /*
+    @SuppressWarnings("Duplicates")
+    private Country checkAddOrUpdate(CountryDto countryDto)
     {
         if (countryDto == null)
         {
@@ -98,11 +80,7 @@ public class ShopService
             System.out.println("--------------------------------");
             return countryWithId;
         }
-    }
-
-
-
-
+    }       */
 
     public List<ShopDto> findAll()
     {
@@ -129,10 +107,12 @@ public class ShopService
     public ShopDto addNewShop()
     {
         ShopDto shopDto = new ShopDto();
-
+        /*
         shopDto.setName(scannerService.getString("Enter the name of the Shop:"));
-        shopDto.setCountryDto(CountryDto.builder().name(scannerService.getString("Enter the name of the country:")).build());
+        shopDto.setCountryDto(CountryDto.builder().name(scannerService.getString("Enter the name of the country:")).build());*/
 
+
+        /*
         Map<String, String> errorsShop = shopValidation.validate(shopDto);
 
         if (!shopValidation.hasErrors())
@@ -146,7 +126,7 @@ public class ShopService
                     .message("Error while inserting Shop into table")
                     .dateTime(LocalDateTime.now())
                     .build());
-        }
+        }   */
         return shopDto;
     }
 

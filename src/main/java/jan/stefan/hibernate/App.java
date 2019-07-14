@@ -54,11 +54,11 @@ public class App
 
 
 
-        var stockService = new StockService(stockRepository);
+        var stockService = new StockService(stockRepository, shopRepository);
         var tradeService = new TradeService(tradeRepository);
 
         var customerService = new CustomerService(customerRepository, scannerService, myErrorService, customerValidation);
-        var shopService = new ShopService(shopRepository, countryRepository, countryService, scannerService, myErrorService, shopValidation);
+        var shopService = new ShopService(shopRepository, countryRepository, scannerService, myErrorService, shopValidation);
         var producerService = new ProducerService(producerRepository, scannerService, myErrorService, producerValidation);
         var productService = new ProductService(productRepository, scannerService, myErrorService, productValidation);
 
