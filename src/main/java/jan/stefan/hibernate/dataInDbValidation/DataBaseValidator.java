@@ -16,7 +16,11 @@ public class DataBaseValidator
     private final ProducerRepository producerRepository;
     private final ProductRepository productRepository;
     private final ShopRepository shopRepository;
+    private final TradeRepository tradeRepository;
 
+    // ZAMIEŃ TYPY ZWRACANE NA BOOLEAN !!!!!!!!!!!!!!!!!
+    // WRZUĆ METODY DO SERWISÓW I OZNACZ JE JAKO PRYWATNE
+    // REPOZYTORIA UWOLNIĆ OD WYJĄTKÓW
 
     @SuppressWarnings("Duplicates")
     public Category categoryDbValidator(CategoryDto categoryDto)
@@ -52,7 +56,7 @@ public class DataBaseValidator
     {
         if (countryDto == null)
         {
-            throw new MyException("SHOP SERVICE: countryDbValidator() // countryDto object is null");
+            throw new MyException("DATA BASE VALIDATION SERVICE: countryDbValidator() // countryDto object is null");
         }
         Country country = ModelMapper.fromCountryDtoToCountry(countryDto);
         Country countryFromDb = null;
@@ -63,7 +67,7 @@ public class DataBaseValidator
 
             if (countryFromDb == null)
             {   // if country from db doesn't have name ---> add new country to data base
-                countryFromDb = countryRepository.saveOrUpdate(country).orElseThrow(() -> new MyException("SHOP SERVICE: countryDbValidator() // countryFromDb EXCEPTION"));
+                countryFromDb = countryRepository.saveOrUpdate(country).orElseThrow(() -> new MyException("DATA BASE VALIDATION SERVICE: countryDbValidator() // countryFromDb EXCEPTION"));
                 return countryFromDb;
             }
             return countryFromDb;
@@ -177,7 +181,7 @@ public class DataBaseValidator
 
             if (shopFromDb == null)
             {
-                shopFromDb = shopRepository.saveOrUpdate(shop).orElseThrow(() -> new MyException("SHOP SERVICE: countryDbValidator() // countryFromDb EXCEPTION"));
+                shopFromDb = shopRepository.saveOrUpdate(shop).orElseThrow(() -> new MyException("SHOP SERVICE: shopDbValidator() // countryFromDb EXCEPTION"));
                 return shopFromDb;
             }
             return shopFromDb;
@@ -189,6 +193,33 @@ public class DataBaseValidator
         }
     }
 
+    @SuppressWarnings("Duplicates")
+    public Trade tradeDbValidator(TradeDto tradeDto)
+    {
+        if (tradeDto == null)
+        {
+            throw new MyException("STOCK SERVICE: shopDbValidator() // shopDto object is null");
+        }
+        Trade trade = ModelMapper.fromTradeDtoToTrade(tradeDto);
+        Trade tradeFromDb = null;
+
+        if (trade.getId() == null)
+        {
+            tradeFromDb = tradeRepository.findOneByName(trade.getTradeName()).orElse(null);
+
+            if (tradeFromDb == null)
+            {
+                tradeFromDb = tradeRepository.saveOrUpdate(trade).orElseThrow(() -> new MyException("SHOP SERVICE: shopDbValidator() // countryFromDb EXCEPTION"));
+                return tradeFromDb;
+            }
+            return tradeFromDb;
+        }
+        else
+        {
+            Trade tradeWithId = tradeRepository.findById(trade.getId()).orElseThrow(() -> new MyException("DATA BASE VALIDATOR: shopDbValidator// countryFromDb EXCEPTION"));
+            return tradeWithId;
+        }
+    }
 
 
 

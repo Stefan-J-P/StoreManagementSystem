@@ -3,6 +3,9 @@ package jan.stefan.hibernate;
 
 import jan.stefan.hibernate.connection.DbConnection;
 
+import jan.stefan.hibernate.dataInDbValidation.DataBaseValidator;
+import jan.stefan.hibernate.dto.modelDto.CountryDto;
+import jan.stefan.hibernate.dto.modelDto.ShopDto;
 import jan.stefan.hibernate.dto.newObjectDto.NewProductDto;
 import jan.stefan.hibernate.model.validation.*;
 import jan.stefan.hibernate.repository.implementation.*;
@@ -28,6 +31,7 @@ public class App
         var productValidation = new ProductValidation();
         var stockValidation = new StockValidation();
         var tradeValidation = new TradeValidation();
+
         var categoryRepository = new CategoryRepositoryImpl();
         var countryRepository = new CountryRepositoryImpl();
         var customerOrderRepository = new CustomerOrderRepositoryImpl();
@@ -43,33 +47,25 @@ public class App
         var stockRepository = new StockRepositoryImpl();
         var tradeRepository = new TradeRepositoryImpl();
 
+        var dataBaseValidation = new DataBaseValidator(categoryRepository, countryRepository, customerRepository, producerRepository, productRepository, shopRepository, tradeRepository);
+
         var categoryService = new CategoryService(categoryRepository);
         var countryService = new CountryService(countryRepository);
-        var customerOrderService = new CustomerOrderService(customerOrderRepository);
-
+        var customerOrderService = new CustomerOrderService(customerOrderRepository, dataBaseValidation);
 
         var myErrorService = new MyErrorService(myErrorRepository);
         var paymentService = new PaymentService(paymentRepository);
 
-
-
-
-        var stockService = new StockService(stockRepository, shopRepository);
+        var stockService = new StockService(stockRepository, dataBaseValidation);
         var tradeService = new TradeService(tradeRepository);
 
         var customerService = new CustomerService(customerRepository, scannerService, myErrorService, customerValidation);
-        var shopService = new ShopService(shopRepository, countryRepository, scannerService, myErrorService, shopValidation);
-        var producerService = new ProducerService(producerRepository, scannerService, myErrorService, producerValidation);
-        var productService = new ProductService(productRepository, scannerService, myErrorService, productValidation);
+        var shopService = new ShopService(shopRepository, dataBaseValidation);
+        var producerService = new ProducerService(producerRepository, dataBaseValidation);
+        var productService = new ProductService(productRepository, dataBaseValidation);
 
         // ====================================================================================================================================================
 
-        //shopService.addNewShop();
-
-        NewProductDto newProductDto = new NewProductDto();
-        NewProductDto res =  newProductDto.createNewProductDto();
-        System.out.println(res);
-        productService.addNewProduct(res);
 
 
 

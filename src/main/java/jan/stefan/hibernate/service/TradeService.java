@@ -7,6 +7,9 @@ import jan.stefan.hibernate.repository.repositoryInterfaces.TradeRepository;
 import jan.stefan.hibernate.service.mappers.ModelMapper;
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @RequiredArgsConstructor
 public class TradeService
 {
@@ -26,5 +29,26 @@ public class TradeService
         );
     }
 
+    public List<TradeDto> findAll()
+    {
+        return tradeRepository
+                .findAll()
+                .stream()
+                .map(ModelMapper::fromTradeToTradeDto)
+                .collect(Collectors.toList());
+    }
+
+    public void delete(Long id)
+    {
+        tradeRepository.delete(id);
+    }
+
+    public TradeDto findOneById(Long id)
+    {
+        return tradeRepository
+                .findById(id)
+                .map(ModelMapper::fromTradeToTradeDto)
+                .orElseThrow(() -> new MyException("TRADE SERVICE: findOneById() cannot find id" + id));
+    }
 
 }

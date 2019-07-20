@@ -1,13 +1,18 @@
 package jan.stefan.hibernate.service;
 
+import jan.stefan.hibernate.dataInDbValidation.DataBaseValidator;
 import jan.stefan.hibernate.dto.modelDto.CountryDto;
 import jan.stefan.hibernate.dto.modelDto.MyErrorDto;
 import jan.stefan.hibernate.dto.modelDto.ProducerDto;
 import jan.stefan.hibernate.dto.modelDto.TradeDto;
 import jan.stefan.hibernate.exceptions.MyException;
+import jan.stefan.hibernate.model.Country;
 import jan.stefan.hibernate.model.Producer;
+import jan.stefan.hibernate.model.Trade;
 import jan.stefan.hibernate.model.validation.ProducerValidation;
+import jan.stefan.hibernate.repository.repositoryInterfaces.CountryRepository;
 import jan.stefan.hibernate.repository.repositoryInterfaces.ProducerRepository;
+import jan.stefan.hibernate.repository.repositoryInterfaces.TradeRepository;
 import jan.stefan.hibernate.service.mappers.ModelMapper;
 import lombok.RequiredArgsConstructor;
 
@@ -20,9 +25,7 @@ import java.util.stream.Collectors;
 public class ProducerService
 {
     private final ProducerRepository producerRepository;
-    private final ScannerService scannerService;
-    private final MyErrorService myErrorService;
-    private final ProducerValidation producerValidation;
+    private final DataBaseValidator dataBaseValidator;
 
     public ProducerDto addOrUpdate(ProducerDto producerDto)
     {
@@ -32,6 +35,11 @@ public class ProducerService
         }
 
         Producer producer = ModelMapper.fromProducerDtoToProducer(producerDto);
+        Country country = dataBaseValidator.countryDbValidator(producerDto.getCountryDto());
+        Trade trade = dataBaseValidator.tradeDbValidator(producerDto.getTradeDto());
+        producer.setCountry(country);
+        producer.setTrade(trade);
+
         return ModelMapper
                 .fromProducerToProducerDto(producerRepository
                 .saveOrUpdate(producer)
@@ -61,7 +69,7 @@ public class ProducerService
                 .orElseThrow(() -> new MyException("PRODUCER SERVICE: addOrUpdate() cannot find id" + id));
     }
 
-
+    /*
     public ProducerDto addNewProducer()
     {
         ProducerDto producerDto = new ProducerDto();
@@ -86,7 +94,9 @@ public class ProducerService
         }
 
         return producerDto;
-    }
+    }   */
+
+
 
 
 

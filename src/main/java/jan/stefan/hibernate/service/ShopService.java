@@ -23,9 +23,6 @@ public class ShopService
 {
     private final ShopRepository shopRepository;
     private  final DataBaseValidator dataBaseValidator;
-    //private final ScannerService scannerService;
-    //private final MyErrorService myErrorService;
-    //private final ShopValidation shopValidation;
 
     public ShopDto addOrUpdate(ShopDto shopDto)
     {
@@ -48,40 +45,6 @@ public class ShopService
                 .orElseThrow(() -> new MyException("SHOP SERVICE: addOrUpdate() exception: cannot addOrUpdate customer")));
     }
 
-    // osobna klasa do walidacji danych w bazie
-    // validatory pól składowych w menu
-    /*
-    @SuppressWarnings("Duplicates")
-    private Country checkAddOrUpdate(CountryDto countryDto)
-    {
-        if (countryDto == null)
-        {
-            throw new MyException("SHOP SERVICE: checkAddOrUpdateCountry() // countryDto object is null");
-        }
-        Country country = ModelMapper.fromCountryDtoToCountry(countryDto);
-        Country countryFromDb = null;
-
-        if (country.getId() == null)    // find country by its ID
-        {   // if country doesn't have ID ---> find country in DB by its name
-            countryFromDb = countryRepository.findOneByName(country.getName()).orElse(null);
-
-            if (countryFromDb == null)
-            {   // if country from db doesn't have name ---> add new country to data base
-                countryFromDb = countryRepository.saveOrUpdate(country).orElseThrow(() -> new MyException("SHOP SERVICE: checkAddOrUpdateCountry() // countryFromDb EXCEPTION"));
-                return countryFromDb;
-            }
-            return countryFromDb;
-        }
-        else
-        {   // if country does have ID ---> return it
-            Country countryWithId = countryRepository.findById(country.getId()).orElseThrow(() -> new MyException("SHOP SERVICE: checkAddOrUpdateCountry() // countryFromDb EXCEPTION"));
-            System.out.println("--------------------------------");
-            System.out.println("COUNTRY WITH ID = " + countryWithId.getId());
-            System.out.println("--------------------------------");
-            return countryWithId;
-        }
-    }       */
-
     public List<ShopDto> findAll()
     {
         return shopRepository
@@ -102,47 +65,5 @@ public class ShopService
                 .map(ModelMapper::fromShopToShopDto)
                 .orElseThrow(() -> new MyException(""));
     }
-
-
-    public ShopDto addNewShop()
-    {
-        ShopDto shopDto = new ShopDto();
-        /*
-        shopDto.setName(scannerService.getString("Enter the name of the Shop:"));
-        shopDto.setCountryDto(CountryDto.builder().name(scannerService.getString("Enter the name of the country:")).build());*/
-
-
-        /*
-        Map<String, String> errorsShop = shopValidation.validate(shopDto);
-
-        if (!shopValidation.hasErrors())
-        {
-            addOrUpdate(shopDto);
-        }
-        else
-        {
-            errorsShop.forEach((k, v) -> System.out.println(k + " " + v));
-            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
-                    .message("Error while inserting Shop into table")
-                    .dateTime(LocalDateTime.now())
-                    .build());
-        }   */
-        return shopDto;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

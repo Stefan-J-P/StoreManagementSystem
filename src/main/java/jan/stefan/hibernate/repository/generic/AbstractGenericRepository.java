@@ -30,9 +30,9 @@ public abstract class AbstractGenericRepository<T, ID extends Serializable> impl
     {
         EntityManager entityManager = null;
         EntityTransaction tx = null;
-        if ( t == null ) {
+        /*if ( t == null ) {
             throw new MyException("SAVE OR UPDATE - ITEM IS NULL");
-        }
+        }*/
         entityManager = entityManagerFactory.createEntityManager();
         tx = entityManager.getTransaction();
 
@@ -60,20 +60,21 @@ public abstract class AbstractGenericRepository<T, ID extends Serializable> impl
     {
         EntityManager entityManager = null;
         EntityTransaction tx = null;
-        if ( id == null )
+        /*if ( id == null )
         {
             throw new MyException("DELETE - ID IS NULL");
-        }
+        }*/
 
         try {
             tx.begin();
-            T item = entityManager.getReference(entityType, id);
+            T item = entityManager.find(entityType, id);
 
             if (item == null)
             {
                 throw new MyException("DELETE - NO ITEM WITH ID " + id);
             }
 
+            entityManager.remove(item);
             tx.commit();
 
         } catch (Exception e) {
@@ -94,10 +95,10 @@ public abstract class AbstractGenericRepository<T, ID extends Serializable> impl
     {
         EntityManager entityManager = null;
         EntityTransaction tx = null;
-        if ( id == null )
+        /*if ( id == null )
         {
             throw new MyException("FIND BY ID - ID IS NULL");
-        }
+        }*/
 
         Optional<T> item = Optional.empty();
 

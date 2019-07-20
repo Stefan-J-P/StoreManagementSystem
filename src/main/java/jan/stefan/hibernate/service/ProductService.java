@@ -1,9 +1,13 @@
 package jan.stefan.hibernate.service;
 
+import jan.stefan.hibernate.dataInDbValidation.DataBaseValidator;
 import jan.stefan.hibernate.dto.modelDto.*;
 import jan.stefan.hibernate.dto.newObjectDto.NewProductDto;
 import jan.stefan.hibernate.exceptions.MyException;
+import jan.stefan.hibernate.model.Category;
+import jan.stefan.hibernate.model.Producer;
 import jan.stefan.hibernate.model.Product;
+import jan.stefan.hibernate.model.Trade;
 import jan.stefan.hibernate.model.validation.ProductValidation;
 import jan.stefan.hibernate.repository.repositoryInterfaces.ProductRepository;
 import jan.stefan.hibernate.service.mappers.ModelMapper;
@@ -18,9 +22,7 @@ import java.util.stream.Collectors;
 public class ProductService
 {
     private final ProductRepository productRepository;
-    private final ScannerService scannerService;
-    private final MyErrorService myErrorService;
-    private final ProductValidation productValidation;
+    private final DataBaseValidator dataBaseValidator;
 
 
     public ProductDto addOrUpdate(ProductDto productDto)
@@ -31,9 +33,17 @@ public class ProductService
         }
 
         Product product = ModelMapper.fromProductDtoToProduct(productDto);
+        Category category = dataBaseValidator.categoryDbValidator(productDto.getCategoryDto());
+        Producer producer = dataBaseValidator.producerDbValidator(productDto.getProducerDto());
+        Trade trade = dataBaseValidator.tradeDbValidator(productDto.getTradeDto());
+
+        product.setCategory(category);
+        product.setProducer(producer);
+        product.setTrade(trade);
+
         return ModelMapper.fromProductToProductDto(productRepository
                 .saveOrUpdate(product)
-                .orElseThrow(()-> new MyException("CUSTOMER SERVICE: addOrUpdate() : Cannot addOrUpdate customer")
+                .orElseThrow(()-> new MyException("PRODUCT SERVICE: addOrUpdate() : Cannot addOrUpdate customer")
                 ));
     }
 
@@ -60,7 +70,7 @@ public class ProductService
                 .orElseThrow(() -> new MyException("PRODUCT SERVICE: findOneById() : Cannot find id: " + id));
     }
 
-
+    /*
     public ProductDto addNewProduct(NewProductDto newProductDto)
     {
         // zrób osobną klasę DTO do przechowania danych pobranych od USERA i przekazać jako argument do metody addNewProduct() ze względu na testy jednostkowe
@@ -85,7 +95,7 @@ public class ProductService
                     .build());
         }
         return productDto;
-    }
+    }           */
 
 
 

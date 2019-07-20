@@ -18,14 +18,14 @@ public class CountryService
     public CountryDto addOrUpdate(CountryDto countryDto) {
 
         if (countryDto == null) {
-            throw new MyException("country service - addOrUpdate - country object argument is null");
+            throw new MyException("COUNTRY SERVICE - addOrUpdate - country object argument is null");
         }
 
         Country country = ModelMapper.fromCountryDtoToCountry(countryDto);
         return ModelMapper
                 .fromCountryToCountryDto(countryRepository
                         .saveOrUpdate(country)
-                        .orElseThrow(() -> new MyException("country service - addOrUpdate - cannot addOrUpdate country"))
+                        .orElseThrow(() -> new MyException("COUNTRY SERVICE - addOrUpdate - cannot addOrUpdate country"))
                 );
     }
 

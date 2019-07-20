@@ -48,6 +48,4 @@ public class ShopRepositoryImpl extends AbstractGenericRepository<Shop, Long> im
         }
         return item;
     }
-
-
 }
