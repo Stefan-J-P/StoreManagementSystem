@@ -1,12 +1,52 @@
 package jan.stefan.hibernate.menu;
 
+import jan.stefan.hibernate.dto.modelDto.CustomerDto;
+import jan.stefan.hibernate.dto.modelDto.MyErrorDto;
+import jan.stefan.hibernate.model.MyError;
+import jan.stefan.hibernate.model.validation.CustomerValidation;
+import jan.stefan.hibernate.service.CustomerService;
+import jan.stefan.hibernate.service.MyErrorService;
+import jan.stefan.hibernate.service.ScannerService;
+import lombok.RequiredArgsConstructor;
+
+import java.time.LocalDateTime;
+import java.util.Map;
+@RequiredArgsConstructor
 public class MenuService
 {
+    private final ScannerService scannerService;
+    private final MyErrorService myErrorService;
+
+    private final CustomerValidation customerValidation;
+
+    private final CustomerService customerService;
+
+
     // ======================================= SERVICE METHODS =========================================
     // CUSTOMER METHODS ----------------------------------------
+    @SuppressWarnings("Duplicates")
     protected void customerOption1()
     {
+        CustomerDto customerDto = new CustomerDto();
+        customerDto.setName(scannerService.getString("Enter customer's name:"));
+        customerDto.setSurname(scannerService.getString("Enter customer's surname:"));
+        customerDto.setEmail(scannerService.getString("Enter customer's email:"));
+        customerDto.setAge(scannerService.getInt("Enter customer's age:"));
 
+        Map<String, String> customerErrors = customerValidation.validate(customerDto);
+
+        if (!customerValidation.hasErrors())
+        {
+            customerService.addOrUpdate(customerDto);
+        }
+        else
+        {
+            customerErrors.forEach((k, v) -> System.out.println(k + " " + v));
+            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
+                    .message("Error while inserting Customer into the table")
+                    .dateTime(LocalDateTime.now())
+                    .build());
+        }
     }
 
     protected void customerOption2()

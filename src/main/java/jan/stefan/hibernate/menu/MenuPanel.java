@@ -11,7 +11,6 @@ public class MenuPanel
     private final MenuService menuService;
     private final MenuStatistics menuStatistics;
 
-
     public void mainMenu()
     {
         while (true)
@@ -29,9 +28,9 @@ public class MenuPanel
                 System.out.println("8. COUNTRY");
                 System.out.println("9. TRADE");
 
-                int option = scannerService.getInt("Enter the option");
+                int optionMenu = scannerService.getInt("Enter the option");
 
-                switch (option)
+                switch (optionMenu)
                 {
                     case 1:
                         System.out.println("============ CUSTOMER ============");
@@ -58,7 +57,7 @@ public class MenuPanel
                     case 2:
                         System.out.println("============= SHOP ==============");
                         System.out.println("1. ADD OR UPDATE ONE SHOP");
-                        System.out.println("2. FIND ALL SHOP");
+                        System.out.println("2. FIND ALL SHOPS");
                         System.out.println("3. FIND ONE SHOP BY ID");
                         System.out.println("4. FIND ONE SHOP BY NAME");
                         System.out.println("5. DELETE ONE SHOP");
@@ -121,7 +120,7 @@ public class MenuPanel
                     case 5:
                         System.out.println("=================== STOCK =======================");
                         System.out.println("1. ADD OR UPDATE ONE STOCK");
-                        System.out.println("2. FIND ALL STOCK");
+                        System.out.println("2. FIND ALL STOCKS");
                         System.out.println("3. FIND ONE STOCK BY ID");
                         System.out.println("4. FIND ONE STOCK BY NAME");
                         System.out.println("5. DELETE ONE STOCK");
@@ -147,20 +146,83 @@ public class MenuPanel
                         System.out.println("4. FIND ONE ORDER BY NAME");
                         System.out.println("5. DELETE ONE ORDER");
                         int optionOrder = scannerService.getInt("Enter the option for the Order: ");
-
-
+                        switch (optionOrder)
+                        {
+                            case 1:
+                                menuService.orderOption1();
+                            case 2:
+                                menuService.orderOption2();
+                            case 3:
+                                menuService.orderOption3();
+                            case 4:
+                                menuService.orderOption4();
+                            case 5:
+                                menuService.orderOption5();
+                        }
+                    case 7:
+                        System.out.println("========================= CATEGORY ==========================");
+                        System.out.println("1. ADD OR UPDATE ONE CATEGORY");
+                        System.out.println("2. FIND ALL CATEGORIES");
+                        System.out.println("3. FIND ONE CATEGORY BY ID");
+                        System.out.println("4. FIND ONE CATEGORY BY NAME");
+                        System.out.println("5. DELETE ONE CATEGORY");
+                        int optionCategory = scannerService.getInt("Enter the option for the Category: ");
+                        switch (optionCategory)
+                        {
+                            case 1:
+                                menuService.categoryOption1();
+                            case 2:
+                                menuService.categoryOption2();
+                            case 3:
+                                menuService.categoryOption3();
+                            case 4:
+                                menuService.categoryOption4();
+                            case 5:
+                                menuService.categoryOption5();
+                        }
+                    case 8:
+                        System.out.println("=================== COUNTRY =======================");
+                        System.out.println("1. ADD OR UPDATE ONE COUNTRY");
+                        System.out.println("2. FIND ALL COUNTRIES");
+                        System.out.println("3. FIND ONE COUNTRY BY ID");
+                        System.out.println("4. FIND ONE COUNTRY BY NAME");
+                        System.out.println("5. DELETE ONE COUNTRY");
+                        int optionCountry = scannerService.getInt("Enter the option for the Category: ");
+                        switch (optionCountry)
+                        {
+                            case 1:
+                                menuService.countryOption1();
+                            case 2:
+                                menuService.countryOption2();
+                            case 3:
+                                menuService.countryOption3();
+                            case 4:
+                                menuService.countryOption4();
+                            case 5:
+                                menuService.categoryOption5();
+                        }
+                    case 9:
+                        System.out.println("======================== TRADE ========================");
+                        System.out.println("1. ADD OR UPDATE ONE TRADE");
+                        System.out.println("2. FIND ALL TRADES");
+                        System.out.println("3. FIND ONE TRADE BY ID");
+                        System.out.println("4. FIND ONE TRADE BY NAME");
+                        System.out.println("5. DELETE ONE TRADE");
+                        int optionTrade = scannerService.getInt("Enter the option for the Trade: ");
+                        switch (optionTrade)
+                        {
+                            case 1:
+                                menuService.tradeOption1();
+                            case 2:
+                                menuService.tradeOption2();
+                            case 3:
+                                menuService.tradeOption3();
+                            case 4:
+                                menuService.tradeOption4();
+                            case 5:
+                                menuService.tradeOption5();
+                        }
                 }
-
-
-
-
-
-
-
-
-
-
-
             } catch (MyException e)
             {
                 System.out.println("*************************** EXCEPTION ********************************************");

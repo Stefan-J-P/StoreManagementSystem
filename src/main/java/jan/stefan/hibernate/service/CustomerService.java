@@ -60,37 +60,4 @@ public class CustomerService
                 .orElseThrow(() -> new MyException("CUSTOMER SERVICE: findOneById() : Cannot find id: " + id));
     }
 
-
-    public CustomerDto addNewCustomer()
-    {
-        CustomerDto customerDto = new CustomerDto();
-
-        customerDto.setName(scannerService.getString("Enter customer's name:"));
-        customerDto.setSurname(scannerService.getString("Enter customer's surname:"));
-        customerDto.setEmail(scannerService.getString("Enter customer's email:"));
-        customerDto.setAge(scannerService.getInt("Enter customer's age:"));
-
-        Map<String, String> customerErrors = customerValidation.validate(customerDto);
-
-        if (!customerValidation.hasErrors())
-        {
-            addOrUpdate(customerDto);
-        }
-        else
-        {
-            customerErrors.forEach((k, v) -> System.out.println(k + " " + v));
-            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
-                    .message("Error while inserting Customer into the table")
-                    .dateTime(LocalDateTime.now())
-                    .build());
-        }
-        return customerDto;
-    }
-
-
-
-
-
-
-
 }
