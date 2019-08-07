@@ -2,6 +2,7 @@ package jan.stefan.hibernate.menu;
 
 import jan.stefan.hibernate.dto.modelDto.CustomerDto;
 import jan.stefan.hibernate.dto.modelDto.MyErrorDto;
+import jan.stefan.hibernate.model.Customer;
 import jan.stefan.hibernate.model.MyError;
 import jan.stefan.hibernate.model.validation.CustomerValidation;
 import jan.stefan.hibernate.service.CustomerService;
@@ -10,10 +11,12 @@ import jan.stefan.hibernate.service.ScannerService;
 import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Map;
 @RequiredArgsConstructor
 public class MenuService
 {
+    // MenuService klasa która wykorzystuje metody serwisowe
     private final ScannerService scannerService;
     private final MyErrorService myErrorService;
 
@@ -25,7 +28,7 @@ public class MenuService
     // ======================================= SERVICE METHODS =========================================
     // CUSTOMER METHODS ----------------------------------------
     @SuppressWarnings("Duplicates")
-    protected void customerOption1()
+    void customerOption1()
     {
         CustomerDto customerDto = new CustomerDto();
         customerDto.setName(scannerService.getString("Enter customer's name:"));
@@ -49,18 +52,21 @@ public class MenuService
         }
     }
 
-    protected void customerOption2()
+    protected List<CustomerDto> customerOption2()
     {
-
+        return customerService.findAll();
     }
 
     protected void customerOption3()
     {
-
+        List<CustomerDto> allCustomers = customerService.findAll();
+        allCustomers.forEach(System.out::println);
     }
 
     protected void customerOption4()
     {
+        Long customerId = scannerService.getLong("Enter customer's ID: ");
+        CustomerDto customerDto = customerService.findOneById(customerId);
 
     }
 

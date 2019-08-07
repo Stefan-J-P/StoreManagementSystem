@@ -90,6 +90,18 @@ public class ScannerService
         }
     }
 
+    public Long getLong(String message)
+    {
+        try
+        {
+            System.out.println(message);
+            return sc.nextLong();
+        } catch (Exception e)
+        {
+            throw new MyException("GET LONG EXCEPTION: " + e.getMessage());
+        }
+    }
+
 
     public EGuarantee getEGuarantee(/*String message*/)
     {
