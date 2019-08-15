@@ -22,7 +22,6 @@ public class App
 {
     public static void main(String[] args)
     {
-        EntityManagerFactory entityManagerFactory = DbConnection.getInstance().getEntityManagerFactory();
         var scannerService = new ScannerService();
         var customerValidation = new CustomerValidation();
         var countryValidadtion = new CountryValidation();
@@ -62,13 +61,34 @@ public class App
         var stockService = new StockService(stockRepository, dataBaseValidation);
         var tradeService = new TradeService(tradeRepository);
 
-        var customerService = new CustomerService(customerRepository);
+        var customerService = new CustomerService(customerRepository, dataBaseValidation);
         var shopService = new ShopService(shopRepository, dataBaseValidation);
         var producerService = new ProducerService(producerRepository, dataBaseValidation);
         var productService = new ProductService(productRepository, dataBaseValidation);
 
-        var menuService = new MenuService(scannerService, myErrorService, customerValidation, customerService);
         var menuStatistics = new MenuStatistics();
+        var menuService = new MenuService(
+                scannerService,
+                myErrorService,
+                customerValidation,
+                shopValidation,
+                producerValidation,
+                productValidation,
+                stockValidation,
+                customerOrderValidation,
+                categoryValidation,
+                countryValidadtion,
+                tradeValidation,
+                customerService,
+                shopService,
+                producerService,
+                productService,
+                stockService,
+                customerOrderService,
+                categoryService,
+                countryService,
+                tradeService
+        );
 
         // ====================================================================================================================================================
 

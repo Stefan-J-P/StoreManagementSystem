@@ -27,6 +27,7 @@ public class MenuPanel
                 System.out.println("7. CATEGORY");
                 System.out.println("8. COUNTRY");
                 System.out.println("9. TRADE");
+                System.out.println("100. CLOSE PROGRAM");
 
                 int optionMenu = scannerService.getInt("Enter the option");
 
@@ -34,7 +35,8 @@ public class MenuPanel
                 {
                     case 1:
                         System.out.println("============ CUSTOMER ============");
-                        System.out.println("1. ADD OR UPDATE ONE CUSTOMER");
+                        System.out.println("0. UPDATE ONE CUSTOMER");
+                        System.out.println("1. ADD ONE CUSTOMER");
                         System.out.println("2. FIND ALL CUSTOMERS");
                         System.out.println("3. FIND ONE CUSTOMER BY ID");
                         System.out.println("4. FIND ONE CUSTOMER BY NAME");
@@ -44,6 +46,9 @@ public class MenuPanel
 
                         switch (customerOption)
                         {
+                            case 0:
+                                menuService.customerOption0();
+                                break;
                             case 1: // add or update one customer
                                 menuService.customerOption1();
                                 break;
@@ -72,25 +77,27 @@ public class MenuPanel
                         System.out.println("4. FIND ONE SHOP BY NAME");
                         System.out.println("5. DELETE ONE SHOP");
                         System.out.println("6. RETURN TO MAIN MENU");
+
                         int shopOption = scannerService.getInt("Enter the option for the Shop: ");
+
                         switch (shopOption)
                         {
-                            case 1:
+                            case 1: // add or update
                                 menuService.shopOption1();
                                 break;
-                            case 2:
+                            case 2: // find all shops
                                 menuService.shopOption2();
                                 break;
-                            case 3:
+                            case 3: // find one shop by id
                                 menuService.shopOption3();
                                 break;
-                            case 4:
+                            case 4: // find one shop by name
                                 menuService.shopOption4();
                                 break;
-                            case 5:
+                            case 5: // delete one shop
                                 menuService.shopOption5();
                                 break;
-                            case 6:
+                            case 6: // return to main menu
                                 break;
                         }
                         break;
@@ -103,7 +110,9 @@ public class MenuPanel
                         System.out.println("4. FIND ONE PRODUCER BY NAME");
                         System.out.println("5. DELETE ONE PRODUCER");
                         System.out.println("6. RETURN TO MAIN MENU");
+
                         int optionProducer = scannerService.getInt("Enter the option for the Producer: ");
+
                         switch (optionProducer)
                         {
                             case 1:
@@ -134,7 +143,9 @@ public class MenuPanel
                         System.out.println("4. FIND ONE PRODUCT BY NAME");
                         System.out.println("5. DELETE ONE PRODUCT");
                         System.out.println("6. RETURN TO MAIN MENU");
+
                         int optionProduct = scannerService.getInt("Enter the option for the Product: ");
+
                         switch (optionProduct)
                         {
                             case 1:
@@ -165,7 +176,9 @@ public class MenuPanel
                         System.out.println("4. FIND ONE STOCK BY NAME");
                         System.out.println("5. DELETE ONE STOCK");
                         System.out.println("6. RETURN TO MAIN MENU");
+
                         int optionStock = scannerService.getInt("Enter the option for the Stock: ");
+
                         switch (optionStock)
                         {
                             case 1:
@@ -196,7 +209,9 @@ public class MenuPanel
                         System.out.println("4. FIND ONE ORDER BY NAME");
                         System.out.println("5. DELETE ONE ORDER");
                         System.out.println("6. RETURN TO MAIN MENU");
+
                         int optionOrder = scannerService.getInt("Enter the option for the Order: ");
+
                         switch (optionOrder)
                         {
                             case 1:
@@ -227,7 +242,9 @@ public class MenuPanel
                         System.out.println("4. FIND ONE CATEGORY BY NAME");
                         System.out.println("5. DELETE ONE CATEGORY");
                         System.out.println("6. RETURN TO MAIN MENU");
+
                         int optionCategory = scannerService.getInt("Enter the option for the Category: ");
+
                         switch (optionCategory)
                         {
                             case 1:
@@ -258,7 +275,9 @@ public class MenuPanel
                         System.out.println("4. FIND ONE COUNTRY BY NAME");
                         System.out.println("5. DELETE ONE COUNTRY");
                         System.out.println("6. RETURN TO MAIN MENU");
+
                         int optionCountry = scannerService.getInt("Enter the option for the Category: ");
+
                         switch (optionCountry)
                         {
                             case 1:
@@ -274,7 +293,7 @@ public class MenuPanel
                                 menuService.countryOption4();
                                 break;
                             case 5:
-                                menuService.categoryOption5();
+                                menuService.countryOption5();
                                 break;
                             case 6:
                                 break;
@@ -289,7 +308,9 @@ public class MenuPanel
                         System.out.println("4. FIND ONE TRADE BY NAME");
                         System.out.println("5. DELETE ONE TRADE");
                         System.out.println("6. RETURN TO MAIN MENU");
+
                         int optionTrade = scannerService.getInt("Enter the option for the Trade: ");
+
                         switch (optionTrade)
                         {
                             case 1:
@@ -311,6 +332,11 @@ public class MenuPanel
                                 break;
                         }
                         break;
+
+                    case 100: // CLOSE PROGRAM
+                        System.out.println("CLOSING PROGRAM");
+                        scannerService.close();
+                        return;
 
                 }
             } catch (MyException e)

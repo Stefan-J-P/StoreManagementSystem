@@ -64,9 +64,18 @@ public class ProducerService
 
     public ProducerDto findOneById(Long id)
     {
-        return producerRepository.findById(id)
+        return producerRepository
+                .findById(id)
                 .map(ModelMapper::fromProducerToProducerDto)
-                .orElseThrow(() -> new MyException("PRODUCER SERVICE: addOrUpdate() cannot find id" + id));
+                .orElseThrow(() -> new MyException("PRODUCER SERVICE: findOneById() cannot find id" + id));
+    }
+
+    public ProducerDto findOneByName(String producerName)
+    {
+        return producerRepository
+                .findOneByName(producerName)
+                .map(ModelMapper::fromProducerToProducerDto)
+                .orElseThrow(() -> new MyException("PRODUCER SERVICE: findOneByName() cannot find name " + producerName));
     }
 
     /*

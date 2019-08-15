@@ -42,13 +42,6 @@
         <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="per01: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="customers: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="per01: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="trades: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
@@ -59,73 +52,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-              <filtering>
-                <filter text="" />
-              </filtering>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CustomerService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="800">
-              <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
-              <folding>
-                <element signature="e#1516#1517#0" expanded="true" />
-                <element signature="e#1561#1562#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/generic/AbstractGenericRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2247">
-              <caret line="121" column="45" selection-start-line="121" selection-start-column="45" selection-end-line="121" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#28#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="65" selection-start-line="65" selection-end-line="65" />
+            <state relative-caret-position="235">
+              <caret line="251" column="27" lean-forward="true" selection-start-line="251" selection-start-column="27" selection-end-line="251" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4560">
-              <caret line="285" column="73" lean-forward="true" selection-start-line="285" selection-start-column="73" selection-end-line="285" selection-end-column="73" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/App.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="84" column="10" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#3100#3131#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -168,11 +102,9 @@
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/StockValidation.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/ProductDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/CountryRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/jan/stefan/hibernate/CustomerServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/StockDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/TradeDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/newProductDto/NewProductDto.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/newObjectDto/NewProductDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/AbstractValidator.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/generic/AbstractValidator.java" />
@@ -195,24 +127,26 @@
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/TradeRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/ShopRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/TradeRepositoryImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ShopService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ProducerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/StockService.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/TradeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ProductService.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CountryService.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/MenuService.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuStatistics.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dataInDbValidation/DataBaseValidator.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CustomerOrderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/CustomerRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/CustomerRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ScannerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/generic/AbstractGenericRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuPanel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/jan/stefan/hibernate/CustomerServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dataInDbValidation/DataBaseValidator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/App.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CustomerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ShopService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuPanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ProducerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuService.java" />
       </list>
     </option>
   </component>
@@ -281,6 +215,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StoreManagementSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StoreManagementSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="dataInDbValidation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="StoreManagementSystem" type="b2602c69:ProjectViewProjectNode" />
@@ -361,7 +304,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomerServiceTest.saveOrUpdateTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CustomerServiceTest.addOrUpdateTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="StoreManagementSystem" />
       <extension name="coverage">
         <pattern>
@@ -371,7 +314,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="jan.stefan.hibernate" />
       <option name="MAIN_CLASS_NAME" value="jan.stefan.hibernate.CustomerServiceTest" />
-      <option name="METHOD_NAME" value="saveOrUpdateTest1" />
+      <option name="METHOD_NAME" value="addOrUpdateTest1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -380,7 +323,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
-        <item itemvalue="JUnit.CustomerServiceTest.saveOrUpdateTest1" />
+        <item itemvalue="JUnit.CustomerServiceTest.addOrUpdateTest1" />
       </list>
     </recent_temporary>
   </component>
@@ -457,14 +400,11 @@
       <workItem from="1565194930785" duration="8354000" />
       <workItem from="1565552243180" duration="1539000" />
       <workItem from="1565716061461" duration="12000" />
-      <workItem from="1565854986285" duration="5273000" />
+      <workItem from="1565854986285" duration="18253000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CustomerServiceTest_saveOrUpdateTest1 - 2019.06.27 at 22h 50m 15s.xml">
-      <configuration name="CustomerServiceTest.saveOrUpdateTest1" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CustomerServiceTest_saveOrUpdateTest1 - 2019.07.02 at 18h 54m 26s.xml">
       <configuration name="CustomerServiceTest.saveOrUpdateTest1" configurationId="JUnit" />
     </history-entry>
@@ -486,15 +426,24 @@
     <history-entry file="CustomerServiceTest_saveOrUpdateTest1 - 2019.07.02 at 19h 44m 21s.xml">
       <configuration name="CustomerServiceTest.saveOrUpdateTest1" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CustomerServiceTest_saveOrUpdateTest1 - 2019.08.15 at 12h 09m 48s.xml">
+      <configuration name="CustomerServiceTest.saveOrUpdateTest1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CustomerServiceTest_addOrUpdateTest1 - 2019.08.15 at 12h 11m 35s.xml">
+      <configuration name="CustomerServiceTest.addOrUpdateTest1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CustomerServiceTest_addOrUpdateTest1 - 2019.08.15 at 12h 11m 58s.xml">
+      <configuration name="CustomerServiceTest.addOrUpdateTest1" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216311000" />
+    <option name="totallyTimeSpent" value="229291000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15618336" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20788912" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -504,7 +453,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.51750547" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.5254605" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -532,112 +481,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/Country.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CategoryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CountryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="27" column="75" selection-start-line="27" selection-start-column="75" selection-end-line="27" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/CustomerRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="9" column="50" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/exceptions/MyException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CustomerOrderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/newObjectDto/NewProductDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/generic/GenericRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
@@ -725,61 +568,6 @@
           <filtering>
             <filter text="" />
           </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="84" column="10" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -829,16 +617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/generic/AbstractGenericRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2247">
-          <caret line="121" column="45" selection-start-line="121" selection-start-column="45" selection-end-line="121" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#28#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
@@ -890,16 +668,6 @@
           <filtering>
             <filter text="" />
           </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4560">
-          <caret line="285" column="73" lean-forward="true" selection-start-line="285" selection-start-column="73" selection-end-line="285" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -910,13 +678,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
+          <filtering>
+            <filter text="" />
+          </filtering>
         </state>
       </provider>
     </entry>
@@ -930,6 +697,175 @@
       </provider>
     </entry>
     <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/generic/GenericRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/generic/AbstractGenericRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-299">
+          <caret line="121" column="45" selection-start-line="121" selection-start-column="45" selection-end-line="121" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#28#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/errors">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/mappers/ModelMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/jan/stefan/hibernate/CustomerServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="63" column="88" selection-start-line="63" selection-start-column="88" selection-end-line="63" selection-end-column="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dataInDbValidation/DataBaseValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432">
+          <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/ShopRepositoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#41#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/ShopRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="24" column="59" lean-forward="true" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ShopService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="763">
+          <caret line="73" column="16" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/countries">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
           <filtering>
@@ -940,15 +876,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ScannerService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="1483">
+          <caret line="107" column="5" lean-forward="true" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/shops">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
           <filtering>
@@ -957,22 +893,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CustomerService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+        <state relative-caret-position="1584">
+          <caret line="99" column="58" selection-start-line="99" selection-start-column="58" selection-end-line="99" selection-end-column="58" />
           <folding>
-            <element signature="e#1516#1517#0" expanded="true" />
-            <element signature="e#1561#1562#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/ProducerRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ProducerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="77" column="122" lean-forward="true" selection-start-line="77" selection-start-column="122" selection-end-line="77" selection-end-column="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="251" column="27" lean-forward="true" selection-start-line="251" selection-start-column="27" selection-end-line="251" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3100#3131#1" expanded="true" />
           </folding>
         </state>
       </provider>

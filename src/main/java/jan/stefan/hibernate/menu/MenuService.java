@@ -1,13 +1,12 @@
 package jan.stefan.hibernate.menu;
 
-import jan.stefan.hibernate.dto.modelDto.CustomerDto;
-import jan.stefan.hibernate.dto.modelDto.MyErrorDto;
+import jan.stefan.hibernate.dto.modelDto.*;
 import jan.stefan.hibernate.model.Customer;
 import jan.stefan.hibernate.model.MyError;
-import jan.stefan.hibernate.model.validation.CustomerValidation;
-import jan.stefan.hibernate.service.CustomerService;
-import jan.stefan.hibernate.service.MyErrorService;
-import jan.stefan.hibernate.service.ScannerService;
+import jan.stefan.hibernate.model.Producer;
+import jan.stefan.hibernate.model.Product;
+import jan.stefan.hibernate.model.validation.*;
+import jan.stefan.hibernate.service.*;
 import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;
@@ -21,8 +20,25 @@ public class MenuService
     private final MyErrorService myErrorService;
 
     private final CustomerValidation customerValidation;
+    private final ShopValidation shopValidation;
+    private final ProducerValidation producerValidation;
+    private final ProductValidation productValidation;
+    private final StockValidation stockValidation;
+    private final CustomerOrderValidation customerOrderValidation;
+    private final CategoryValidation categoryValidation;
+    private final CountryValidation countryValidation;
+    private final TradeValidation tradeValidation;
+
 
     private final CustomerService customerService;
+    private final ShopService shopService;
+    private final ProducerService producerService;
+    private final ProductService productService;
+    private final StockService stockService;
+    private final CustomerOrderService customerOrderService;
+    private final CategoryService categoryService;
+    private final CountryService countryService;
+    private final TradeService tradeService;
 
 
     // ======================================= SERVICE METHODS =========================================
@@ -35,15 +51,13 @@ public class MenuService
         customerDto.setSurname(scannerService.getString("Enter customer's surname:"));
         customerDto.setEmail(scannerService.getString("Enter customer's email:"));
         customerDto.setAge(scannerService.getInt("Enter customer's age:"));
+        customerDto.setCountryDto(CountryDto.builder().name(scannerService.getString("Enter the name of customer's country")).build());
 
         Map<String, String> customerErrors = customerValidation.validate(customerDto);
 
         if (!customerValidation.hasErrors())
         {
             customerService.addOrUpdate(customerDto);
-            //CustomerDto check = customerService.findOneById(customerDto.getId());
-
-
         }
         else
         {
@@ -55,9 +69,45 @@ public class MenuService
         }
     }
 
-    List<CustomerDto> customerOption2()
+    @SuppressWarnings("Duplicates")
+    void customerOption0()
     {
-        return customerService.findAll();
+        CustomerDto customerDto = new CustomerDto();
+        customerDto.setId(scannerService.getLong("Enter customer's ID: "));
+        customerDto.setName(scannerService.getString("Enter customer's name:"));
+        customerDto.setSurname(scannerService.getString("Enter customer's surname:"));
+        customerDto.setEmail(scannerService.getString("Enter customer's email:"));
+        customerDto.setAge(scannerService.getInt("Enter customer's age:"));
+        customerDto.setCountryDto(CountryDto.builder().name(scannerService.getString("Enter the name of customer's country")).build());
+
+        Map<String, String> customerErrors = customerValidation.validate(customerDto);
+
+        if (!customerValidation.hasErrors())
+        {
+            customerService.addOrUpdate(customerDto);
+        }
+        else
+        {
+            customerErrors.forEach((k, v) -> System.out.println(k + " " + v));
+            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
+                    .message("Error while inserting Customer into the table")
+                    .dateTime(LocalDateTime.now())
+                    .build());
+        }
+    }
+
+    void customerOption2()
+    {
+        List<CustomerDto> customerDtoList = customerService.findAll();
+        //customerDtoList.isEmpty() ? System.out.println("YOUR LIST IS EMPTY") : customerDtoList.forEach(System.out::println);
+        if (!customerDtoList.isEmpty())
+        {
+            customerDtoList.forEach(System.out::println);
+        }
+        else
+        {
+            System.out.println("YOUR LIST IS EMPTY");
+        }
     }
 
     void customerOption3()
@@ -82,60 +132,160 @@ public class MenuService
     }
 
     // SHOP METHODS -------------------------------------------
-    protected void shopOption1(){}
-    protected void shopOption2(){}
-    protected void shopOption3(){}
-    protected void shopOption4(){}
-    protected void shopOption5(){}
+    void shopOption1()
+    {
+        ShopDto shopDto = new ShopDto();
+        shopDto.setName(scannerService.getString("Enter the name of the Shop: "));
+        shopDto.setCountryDto(CountryDto.builder().name(scannerService.getString("Enter the name of the shop's country: ")).build());
+
+        Map<String, String> shopErrors = shopValidation.validate(shopDto);
+
+        if (!shopValidation.hasErrors())
+        {
+            shopService.addOrUpdate(shopDto);
+        }
+        else
+        {
+            shopErrors.forEach((k, v) -> System.out.println(k + " " +v));
+            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
+                    .message("Error while inserting Shop into the table")
+                    .dateTime(LocalDateTime.now())
+                    .build());
+        }
+    }
+    void shopOption2()
+    {
+        List<ShopDto> shopDtoList = shopService.findAll();
+        if (!shopDtoList.isEmpty())
+        {
+            shopDtoList.forEach(System.out::println);
+        }
+        else
+        {
+            System.out.println("YOUR LIST IS EMPTY!");
+        }
+    }
+    void shopOption3()
+    {
+        Long shopId = scannerService.getLong("Enter the shop ID: ");
+        ShopDto shopDto = shopService.findOneById(shopId);
+        System.out.println(shopDto);
+    }
+
+    void shopOption4()
+    {
+        String shopName = scannerService.getString("Enter the name of the shop");
+        ShopDto myShop = shopService.findOneByName(shopName);
+        System.out.println(myShop);
+    }
+
+    void shopOption5()
+    {
+        Long delId = scannerService.getLong("Enter the shop ID: ");
+        shopService.delete(delId);
+    }
 
     // PRODUCER METHODS ---------------------------------------
-    protected void producerOption1(){}
-    protected void producerOption2(){}
-    protected void producerOption3(){}
-    protected void producerOption4(){}
-    protected void producerOption5(){}
+    void producerOption1()
+    {
+        ProducerDto producerDto = new ProducerDto();
+        producerDto.setName(scannerService.getString("Enter the name of the producer: "));
+        producerDto.setCountryDto(CountryDto.builder().name(scannerService.getString("Enter the name of the producer's country")).build());
+        producerDto.setTradeDto(TradeDto.builder().name(scannerService.getString("Enter the name of the producer's trade")).build());
+
+        Map<String, String> producerErrors = producerValidation.validate(producerDto);
+
+        if (!producerValidation.hasErrors())
+        {
+            producerService.addOrUpdate(producerDto);
+        }
+        else
+        {
+            producerErrors.forEach((k, v) -> System.out.println(k + " " + v));
+            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
+                    .message("Error while inserting Producer into the table ")
+                    .dateTime(LocalDateTime.now())
+                    .build());
+        }
+    }
+
+    void producerOption2()
+    {
+        List<ProducerDto> producerDtoList = producerService.findAll();
+        if (!producerDtoList.isEmpty())
+        {
+            producerDtoList.forEach(System.out::println);
+        }
+        else
+        {
+            System.out.println("YOUR LIST IS EMPTY!");
+        }
+
+    }
+
+    void producerOption3()
+    {
+        Long producerId = scannerService.getLong("Enter the ID of the producer: ");
+        ProducerDto producerDto = producerService.findOneById(producerId);
+        System.out.println(producerDto);
+    }
+
+    void producerOption4()
+    {
+        String producerName = scannerService.getString("Enter the name of the producer: ");
+        ProducerDto producerDto = producerService.findOneByName(producerName);
+        System.out.println(producerDto);
+    }
+
+    void producerOption5()
+    {
+        Long prodDelId = scannerService.getLong("Enter the ID of the producer to delete: ");
+        producerService.delete(prodDelId);
+    }
+
+
 
     // PRODUCT METHODS ----------------------------------------
-    protected void productOption1(){}
-    protected void productOption2(){}
-    protected void productOption3(){}
-    protected void productOption4(){}
-    protected void productOption5(){}
+    void productOption1(){}
+    void productOption2(){}
+    void productOption3(){}
+    void productOption4(){}
+    void productOption5(){}
 
     // STOCK --------------------------------------------------
-    protected void stockOption1(){}
-    protected void stockOption2(){}
-    protected void stockOption3(){}
-    protected void stockOption4(){}
-    protected void stockOption5(){}
+    void stockOption1(){}
+    void stockOption2(){}
+    void stockOption3(){}
+    void stockOption4(){}
+    void stockOption5(){}
 
     // CUSTOMER ORDER -----------------------------------------
-    protected void orderOption1(){}
-    protected void orderOption2(){}
-    protected void orderOption3(){}
-    protected void orderOption4(){}
-    protected void orderOption5(){}
+    void orderOption1(){}
+    void orderOption2(){}
+    void orderOption3(){}
+    void orderOption4(){}
+    void orderOption5(){}
 
     // CATEGORY -----------------------------------------------
-    protected void categoryOption1(){}
-    protected void categoryOption2(){}
-    protected void categoryOption3(){}
-    protected void categoryOption4(){}
-    protected void categoryOption5(){}
+    void categoryOption1(){}
+    void categoryOption2(){}
+    void categoryOption3(){}
+    void categoryOption4(){}
+    void categoryOption5(){}
 
     // COUNTRY ------------------------------------------------
-    protected void countryOption1(){}
-    protected void countryOption2(){}
-    protected void countryOption3(){}
-    protected void countryOption4(){}
-    protected void countryOption5(){}
+    void countryOption1(){}
+    void countryOption2(){}
+    void countryOption3(){}
+    void countryOption4(){}
+    void countryOption5(){}
 
     // TRADE --------------------------------------------------
-    protected void tradeOption1(){}
-    protected void tradeOption2(){}
-    protected void tradeOption3(){}
-    protected void tradeOption4(){}
-    protected void tradeOption5(){}
+    void tradeOption1(){}
+    void tradeOption2(){}
+    void tradeOption3(){}
+    void tradeOption4(){}
+    void tradeOption5(){}
 
 
 

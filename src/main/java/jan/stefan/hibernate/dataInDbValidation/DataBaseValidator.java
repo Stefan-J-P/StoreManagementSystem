@@ -18,10 +18,6 @@ public class DataBaseValidator
     private final ShopRepository shopRepository;
     private final TradeRepository tradeRepository;
 
-    // ZAMIEŃ TYPY ZWRACANE NA BOOLEAN !!!!!!!!!!!!!!!!!
-    // WRZUĆ METODY DO SERWISÓW I OZNACZ JE JAKO PRYWATNE
-    // REPOZYTORIA UWOLNIĆ OD WYJĄTKÓW
-
     @SuppressWarnings("Duplicates")
     public Category categoryDbValidator(CategoryDto categoryDto)
     {

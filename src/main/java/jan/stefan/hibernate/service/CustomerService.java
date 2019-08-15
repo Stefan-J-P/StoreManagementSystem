@@ -1,8 +1,10 @@
 package jan.stefan.hibernate.service;
 
+import jan.stefan.hibernate.dataInDbValidation.DataBaseValidator;
 import jan.stefan.hibernate.dto.modelDto.CustomerDto;
 import jan.stefan.hibernate.dto.modelDto.MyErrorDto;
 import jan.stefan.hibernate.exceptions.MyException;
+import jan.stefan.hibernate.model.Country;
 import jan.stefan.hibernate.model.Customer;
 import jan.stefan.hibernate.model.validation.CustomerValidation;
 import jan.stefan.hibernate.repository.repositoryInterfaces.CustomerRepository;
@@ -18,15 +20,19 @@ import java.util.stream.Collectors;
 public class CustomerService
 {
     private final CustomerRepository customerRepository;
+    private final DataBaseValidator dataBaseValidator;
 
     public CustomerDto addOrUpdate(CustomerDto customerDto)
     {
         if (customerDto == null)
         {
-            throw new MyException("CUSTOMER SERVICE: Customer object argument is null");
+            throw new MyException("CUSTOMER SERVICE: addOrUpdate() : Customer object argument is null");
         }
 
         Customer customer = ModelMapper.fromCustomerDtoToCustomer(customerDto);
+        Country result = dataBaseValidator.countryDbValidator(customerDto.getCountryDto());
+        customer.setCountry(result);
+
         return ModelMapper.fromCustomerToCustomerDto(customerRepository
                 .saveOrUpdate(customer)
                 .orElseThrow(()-> new MyException("CUSTOMER SERVICE: Cannot addOrUpdate() customer")
@@ -52,7 +58,7 @@ public class CustomerService
     {
         if (id == null)
         {
-            throw new MyException("CUSTOMER SERVICE: ID argument is null");
+            throw new MyException("CUSTOMER SERVICE: findOneById() : ID argument is null");
         }
         return customerRepository
                 .findById(id)
@@ -64,7 +70,7 @@ public class CustomerService
     {
         if (email == null)
         {
-
+            throw new MyException("CUSTOMER SERVICE: findOneByEmail() : email argument is null");
         }
         return customerRepository.findOneByEmail(email)
                 .map(ModelMapper::fromCustomerToCustomerDto)

@@ -63,7 +63,15 @@ public class ShopService
     {
         return shopRepository.findById(id)
                 .map(ModelMapper::fromShopToShopDto)
-                .orElseThrow(() -> new MyException(""));
+                .orElseThrow(() -> new MyException("SHOP SERVICE: findOneById() : Cannot find shop with ID: " + id));
+    }
+
+    public ShopDto findOneByName(String shopName)
+    {
+        return shopRepository
+                .findOneByName(shopName)
+                .map(ModelMapper::fromShopToShopDto)
+                .orElseThrow(() -> new MyException("SHOP SERVICE: findOneByName() : Cannot find shop named: " + shopName));
     }
 
 }
