@@ -15,7 +15,7 @@ public class CategoryRepositoryImpl extends AbstractGenericRepository<Category, 
     {
         if ( name == null )
         {
-            throw new MyException("CATEGORY REPOSITORY IMPL: findOneByName() - NAME ARGUMENT IS NULL");
+            throw new MyException("CATEGORY REPOSITORY IMPL: findOneByEmail() - NAME ARGUMENT IS NULL");
         }
 
         EntityManager entityManager = null;

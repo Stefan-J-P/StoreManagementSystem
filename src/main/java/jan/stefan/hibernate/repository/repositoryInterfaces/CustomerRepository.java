@@ -7,5 +7,5 @@ import java.util.Optional;
 
 public interface CustomerRepository extends GenericRepository<Customer, Long>
 {
-    Optional<Customer> findOneByName(String name);
+    Optional<Customer> findOneByEmail(String email);
 }

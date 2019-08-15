@@ -15,7 +15,7 @@ public class ProducerRepositoryImpl extends AbstractGenericRepository<Producer, 
     {
         if ( name == null )
         {
-            throw new MyException("PRODUCER REPOSITORY IMPL: findOneByName() - NAME ARGUMENT IS NULL");
+            throw new MyException("PRODUCER REPOSITORY IMPL: findOneByEmail() - NAME ARGUMENT IS NULL");
         }
 
         EntityManager entityManager = null;

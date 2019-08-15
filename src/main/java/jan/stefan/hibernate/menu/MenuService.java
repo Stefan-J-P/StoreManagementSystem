@@ -41,6 +41,9 @@ public class MenuService
         if (!customerValidation.hasErrors())
         {
             customerService.addOrUpdate(customerDto);
+            //CustomerDto check = customerService.findOneById(customerDto.getId());
+
+
         }
         else
         {
@@ -52,27 +55,30 @@ public class MenuService
         }
     }
 
-    protected List<CustomerDto> customerOption2()
+    List<CustomerDto> customerOption2()
     {
         return customerService.findAll();
     }
 
-    protected void customerOption3()
-    {
-        List<CustomerDto> allCustomers = customerService.findAll();
-        allCustomers.forEach(System.out::println);
-    }
-
-    protected void customerOption4()
+    void customerOption3()
     {
         Long customerId = scannerService.getLong("Enter customer's ID: ");
         CustomerDto customerDto = customerService.findOneById(customerId);
+        System.out.println(customerDto);
+    }
+
+    void customerOption4()
+    {
+        String email = scannerService.getString("Enter the customer's email: ");
+        CustomerDto customerDto = customerService.findOneByEmail(email);
+        System.out.println(customerDto);
 
     }
 
-    protected void customerOption5()
+    void customerOption5()
     {
-
+        Long id = scannerService.getLong("Enter the customer's ID: ");
+        customerService.delete(id);
     }
 
     // SHOP METHODS -------------------------------------------

@@ -91,7 +91,7 @@ public class DataBaseValidator
 
         if (customer.getId() == null)
         {
-            customerFromDb = customerRepository.findOneByName(customer.getName()).orElse(null);
+            customerFromDb = customerRepository.findOneByEmail(customer.getName()).orElse(null);
 
             if (customerFromDb == null)
             {

@@ -7,6 +7,9 @@ import jan.stefan.hibernate.dataInDbValidation.DataBaseValidator;
 import jan.stefan.hibernate.dto.modelDto.CountryDto;
 import jan.stefan.hibernate.dto.modelDto.ShopDto;
 import jan.stefan.hibernate.dto.newObjectDto.NewProductDto;
+import jan.stefan.hibernate.menu.MenuPanel;
+import jan.stefan.hibernate.menu.MenuService;
+import jan.stefan.hibernate.menu.MenuStatistics;
 import jan.stefan.hibernate.model.validation.*;
 import jan.stefan.hibernate.repository.implementation.*;
 import jan.stefan.hibernate.service.*;
@@ -59,13 +62,27 @@ public class App
         var stockService = new StockService(stockRepository, dataBaseValidation);
         var tradeService = new TradeService(tradeRepository);
 
-        var customerService = new CustomerService(customerRepository, scannerService, myErrorService, customerValidation);
+        var customerService = new CustomerService(customerRepository);
         var shopService = new ShopService(shopRepository, dataBaseValidation);
         var producerService = new ProducerService(producerRepository, dataBaseValidation);
         var productService = new ProductService(productRepository, dataBaseValidation);
 
+        var menuService = new MenuService(scannerService, myErrorService, customerValidation, customerService);
+        var menuStatistics = new MenuStatistics();
+
         // ====================================================================================================================================================
 
+
+        new MenuPanel(
+                scannerService,
+                menuService,
+                menuStatistics
+
+
+
+
+
+        ).mainMenu();
 
 
 

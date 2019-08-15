@@ -23,7 +23,8 @@ public class ScannerService
             return sc.nextLine();
         } catch (Exception e)
         {
-            throw new MyException("GET STRING EXCEPTION: " + e.getMessage());
+            e.printStackTrace();
+            throw new MyException("SCANNER SERVICE - GET STRING EXCEPTION: " + e.getMessage());
         }
     }
 
@@ -33,7 +34,7 @@ public class ScannerService
         String text = sc.nextLine();
         if (!text.matches("\\d+"))
         {
-            throw new MyException("GET INT VALUE EXCEPTION: " + text);
+            throw new MyException("SCANNER SERVICE - GET INT VALUE EXCEPTION: " + text);
         }
         return Integer.parseInt(text);
     }
@@ -47,7 +48,7 @@ public class ScannerService
 
         } catch (Exception e)
         {
-            throw new MyException("GET BIG DECIMAL EXCEPTION: " + e.getMessage());
+            throw new MyException("SCANNER SERVICE - GET BIG DECIMAL EXCEPTION: " + e.getMessage());
         }
 
     }
@@ -61,7 +62,7 @@ public class ScannerService
 
         } catch (Exception e)
         {
-            throw new MyException("GET DATE EXCEPTION: " + e.getMessage());
+            throw new MyException("SCANNER SERVICE - GET DATE EXCEPTION: " + e.getMessage());
         }
     }
 
@@ -74,7 +75,7 @@ public class ScannerService
 
         } catch (Exception e)
         {
-            throw new MyException("GET TIME EXCEPTION: " + e.getMessage());
+            throw new MyException("SCANNER SERVICE - GET TIME EXCEPTION: " + e.getMessage());
         }
     }
 
@@ -86,7 +87,7 @@ public class ScannerService
 
         } catch (Exception e)
         {
-            throw new MyException("GENERATE DATE EXCEPTION: " + e.getMessage());
+            throw new MyException("SCANNER SERVICE - GENERATE DATE EXCEPTION: " + e.getMessage());
         }
     }
 
@@ -98,7 +99,7 @@ public class ScannerService
             return sc.nextLong();
         } catch (Exception e)
         {
-            throw new MyException("GET LONG EXCEPTION: " + e.getMessage());
+            throw new MyException("SCANNER SERVICE - GET LONG EXCEPTION: " + e.getMessage());
         }
     }
 

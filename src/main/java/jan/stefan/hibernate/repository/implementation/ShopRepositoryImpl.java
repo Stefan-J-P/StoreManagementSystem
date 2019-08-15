@@ -15,7 +15,7 @@ public class ShopRepositoryImpl extends AbstractGenericRepository<Shop, Long> im
     {
         if ( name == null )
         {
-            throw new MyException("SHOP REPOSITORY IMPL: findOneByName() - NAME ARGUMENT IS NULL");
+            throw new MyException("SHOP REPOSITORY IMPL: findOneByEmail() - NAME ARGUMENT IS NULL");
         }
 
         EntityManager entityManager = null;

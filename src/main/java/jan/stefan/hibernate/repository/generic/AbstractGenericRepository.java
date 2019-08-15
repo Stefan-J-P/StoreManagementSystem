@@ -28,13 +28,8 @@ public abstract class AbstractGenericRepository<T, ID extends Serializable> impl
     @Override
     public Optional<T> saveOrUpdate(T t)
     {
-        EntityManager entityManager = null;
-        EntityTransaction tx = null;
-        /*if ( t == null ) {
-            throw new MyException("SAVE OR UPDATE - ITEM IS NULL");
-        }*/
-        entityManager = entityManagerFactory.createEntityManager();
-        tx = entityManager.getTransaction();
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction tx = entityManager.getTransaction();
 
         Optional<T> inserted = Optional.empty();
         try {
@@ -58,12 +53,9 @@ public abstract class AbstractGenericRepository<T, ID extends Serializable> impl
     @Override
     public void delete(ID id)
     {
-        EntityManager entityManager = null;
-        EntityTransaction tx = null;
-        /*if ( id == null )
-        {
-            throw new MyException("DELETE - ID IS NULL");
-        }*/
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction tx = entityManager.getTransaction();
+
 
         try {
             tx.begin();
@@ -81,7 +73,9 @@ public abstract class AbstractGenericRepository<T, ID extends Serializable> impl
             if (tx != null) {
                 tx.rollback();
             }
+            e.printStackTrace();
             throw new MyException("ABSTRACT REPOSITORY: delete() exception");
+
 
         } finally {
             if (entityManager != null) {
@@ -93,12 +87,8 @@ public abstract class AbstractGenericRepository<T, ID extends Serializable> impl
     @Override
     public Optional<T> findById(ID id)
     {
-        EntityManager entityManager = null;
-        EntityTransaction tx = null;
-        /*if ( id == null )
-        {
-            throw new MyException("FIND BY ID - ID IS NULL");
-        }*/
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction tx = entityManager.getTransaction();
 
         Optional<T> item = Optional.empty();
 
@@ -106,7 +96,7 @@ public abstract class AbstractGenericRepository<T, ID extends Serializable> impl
         {
             tx.begin();
 
-            item = Optional.ofNullable(entityManager.getReference(entityType, id));
+            item = Optional.ofNullable(entityManager.find(entityType, id));
 
             tx.commit();
 
@@ -126,10 +116,10 @@ public abstract class AbstractGenericRepository<T, ID extends Serializable> impl
     public List<T> findAll()
     {
 
-        EntityManager entityManager = null;
-        EntityTransaction tx = null;
-        List<T> elements = new ArrayList<>();
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityTransaction tx = entityManager.getTransaction();
 
+        List<T> elements = new ArrayList<>();
         try
         {
 

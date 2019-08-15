@@ -11,11 +11,11 @@ import java.util.Optional;
 
 public class CustomerRepositoryImpl extends AbstractGenericRepository<Customer, Long> implements CustomerRepository
 {
-    public Optional<Customer> findOneByName(String name)
+    public Optional<Customer> findOneByEmail(String email)
     {
-        if ( name == null )
+        if ( email == null )
         {
-            throw new MyException("CUSTOMER REPOSITORY IMPL: findOneByName() - NAME ARGUMENT IS NULL");
+            throw new MyException("CUSTOMER REPOSITORY IMPL: findOneByEmail() - NAME ARGUMENT IS NULL");
         }
 
         EntityManager entityManager = null;
@@ -28,8 +28,8 @@ public class CustomerRepositoryImpl extends AbstractGenericRepository<Customer, 
             tx = entityManager.getTransaction();
             tx.begin();
             item = entityManager
-                    .createQuery("select c from Customer c where c.name = :name", Customer.class)
-                    .setParameter("name", name)
+                    .createQuery("select c from Customer c where c.email = :email", Customer.class)
+                    .setParameter("email", email)
                     .getResultList()
                     .stream()
                     .findFirst();
@@ -40,7 +40,7 @@ public class CustomerRepositoryImpl extends AbstractGenericRepository<Customer, 
             if (tx != null) {
                 tx.rollback();
             }
-            throw new MyException("Customer repository find one by name exception");
+            throw new MyException("Customer repository find one by email exception");
         } finally {
             if (entityManager != null) {
                 entityManager.close();

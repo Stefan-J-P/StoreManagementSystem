@@ -18,10 +18,6 @@ import java.util.stream.Collectors;
 public class CustomerService
 {
     private final CustomerRepository customerRepository;
-    private final ScannerService scannerService;
-    private final MyErrorService myErrorService;
-    private final CustomerValidation customerValidation;
-
 
     public CustomerDto addOrUpdate(CustomerDto customerDto)
     {
@@ -54,10 +50,27 @@ public class CustomerService
 
     public CustomerDto findOneById(Long id)
     {
+        if (id == null)
+        {
+            throw new MyException("CUSTOMER SERVICE: ID argument is null");
+        }
         return customerRepository
                 .findById(id)
                 .map(ModelMapper::fromCustomerToCustomerDto)
                 .orElseThrow(() -> new MyException("CUSTOMER SERVICE: findOneById() : Cannot find id: " + id));
     }
+
+    public CustomerDto findOneByEmail (String email)
+    {
+        if (email == null)
+        {
+
+        }
+        return customerRepository.findOneByEmail(email)
+                .map(ModelMapper::fromCustomerToCustomerDto)
+                .orElseThrow(() -> new MyException("CUSTOMER SERVICE: findOneByEmail() : Cannot find email: " + email));
+
+    }
+
 
 }

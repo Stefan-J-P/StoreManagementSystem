@@ -15,7 +15,7 @@ public class ProductRepositoryImpl extends AbstractGenericRepository<Product, Lo
     {
         if ( name == null )
         {
-            throw new MyException("PRODUCT REPOSITORY IMPL: findOneByName() - NAME ARGUMENT IS NULL");
+            throw new MyException("PRODUCT REPOSITORY IMPL: findOneByEmail() - NAME ARGUMENT IS NULL");
         }
 
         EntityManager entityManager = null;
