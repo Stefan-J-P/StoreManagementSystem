@@ -55,12 +55,44 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="251" column="27" lean-forward="true" selection-start-line="251" selection-start-column="27" selection-end-line="251" selection-end-column="27" />
+            <state relative-caret-position="779">
+              <caret line="307" column="41" lean-forward="true" selection-start-line="307" selection-start-column="41" selection-end-line="307" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3100#3131#1" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/producers">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="6f0db67f-f877-4cc6-94df-a1ef4debed95">
+              <filtering>
+                <filter text="" />
+              </filtering>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/countries">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="6f0db67f-f877-4cc6-94df-a1ef4debed95">
+              <filtering>
+                <filter text="" />
+              </filtering>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/trades">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="6f0db67f-f877-4cc6-94df-a1ef4debed95">
+              <filtering>
+                <filter text="" />
+              </filtering>
             </state>
           </provider>
         </entry>
@@ -183,6 +215,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -253,7 +286,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -401,6 +433,7 @@
       <workItem from="1565552243180" duration="1539000" />
       <workItem from="1565716061461" duration="12000" />
       <workItem from="1565854986285" duration="18253000" />
+      <workItem from="1566150076902" duration="5711000" />
     </task>
     <servers />
   </component>
@@ -437,13 +470,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229291000" />
+    <option name="totallyTimeSpent" value="235002000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20788912" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21002132" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -472,7 +505,7 @@
       <window_info anchor="right" id="Maven" order="3" weight="0.32889125" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" weight="0.23507462" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.14872068" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
@@ -481,132 +514,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/CustomerRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
@@ -617,154 +524,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/CustomerValidation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
         </state>
       </provider>
     </entry>
@@ -785,15 +548,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/errors">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/errors" />
     <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/mappers/ModelMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -825,15 +580,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/customers" />
     <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/ShopRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -865,15 +612,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/countries">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/countries" />
     <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ScannerService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1483">
@@ -884,15 +623,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/shops">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="7e762ac3-f521-46d6-ae2e-3ebd3643c3fc">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/shops" />
     <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1584">
@@ -917,13 +648,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/countries">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="6f0db67f-f877-4cc6-94df-a1ef4debed95">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/countries">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="6f0db67f-f877-4cc6-94df-a1ef4debed95">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/countries">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="6f0db67f-f877-4cc6-94df-a1ef4debed95">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/trades">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="6f0db67f-f877-4cc6-94df-a1ef4debed95">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://4ca591b9-3004-4255-8043-a4d11aede05d/schema/per01/table/producers">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="6f0db67f-f877-4cc6-94df-a1ef4debed95">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="251" column="27" lean-forward="true" selection-start-line="251" selection-start-column="27" selection-end-line="251" selection-end-column="27" />
+        <state relative-caret-position="779">
+          <caret line="307" column="41" lean-forward="true" selection-start-line="307" selection-start-column="41" selection-end-line="307" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3100#3131#1" expanded="true" />
           </folding>
         </state>
       </provider>

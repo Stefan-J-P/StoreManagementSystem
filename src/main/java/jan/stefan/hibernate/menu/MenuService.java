@@ -246,11 +246,68 @@ public class MenuService
 
 
     // PRODUCT METHODS ----------------------------------------
-    void productOption1(){}
-    void productOption2(){}
-    void productOption3(){}
-    void productOption4(){}
-    void productOption5(){}
+    void productOption1()
+    {
+        ProductDto productDto = new ProductDto();
+        productDto.setName(scannerService.getString("Enter the name of the Prouct: "));
+        productDto.setPrice(scannerService.getBigDecimal("Enter the price: "));
+        productDto.setCategoryDto(CategoryDto.builder().name(scannerService.getString("Enter the name of the Category: ")).build());
+        productDto.setProducerDto(ProducerDto.builder().name(scannerService.getString("Enter the name of the Producer: ")).build());
+        productDto.setTradeDto(TradeDto.builder().name(scannerService.getString("Enter the name of the Category")).build());
+        //productDto.setEGuarantees();
+
+        Map<String, String> productErrors = productValidation.validate(productDto);
+
+        if (!productValidation.hasErrors())
+        {
+            productService.addOrUpdate(productDto);
+        }
+        else
+        {
+            productErrors.forEach((k, v) -> System.out.println(k + " " + v));
+            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
+                    .message("Error while inserting Product into the table ")
+                    .dateTime(LocalDateTime.now())
+                    .build());
+        }
+    }
+
+
+    void productOption2()
+    {
+        List<ProductDto> productDtoList = productService.findAll();
+        if (!productDtoList.isEmpty())
+        {
+            productDtoList.forEach(System.out::println);
+        }
+        else
+        {
+            System.out.println("YOUR LIST IS EMPTY");
+        }
+
+    }
+
+    void productOption3()
+    {
+        Long productId = scannerService.getLong("Enter the ID of the Product: ");
+        ProductDto productDto = productService.findOneById(productId);
+        System.out.println(productDto);
+    }
+
+    void productOption4()
+    {
+        String name = scannerService.getString("Enter the name of the Product: ");
+        //ProductDto productDto = productService.
+
+    }
+
+
+    void productOption5()
+    {
+        Long prodDelId = scannerService.getLong("Enter the ID of the Product: ");
+        productService.delete(prodDelId);
+
+    }
 
     // STOCK --------------------------------------------------
     void stockOption1(){}
