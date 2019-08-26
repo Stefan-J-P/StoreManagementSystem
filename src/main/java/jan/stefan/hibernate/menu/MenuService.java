@@ -40,8 +40,10 @@ public class MenuService
 
 
     // ======================================= SERVICE METHODS =========================================
-    // CUSTOMER METHODS ----------------------------------------
 
+
+    //========================================================================================================================================================
+    // CUSTOMER METHODS ----------------------------------------
     @SuppressWarnings("Duplicates")
     void customerOption0()
     {
@@ -131,8 +133,8 @@ public class MenuService
         customerService.delete(id);
     }
 
+    //========================================================================================================================================================
     // SHOP METHODS -------------------------------------------
-
     @SuppressWarnings("Duplicates")
     void shopOption0()
     {
@@ -142,14 +144,14 @@ public class MenuService
         System.out.println(myShopDto);
         System.out.println("-----------------------------------------------------");
 
-        myShopDto.setName(scannerService.getString("Enter customer's name:"));
+        myShopDto.setName(scannerService.getString("Enter name of the Shop: "));
         myShopDto.setCountryDto(CountryDto.builder().name(scannerService.getString("Enter the name of the Country: ")).build());
 
-        Map<String, String> customerErrors = shopValidation.validate(myShopDto);
+        Map<String, String> shopErrors = shopValidation.validate(myShopDto);
 
         if (shopValidation.hasErrors())
         {
-            customerErrors.forEach((k, v) -> System.out.println(k + " " + v));
+            shopErrors.forEach((k, v) -> System.out.println(k + " " + v));
             myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
                     .message("Error while updating Shop in the table")
                     .dateTime(LocalDateTime.now())
@@ -159,6 +161,7 @@ public class MenuService
         System.out.println("Your Shop has been updated");
     }
 
+    @SuppressWarnings("Duplicates")
     void shopOption1()
     {
         ShopDto shopDto = new ShopDto();
@@ -167,11 +170,7 @@ public class MenuService
 
         Map<String, String> shopErrors = shopValidation.validate(shopDto);
 
-        if (!shopValidation.hasErrors())
-        {
-            shopService.addOrUpdate(shopDto);
-        }
-        else
+        if (shopValidation.hasErrors())
         {
             shopErrors.forEach((k, v) -> System.out.println(k + " " +v));
             myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
@@ -179,6 +178,8 @@ public class MenuService
                     .dateTime(LocalDateTime.now())
                     .build());
         }
+        shopService.addOrUpdate(shopDto);
+        System.out.println("Your new Shop has been added");
     }
     void shopOption2()
     {
@@ -212,13 +213,36 @@ public class MenuService
         shopService.delete(delId);
     }
 
+    //========================================================================================================================================================
     // PRODUCER METHODS ---------------------------------------
+    @SuppressWarnings("Duplicates")
     void producerOption0()
     {
         String myName = scannerService.getString("Enter the name of the Producer: ");
+        ProducerDto myProducerDto = producerService.findOneByName(myName);
+        System.out.println("-----------------------------------------------------");
+        System.out.println(myProducerDto);
+        System.out.println("-----------------------------------------------------");
+
+        myProducerDto.setName(scannerService.getString("Enter the new name of the Producer: "));
+        myProducerDto.setCountryDto(CountryDto.builder().name(scannerService.getString("Enter the name of the new Country: ")).build());
+        myProducerDto.setTradeDto(TradeDto.builder().name(scannerService.getString("Enter the name of the new Trade: ")).build());
+
+        Map<String, String> producerErrors = producerValidation.validate(myProducerDto);
+
+        if (producerValidation.hasErrors())
+        {
+            producerErrors.forEach((k, v) -> System.out.println(k + " " +v));
+            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
+                    .message("Error while updating Producer in the table")
+                    .dateTime(LocalDateTime.now())
+                    .build());
+        }
+        producerService.addOrUpdate(myProducerDto);
 
     }
 
+    @SuppressWarnings("Duplicates")
     void producerOption1()
     {
         ProducerDto producerDto = new ProducerDto();
@@ -228,11 +252,7 @@ public class MenuService
 
         Map<String, String> producerErrors = producerValidation.validate(producerDto);
 
-        if (!producerValidation.hasErrors())
-        {
-            producerService.addOrUpdate(producerDto);
-        }
-        else
+        if (producerValidation.hasErrors())
         {
             producerErrors.forEach((k, v) -> System.out.println(k + " " + v));
             myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
@@ -240,6 +260,7 @@ public class MenuService
                     .dateTime(LocalDateTime.now())
                     .build());
         }
+        producerService.addOrUpdate(producerDto);
     }
 
     void producerOption2()
@@ -277,8 +298,37 @@ public class MenuService
     }
 
 
-
+    //========================================================================================================================================================
     // PRODUCT METHODS ----------------------------------------
+    void productOption0()
+    {
+        String name = scannerService.getString("Enter the name of the Product: ");
+        ProductDto myProductDto = productService.findOneByName(name);
+        System.out.println("-----------------------------------------------------");
+        System.out.println(myProductDto);
+        System.out.println("-----------------------------------------------------");
+
+        myProductDto.setName(scannerService.getString("Enter the new name for the Product: "));
+        myProductDto.setCategoryDto(CategoryDto.builder().name(scannerService.getString("Enter the new name for the Category: ")).build());
+        myProductDto.setProducerDto(ProducerDto.builder().name(scannerService.getString("Enter the new name for the Producer")).build());
+        myProductDto.setTradeDto(TradeDto.builder().name(scannerService.getString("Enter the new name for the Trade: ")).build());
+        myProductDto.setPrice(scannerService.getBigDecimal("Enter the new Price: "));
+        //myProductDto.setEGuarantees(...);
+
+        Map<String, String> productErrors = productValidation.validate(myProductDto);
+
+        if (productValidation.hasErrors())
+        {
+            productErrors.forEach((k, v) -> System.out.println(k + " " +v));
+            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
+                    .message("Error while inserting Product into the table")
+                    .dateTime(LocalDateTime.now())
+                    .build());
+        }
+        productService.addOrUpdate(myProductDto);
+    }
+
+    @SuppressWarnings("Duplicates")
     void productOption1()
     {
         ProductDto productDto = new ProductDto();
@@ -342,7 +392,14 @@ public class MenuService
 
     }
 
+    //========================================================================================================================================================
     // STOCK --------------------------------------------------
+
+    void stockOption0()
+    {
+
+    }
+
     void stockOption1()
     {
         StockDto stockDto = new StockDto();
@@ -352,11 +409,7 @@ public class MenuService
 
         Map<String, String> stockErrors = stockValidation.validate(stockDto);
 
-        if (!stockValidation.hasErrors())
-        {
-            stockService.addOrUpdate(stockDto);
-        }
-        else
+        if (stockValidation.hasErrors())
         {
             stockErrors.forEach((k, v) -> System.out.println(k + " " + v));
             myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
@@ -364,41 +417,157 @@ public class MenuService
                     .dateTime(LocalDateTime.now())
                     .build());
         }
+        stockService.addOrUpdate(stockDto);
+    }
 
+    void stockOption2()
+    {
+        List<StockDto> stocks = stockService.findAll();
+        if (stocks.isEmpty())
+        {
+            System.out.println("YOUR LIST IS EMPTY");
+        }
+        stocks.forEach(System.out::println);
+    }
+
+    void stockOption3()
+    {
+        Long productId = scannerService.getLong("Enter the ID of the Product: ");
+        StockDto stockDto = stockService.findOneById(productId);
+        System.out.println("------------------ FOUNDED STOCK --------------------");
+        System.out.println(stockDto);
+        System.out.println("-----------------------------------------------------");
+    }
+
+    void stockOption4()
+    {
+        Long stockDto = scannerService.getLong("Enter the ID of the Product: ");
+        stockService.delete(stockDto);
+    }
+
+
+    //========================================================================================================================================================
+    // CUSTOMER ORDER -----------------------------------------
+    @SuppressWarnings("Duplicates")
+    void orderOption0()
+    {
 
     }
-    void stockOption2(){}
-    void stockOption3(){}
-    void stockOption4(){}
-    void stockOption5(){}
 
-    // CUSTOMER ORDER -----------------------------------------
-    void orderOption1(){}
+    @SuppressWarnings("Duplicates")
+    void orderOption1()
+    {
+
+    }
+
     void orderOption2(){}
     void orderOption3(){}
     void orderOption4(){}
     void orderOption5(){}
 
+
+    //========================================================================================================================================================
     // CATEGORY -----------------------------------------------
-    void categoryOption1(){}
-    void categoryOption2(){}
-    void categoryOption3(){}
-    void categoryOption4(){}
-    void categoryOption5(){}
+    @SuppressWarnings("Duplicates")
+    void categoryOption0()
+    {
 
+    }
+
+    @SuppressWarnings("Duplicates")
+    void categoryOption1()
+    {
+        System.out.println("-----------------------------------------------------");
+    }
+
+    void categoryOption2()
+    {
+
+    }
+
+    void categoryOption3()
+    {
+
+    }
+
+    void categoryOption4()
+    {
+
+    }
+
+    void categoryOption5()
+    {
+
+    }
+
+    //========================================================================================================================================================
     // COUNTRY ------------------------------------------------
-    void countryOption1(){}
-    void countryOption2(){}
-    void countryOption3(){}
-    void countryOption4(){}
-    void countryOption5(){}
+    @SuppressWarnings("Duplicates")
+    void countryOption0()
+    {
 
+    }
+
+    @SuppressWarnings("Duplicates")
+    void countryOption1()
+    {
+        System.out.println("-----------------------------------------------------");
+    }
+
+    void countryOption2()
+    {
+
+    }
+
+    void countryOption3()
+    {
+
+    }
+
+    void countryOption4()
+    {
+
+    }
+
+    void countryOption5()
+    {
+
+    }
+
+    //========================================================================================================================================================
     // TRADE --------------------------------------------------
-    void tradeOption1(){}
-    void tradeOption2(){}
-    void tradeOption3(){}
-    void tradeOption4(){}
-    void tradeOption5(){}
+    @SuppressWarnings("Duplicates")
+    void tradeOption0()
+    {
+
+    }
+
+    @SuppressWarnings("Duplicates")
+    void tradeOption1()
+    {
+        System.out.println("-----------------------------------------------------");
+    }
+
+    void tradeOption2()
+    {
+
+    }
+
+    void tradeOption3()
+    {
+
+    }
+
+    void tradeOption4()
+    {
+
+    }
+
+    void tradeOption5()
+    {
+
+    }
+
 
     /*static <T> String toJson( T t )
     {

@@ -158,7 +158,7 @@ public class MenuPanel
                         switch (optionProduct)
                         {
                             case 0:
-
+                                menuService.productOption0();
                                 break;
                             case 1:
                                 menuService.productOption1();
@@ -182,17 +182,20 @@ public class MenuPanel
 
                     case 5:
                         System.out.println("=================== STOCK =======================");
-                        System.out.println("1. ADD OR UPDATE ONE STOCK");
+                        System.out.println("0. UPDATE ONE STOCK");
+                        System.out.println("1. ADD ONE STOCK");
                         System.out.println("2. FIND ALL STOCKS");
                         System.out.println("3. FIND ONE STOCK BY ID");
-                        System.out.println("4. FIND ONE STOCK BY NAME");
-                        System.out.println("5. DELETE ONE STOCK");
-                        System.out.println("6. RETURN TO MAIN MENU");
+                        System.out.println("4. DELETE ONE STOCK");
+                        System.out.println("5. RETURN TO MAIN MENU");
 
                         int optionStock = scannerService.getInt("Enter the option for the Stock: ");
 
                         switch (optionStock)
                         {
+                            case 0:
+                                menuService.stockOption0();
+                                break;
                             case 1:
                                 menuService.stockOption1();
                                 break;
@@ -206,16 +209,14 @@ public class MenuPanel
                                 menuService.stockOption4();
                                 break;
                             case 5:
-                                menuService.stockOption5();
-                                break;
-                            case 6:
                                 break;
                         }
                         break;
 
                     case 6:
                         System.out.println("======================== ORDER ==========================");
-                        System.out.println("1. ADD OR UPDATE ONE ORDER");
+                        System.out.println("0. UPDATE ONE ORDER");
+                        System.out.println("1. ADD ONE ORDER");
                         System.out.println("2. FIND ALL ORDERS");
                         System.out.println("3. FIND ONE ORDER BY ID");
                         System.out.println("4. FIND ONE ORDER BY NAME");
@@ -226,6 +227,9 @@ public class MenuPanel
 
                         switch (optionOrder)
                         {
+                            case 0:
+                                menuService.orderOption0();
+                                break;
                             case 1:
                                 menuService.orderOption1();
                                 break;
@@ -248,7 +252,8 @@ public class MenuPanel
 
                     case 7:
                         System.out.println("========================= CATEGORY ==========================");
-                        System.out.println("1. ADD OR UPDATE ONE CATEGORY");
+                        System.out.println("0. UPDATE ONE CATEGORY");
+                        System.out.println("1. ADD ONE CATEGORY");
                         System.out.println("2. FIND ALL CATEGORIES");
                         System.out.println("3. FIND ONE CATEGORY BY ID");
                         System.out.println("4. FIND ONE CATEGORY BY NAME");
@@ -259,6 +264,9 @@ public class MenuPanel
 
                         switch (optionCategory)
                         {
+                            case 0:
+                                menuService.categoryOption0();
+                                break;
                             case 1:
                                 menuService.categoryOption1();
                                 break;
@@ -281,7 +289,8 @@ public class MenuPanel
 
                     case 8:
                         System.out.println("=================== COUNTRY =======================");
-                        System.out.println("1. ADD OR UPDATE ONE COUNTRY");
+                        System.out.println("0. UPDATE ONE COUNTRY");
+                        System.out.println("1. ADD ONE COUNTRY");
                         System.out.println("2. FIND ALL COUNTRIES");
                         System.out.println("3. FIND ONE COUNTRY BY ID");
                         System.out.println("4. FIND ONE COUNTRY BY NAME");
@@ -292,6 +301,9 @@ public class MenuPanel
 
                         switch (optionCountry)
                         {
+                            case 0:
+                                menuService.countryOption0();
+                                break;
                             case 1:
                                 menuService.countryOption1();
                                 break;
@@ -314,7 +326,8 @@ public class MenuPanel
 
                     case 9:
                         System.out.println("======================== TRADE ========================");
-                        System.out.println("1. ADD OR UPDATE ONE TRADE");
+                        System.out.println("0. UPDATE ONE TRADE");
+                        System.out.println("1. ADD ONE TRADE");
                         System.out.println("2. FIND ALL TRADES");
                         System.out.println("3. FIND ONE TRADE BY ID");
                         System.out.println("4. FIND ONE TRADE BY NAME");
@@ -325,6 +338,9 @@ public class MenuPanel
 
                         switch (optionTrade)
                         {
+                            case 0:
+                                menuService.tradeOption0();
+                                break;
                             case 1:
                                 menuService.tradeOption1();
                                 break;

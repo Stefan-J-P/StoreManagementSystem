@@ -16,7 +16,6 @@ public class ShopValidation implements Validator<ShopDto>
     {
         errors.clear();
 
-
         if (!isNameValid(shopDto))
         {
             errors.put("NAME:" + shopDto.getName(), "SHOP NAME IS NOT VALID: Block letters only");

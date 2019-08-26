@@ -70,7 +70,13 @@ public class ProductService
                 .orElseThrow(() -> new MyException("PRODUCT SERVICE: findOneById() : Cannot find id: " + id));
     }
 
-
+    public ProductDto findOneByName(String name)
+    {
+        return productRepository
+                .findOneByName(name)
+                .map(ModelMapper::fromProductToProductDto)
+                .orElseThrow(() -> new MyException("PRODUCT SERVICE: findOneByName() : Cannot find name: " + name));
+    }
 
 
 
