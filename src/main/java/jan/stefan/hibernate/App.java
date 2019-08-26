@@ -89,43 +89,13 @@ public class App
                 countryService,
                 tradeService
         );
-
         // ====================================================================================================================================================
-
-
         new MenuPanel(
                 scannerService,
                 menuService,
                 menuStatistics
 
-
-
-
-
         ).mainMenu();
-
-
-
-
-
-
-
-
-
-
-
         DbConnection.getInstance().close();
-
-        /*
-        try
-        {
-            Shop shop = Shop.builder().build();
-            Class<? extends Shop> shopClass = shop.getClass();
-            Field field = shopClass.getDeclaredField("id");
-            field.setAccessible(true);
-            System.out.println(field.get(shop));
-        } catch (Exception e) {}
-        */
-
     }
 }

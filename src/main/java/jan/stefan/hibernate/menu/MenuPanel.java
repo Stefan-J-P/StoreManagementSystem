@@ -71,7 +71,8 @@ public class MenuPanel
 
                     case 2:
                         System.out.println("============= SHOP ==============");
-                        System.out.println("1. ADD OR UPDATE ONE SHOP");
+                        System.out.println("0. UPDATE ONE SHOP");
+                        System.out.println("1. ADD ONE SHOP");
                         System.out.println("2. FIND ALL SHOPS");
                         System.out.println("3. FIND ONE SHOP BY ID");
                         System.out.println("4. FIND ONE SHOP BY NAME");
@@ -82,7 +83,10 @@ public class MenuPanel
 
                         switch (shopOption)
                         {
-                            case 1: // add or update
+                            case 0: // update one shop
+                                menuService.shopOption0();
+                                break;
+                            case 1: // add one shop
                                 menuService.shopOption1();
                                 break;
                             case 2: // find all shops
@@ -104,7 +108,8 @@ public class MenuPanel
 
                     case 3:
                         System.out.println("============ PRODUCER =============");
-                        System.out.println("1. ADD OR UPDATE ONE PRODUCER");
+                        System.out.println("0. UPDATE ONE PRODUCER");
+                        System.out.println("1. ADD ONE PRODUCER");
                         System.out.println("2. FIND ALL PRODUCERS");
                         System.out.println("3. FIND ONE PRODUCER BY ID");
                         System.out.println("4. FIND ONE PRODUCER BY NAME");
@@ -115,29 +120,33 @@ public class MenuPanel
 
                         switch (optionProducer)
                         {
-                            case 1:
+                            case 0: // update one producer
+                                menuService.producerOption0();
+                                break;
+                            case 1: // add one producer
                                 menuService.producerOption1();
                                 break;
-                            case 2:
+                            case 2: // find all producers
                                 menuService.producerOption2();
                                 break;
-                            case 3:
+                            case 3: // find one producer by ID
                                 menuService.producerOption3();
                                 break;
-                            case 4:
+                            case 4: // find one producer by name
                                 menuService.producerOption4();
                                 break;
-                            case 5:
+                            case 5: // delete one producer
                                 menuService.producerOption5();
                                 break;
-                            case 6:
+                            case 6: // return to the main menu
                                 break;
                         }
                         break;
 
                     case 4:
                         System.out.println("=================== PRODUCT ====================");
-                        System.out.println("1. ADD OR UPDATE ONE PRODUCT");
+                        System.out.println("0. UPDATE ONE PRODUCT");
+                        System.out.println("1. ADD ONE PRODUCT");
                         System.out.println("2. FIND ALL PRODUCTS");
                         System.out.println("3. FIND ONE PRODUCT BY ID");
                         System.out.println("4. FIND ONE PRODUCT BY NAME");
@@ -148,6 +157,9 @@ public class MenuPanel
 
                         switch (optionProduct)
                         {
+                            case 0:
+
+                                break;
                             case 1:
                                 menuService.productOption1();
                                 break;

@@ -1,13 +1,11 @@
 package jan.stefan.hibernate.menu;
 
 import jan.stefan.hibernate.dto.modelDto.*;
-import jan.stefan.hibernate.model.Customer;
-import jan.stefan.hibernate.model.MyError;
-import jan.stefan.hibernate.model.Producer;
-import jan.stefan.hibernate.model.Product;
+import jan.stefan.hibernate.model.*;
 import jan.stefan.hibernate.model.validation.*;
 import jan.stefan.hibernate.service.*;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -43,6 +41,37 @@ public class MenuService
 
     // ======================================= SERVICE METHODS =========================================
     // CUSTOMER METHODS ----------------------------------------
+
+    @SuppressWarnings("Duplicates")
+    void customerOption0()
+    {
+        String myEmail = scannerService.getString("Enter the customer's email: ");
+        CustomerDto myCustomerDto = customerService.findOneByEmail(myEmail);
+        System.out.println("-----------------------------------------------------");
+        System.out.println(myCustomerDto);
+        System.out.println("-----------------------------------------------------");
+
+        myCustomerDto.setName(scannerService.getString("Enter customer's name:"));
+        myCustomerDto.setSurname(scannerService.getString("Enter customer's surname:"));
+        myCustomerDto.setEmail(scannerService.getString("Enter customer's email:"));
+        myCustomerDto.setAge(scannerService.getInt("Enter customer's age:"));
+        myCustomerDto.setCountryDto(CountryDto.builder().name(scannerService.getString("Enter the name of customer's country")).build());
+
+        Map<String, String> customerErrors = customerValidation.validate(myCustomerDto);
+
+        if (customerValidation.hasErrors())
+        {
+            customerErrors.forEach((k, v) -> System.out.println(k + " " + v));
+            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
+                    .message("Error while updating Customer in the table")
+                    .dateTime(LocalDateTime.now())
+                    .build());
+        }
+        customerService.addOrUpdate(myCustomerDto);
+        System.out.println("Your customer has been updated");
+    }
+
+
     @SuppressWarnings("Duplicates")
     void customerOption1()
     {
@@ -55,11 +84,7 @@ public class MenuService
 
         Map<String, String> customerErrors = customerValidation.validate(customerDto);
 
-        if (!customerValidation.hasErrors())
-        {
-            customerService.addOrUpdate(customerDto);
-        }
-        else
+        if (customerValidation.hasErrors())
         {
             customerErrors.forEach((k, v) -> System.out.println(k + " " + v));
             myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
@@ -67,47 +92,22 @@ public class MenuService
                     .dateTime(LocalDateTime.now())
                     .build());
         }
-    }
 
-    @SuppressWarnings("Duplicates")
-    void customerOption0()
-    {
-        CustomerDto customerDto = new CustomerDto();
-        customerDto.setId(scannerService.getLong("Enter customer's ID: "));
-        customerDto.setName(scannerService.getString("Enter customer's name:"));
-        customerDto.setSurname(scannerService.getString("Enter customer's surname:"));
-        customerDto.setEmail(scannerService.getString("Enter customer's email:"));
-        customerDto.setAge(scannerService.getInt("Enter customer's age:"));
-        customerDto.setCountryDto(CountryDto.builder().name(scannerService.getString("Enter the name of customer's country")).build());
-
-        Map<String, String> customerErrors = customerValidation.validate(customerDto);
-
-        if (!customerValidation.hasErrors())
-        {
-            customerService.addOrUpdate(customerDto);
-        }
-        else
-        {
-            customerErrors.forEach((k, v) -> System.out.println(k + " " + v));
-            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
-                    .message("Error while inserting Customer into the table")
-                    .dateTime(LocalDateTime.now())
-                    .build());
-        }
+        customerService.addOrUpdate(customerDto);
+        System.out.println("Your new customer has been added to the data base");
     }
 
     void customerOption2()
     {
-        List<CustomerDto> customerDtoList = customerService.findAll();
-        //customerDtoList.isEmpty() ? System.out.println("YOUR LIST IS EMPTY") : customerDtoList.forEach(System.out::println);
-        if (!customerDtoList.isEmpty())
-        {
-            customerDtoList.forEach(System.out::println);
-        }
-        else
+        var customerDtoList = customerService.findAll();
+        if (customerDtoList.isEmpty())
         {
             System.out.println("YOUR LIST IS EMPTY");
         }
+        customerDtoList.forEach(System.out::println);
+
+        // System.out.println(customerDtoList.isEmpty() ? customerDtoList : "ssss");
+
     }
 
     void customerOption3()
@@ -132,6 +132,33 @@ public class MenuService
     }
 
     // SHOP METHODS -------------------------------------------
+
+    @SuppressWarnings("Duplicates")
+    void shopOption0()
+    {
+        String name = scannerService.getString("Enter the name of the shop: ");
+        ShopDto myShopDto = shopService.findOneByName(name);
+        System.out.println("-----------------------------------------------------");
+        System.out.println(myShopDto);
+        System.out.println("-----------------------------------------------------");
+
+        myShopDto.setName(scannerService.getString("Enter customer's name:"));
+        myShopDto.setCountryDto(CountryDto.builder().name(scannerService.getString("Enter the name of the Country: ")).build());
+
+        Map<String, String> customerErrors = shopValidation.validate(myShopDto);
+
+        if (shopValidation.hasErrors())
+        {
+            customerErrors.forEach((k, v) -> System.out.println(k + " " + v));
+            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
+                    .message("Error while updating Shop in the table")
+                    .dateTime(LocalDateTime.now())
+                    .build());
+        }
+        shopService.addOrUpdate(myShopDto);
+        System.out.println("Your Shop has been updated");
+    }
+
     void shopOption1()
     {
         ShopDto shopDto = new ShopDto();
@@ -186,6 +213,12 @@ public class MenuService
     }
 
     // PRODUCER METHODS ---------------------------------------
+    void producerOption0()
+    {
+        String myName = scannerService.getString("Enter the name of the Producer: ");
+
+    }
+
     void producerOption1()
     {
         ProducerDto producerDto = new ProducerDto();
@@ -254,7 +287,7 @@ public class MenuService
         productDto.setCategoryDto(CategoryDto.builder().name(scannerService.getString("Enter the name of the Category: ")).build());
         productDto.setProducerDto(ProducerDto.builder().name(scannerService.getString("Enter the name of the Producer: ")).build());
         productDto.setTradeDto(TradeDto.builder().name(scannerService.getString("Enter the name of the Category")).build());
-        //productDto.setEGuarantees();
+        //productDto.setEGuarantees(scannerService.getGuarantees("Enter values by comma , :"));
 
         Map<String, String> productErrors = productValidation.validate(productDto);
 
@@ -310,7 +343,30 @@ public class MenuService
     }
 
     // STOCK --------------------------------------------------
-    void stockOption1(){}
+    void stockOption1()
+    {
+        StockDto stockDto = new StockDto();
+        stockDto.setProductDto(ProductDto.builder().name(scannerService.getString("Enter the name of the Product: ")).build());
+        stockDto.setQuantity(scannerService.getInt("Enter the quantity: "));
+        stockDto.setShopDto(ShopDto.builder().name(scannerService.getString("Enter the name of the Shop: ")).build());
+
+        Map<String, String> stockErrors = stockValidation.validate(stockDto);
+
+        if (!stockValidation.hasErrors())
+        {
+            stockService.addOrUpdate(stockDto);
+        }
+        else
+        {
+            stockErrors.forEach((k, v) -> System.out.println(k + " " + v));
+            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
+                    .message("Error while inserting Stock into the table ")
+                    .dateTime(LocalDateTime.now())
+                    .build());
+        }
+
+
+    }
     void stockOption2(){}
     void stockOption3(){}
     void stockOption4(){}
@@ -344,6 +400,11 @@ public class MenuService
     void tradeOption4(){}
     void tradeOption5(){}
 
+    /*static <T> String toJson( T t )
+    {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(t);
+    }*/
 
 
 }

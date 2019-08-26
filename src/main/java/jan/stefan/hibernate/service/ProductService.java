@@ -70,32 +70,7 @@ public class ProductService
                 .orElseThrow(() -> new MyException("PRODUCT SERVICE: findOneById() : Cannot find id: " + id));
     }
 
-    /*
-    public ProductDto addNewProduct(NewProductDto newProductDto)
-    {
-        // zrób osobną klasę DTO do przechowania danych pobranych od USERA i przekazać jako argument do metody addNewProduct() ze względu na testy jednostkowe
 
-
-        // lista wartości EGuarantee i wybór ich indeksów, które pobiorę do SET
-        // pobierz  nazwy kraju, producenta etc poprzez repozytorium każdego z nich, potem ustaw setterami wartości dla obiektu
-
-        ProductDto productDto = ModelMapper.fromNewProductDtoToProductDto(newProductDto);
-
-        Map<String, String> errorsProduct = productValidation.validate(productDto);
-        if (!productValidation.hasErrors())
-        {
-            addOrUpdate(productDto);
-        }
-        else
-        {
-            errorsProduct.forEach((k, v) -> System.out.println(k + " " + v));
-            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
-                    .message("Error while inserting Product into table")
-                    .dateTime(LocalDateTime.now())
-                    .build());
-        }
-        return productDto;
-    }           */
 
 
 

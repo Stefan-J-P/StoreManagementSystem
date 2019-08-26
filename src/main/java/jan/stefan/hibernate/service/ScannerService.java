@@ -8,7 +8,11 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 public class ScannerService
 {
@@ -34,6 +38,7 @@ public class ScannerService
         String text = sc.nextLine();
         if (!text.matches("\\d+"))
         {
+            System.out.println("-----" + text + "-----");
             throw new MyException("SCANNER SERVICE - GET INT VALUE EXCEPTION: " + text);
         }
         return Integer.parseInt(text);
@@ -93,14 +98,13 @@ public class ScannerService
 
     public Long getLong(String message)
     {
-        try
+        System.out.println(message);
+        String text = sc.nextLine();
+        if (!text.matches("\\d+"))
         {
-            System.out.println(message);
-            return sc.nextLong();
-        } catch (Exception e)
-        {
-            throw new MyException("SCANNER SERVICE - GET LONG EXCEPTION: " + e.getMessage());
+            throw new MyException("SCANNER SERVICE - GET LONG VALUE EXCEPTION: " + text);
         }
+        return Long.parseLong(text);
     }
 
 
@@ -128,6 +132,63 @@ public class ScannerService
         }
     }*/
 
+    // =========================================================================================================================================_
+    /*
+    static Set<Color> getColors() {
+
+        AtomicInteger counter = new AtomicInteger(1);
+
+        Arrays
+                .stream(Color.values())
+                .forEach(color -> System.out.println(counter.getAndIncrement() + ". " + color));
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter color numbers separating them with comma");
+        String colorNumbers = sc.nextLine();
+
+        if ( !colorNumbers.matches("(\\d+,)*\\d+") ) {
+            throw new IllegalStateException("color numbers has incorrect format");
+        }
+
+        return Arrays
+                .stream(colorNumbers.split(","))
+                .map(number -> {
+
+                    int n = Integer.parseInt(number);
+                    if ( n < 0 || n >= Color.values().length ) {
+                        throw new IllegalStateException("no color with number " + n);
+                    }
+
+                    return Color.values()[n - 1];
+                })
+                .collect(Collectors.toSet());           */
+    // =========================================================================================================================================_
+
+
+    public Set<EGuarantee> getGuarantees(String message)
+    {
+        AtomicInteger counter = new AtomicInteger(1);
+        Arrays.stream(EGuarantee.values()).forEach(g -> System.out.println(counter.getAndIncrement() + ", " + g));
+        System.out.println("Enter guarantee values separating them with comma");
+        String guaranteeValues = sc.nextLine();
+        /*
+        if (!guaranteeValues.matches("[A-Z_]*,[A-Z_]+"))
+        {
+            throw new MyException("SCANNER SERVICE: getGuarantees(): Regex exception");
+        }   */
+        return Arrays.stream(guaranteeValues.split(",")).map(number -> {
+            int n = Integer.parseInt(number);
+            if (n < 0 || n >= EGuarantee.values().length )
+            {
+                throw new MyException("SCANNER SERVICE: getGuarantees(): No Guarantee as: " + n);
+            }
+            return EGuarantee.values()[n-1];
+        }).collect(Collectors.toSet());
+    }
+
+
+
+
 
 
     public void close ()
@@ -141,3 +202,21 @@ public class ScannerService
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
