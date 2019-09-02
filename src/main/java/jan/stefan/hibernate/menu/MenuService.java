@@ -1,15 +1,19 @@
 package jan.stefan.hibernate.menu;
 
 import jan.stefan.hibernate.dto.modelDto.*;
-import jan.stefan.hibernate.model.*;
+import jan.stefan.hibernate.model.Category;
+import jan.stefan.hibernate.model.Country;
+import jan.stefan.hibernate.model.Order;
 import jan.stefan.hibernate.model.validation.*;
 import jan.stefan.hibernate.service.*;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
+import java.util.function.DoubleToIntFunction;
+import java.util.spi.AbstractResourceBundleProvider;
+
 @RequiredArgsConstructor
 public class MenuService
 {
@@ -33,7 +37,7 @@ public class MenuService
     private final ProducerService producerService;
     private final ProductService productService;
     private final StockService stockService;
-    private final CustomerOrderService customerOrderService;
+    private final OrderService orderService;
     private final CategoryService categoryService;
     private final CountryService countryService;
     private final TradeService tradeService;
@@ -397,9 +401,13 @@ public class MenuService
 
     void stockOption0()
     {
+        String name = scannerService.getString("Enter the name of the Stock: ");
+
+        // WPROWADŹ DODATKOWY UNIKALNY PARAMETR NP NAME
 
     }
 
+    @SuppressWarnings("Duplicates")
     void stockOption1()
     {
         StockDto stockDto = new StockDto();
@@ -451,19 +459,66 @@ public class MenuService
     @SuppressWarnings("Duplicates")
     void orderOption0()
     {
-
+        Long orderNumber = scannerService.getLong("Enter the order number: ");
+        OrderDto myOrder = orderService.findOneByNumber(orderNumber);
+        System.out.println(myOrder);
     }
 
     @SuppressWarnings("Duplicates")
     void orderOption1()
     {
+        OrderDto orderDto = new OrderDto();
+        orderDto.setCustomerDto(CustomerDto.builder()
+                .name(scannerService.getString("Enter the customer's name: "))
+                .surname(scannerService.getString("Enter the customer's surname: "))
+                .email(scannerService.getString("Enter the customers Email: "))
+                .countryDto(CountryDto.builder().name(scannerService.getString("Enter the name of the customer's Country: ")).build())
+                .build());
+        orderDto.setDateTime(LocalDateTime.now());
+        orderDto.setDiscount(scannerService.getBigDecimal("Enter the value of the discount: "));
+        orderDto.setProductDto(ProductDto.builder()
+                .name(scannerService.getString("Enter the name of the Product: "))
+                .categoryDto(CategoryDto.builder().name(scannerService.getString("Enter the name of the Category: ")).build())
+                .build());
+        orderDto.setQuantity(scannerService.getInt("Enter the number of the products: "));
+        orderDto.setPaymentDto(PaymentDto.builder().ePayment(scannerService.getEpayment()).build());
+
+
+        Map<String, String> orderErrors = customerOrderValidation.validate(orderDto);
+
+        if (customerOrderValidation.hasErrors())
+        {
+            orderErrors.forEach((k, v) -> System.out.println(k + " " + v));
+            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
+                    .message("Error while inserting Stock into the table ")
+                    .dateTime(LocalDateTime.now())
+                    .build());
+        }
+        orderService.addOrUpdate(orderDto);
 
     }
 
-    void orderOption2(){}
-    void orderOption3(){}
-    void orderOption4(){}
-    void orderOption5(){}
+    void orderOption2()
+    {
+        List<OrderDto> orderDtos = orderService.findAll();
+        if (orderDtos.isEmpty())
+        {
+            System.out.println("YOUR LIST IS EMPTY");
+        }
+        orderDtos.forEach(System.out::println);
+    }
+
+    void orderOption3()
+    {
+        Long id = scannerService.getLong("Enter the Order ID: ");
+        OrderDto orderDto = orderService.findOneById(id);
+        System.out.println(orderDto);
+    }
+    void orderOption4()
+    {
+        Long id = scannerService.getLong("Enter the Customer's ID: ");
+        orderService.delete(id);
+    }
 
 
     //========================================================================================================================================================
@@ -471,33 +526,79 @@ public class MenuService
     @SuppressWarnings("Duplicates")
     void categoryOption0()
     {
+        String name = scannerService.getString("Enter name of the Category: ");
+        CategoryDto categoryDto = categoryService.findOneByName(name);
+        System.out.println(categoryDto);
 
+        categoryDto.setName(scannerService.getString("Enter the new name of the Category: "));
+        Map<String, String> categoryErrors = categoryValidation.validate(categoryDto);
+
+        if (customerOrderValidation.hasErrors())
+        {
+            categoryErrors.forEach((k, v) -> System.out.println(k + " " + v));
+            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
+                    .message("Error while inserting Stock into the table ")
+                    .dateTime(LocalDateTime.now())
+                    .build());
+        }
+        categoryService.addOrUpdate(categoryDto);
     }
 
     @SuppressWarnings("Duplicates")
     void categoryOption1()
     {
-        System.out.println("-----------------------------------------------------");
+        CategoryDto categoryDto = new CategoryDto();
+        categoryDto.setName(scannerService.getString("Enter the name of the Category: "));
+
+        Map<String, String> categoryErrors = categoryValidation.validate(categoryDto);
+
+        if (customerOrderValidation.hasErrors())
+        {
+            categoryErrors.forEach((k, v) -> System.out.println(k + " " + v));
+            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
+                    .message("Error while inserting Stock into the table ")
+                    .dateTime(LocalDateTime.now())
+                    .build());
+        }
+        categoryService.addOrUpdate(categoryDto);
     }
 
     void categoryOption2()
     {
-
+        List<CategoryDto> categoryDtos = categoryService.findAll();
+        if (categoryDtos.isEmpty())
+        {
+            System.out.println("YOUR LIST IS EMPTY");
+        }
+        categoryDtos.forEach(System.out::println);
     }
 
     void categoryOption3()
     {
-
+        Long id = scannerService.getLong("Enter the ID of the Category: ");
+        CategoryDto categoryDto = categoryService.findOneById(id);
+        if (categoryDto == null)
+        {
+            System.out.println("YOUR CATEGORY IS NULL");
+        }
+        System.out.println(categoryDto);
     }
 
     void categoryOption4()
     {
-
+        String name = scannerService.getString("Enter the name of the Category: ");
+        CategoryDto categoryDto = categoryService.findOneByName(name);
+        if (categoryDto == null)
+        {
+            System.out.println("YOUR CATEGORY IS NULL");
+        }
+        System.out.println(categoryDto);
     }
 
     void categoryOption5()
     {
-
+        Long id = scannerService.getLong("Enter the name of the Country: ");
+        countryService.delete(id);
     }
 
     //========================================================================================================================================================
@@ -505,33 +606,80 @@ public class MenuService
     @SuppressWarnings("Duplicates")
     void countryOption0()
     {
+        String name = scannerService.getString("Enter the name of the Country: ");
+        CountryDto countryDto = countryService.findOneByName(name);
+        countryDto.setName(scannerService.getString("Enter the new name of the Country: "));
+
+        Map<String, String> countryErrors = countryValidation.validate(countryDto);
+
+        if (customerOrderValidation.hasErrors())
+        {
+            countryErrors.forEach((k, v) -> System.out.println(k + " " + v));
+            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
+                    .message("Error while inserting Stock into the table ")
+                    .dateTime(LocalDateTime.now())
+                    .build());
+        }
+        countryService.addOrUpdate(countryDto);
 
     }
 
     @SuppressWarnings("Duplicates")
     void countryOption1()
     {
-        System.out.println("-----------------------------------------------------");
+        CountryDto countryDto = new CountryDto();
+        countryDto.setName(scannerService.getString("Enter the name of the Country: "));
+
+        Map<String, String> countryErrors = countryValidation.validate(countryDto);
+
+        if (customerOrderValidation.hasErrors())
+        {
+            countryErrors.forEach((k, v) -> System.out.println(k + " " + v));
+            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
+                    .message("Error while inserting Stock into the table ")
+                    .dateTime(LocalDateTime.now())
+                    .build());
+        }
+        countryService.addOrUpdate(countryDto);
+
     }
 
     void countryOption2()
     {
-
+        List<CountryDto> countryDtos = countryService.findAll();
+        if (!countryDtos.isEmpty())
+        {
+            System.out.println("YOUR LIST IS NULL");
+        }
+        countryDtos.forEach(System.out::println);
     }
 
     void countryOption3()
     {
-
+        Long id = scannerService.getLong("Enter the Country ID: ");
+        CountryDto countryDto = countryService.findOneById(id);
+        if (countryDto == null)
+        {
+            System.out.println("YOUR COUNTRY IS NULL");
+        }
+        System.out.println(countryDto);
     }
 
     void countryOption4()
     {
-
+        String name = scannerService.getString("Enter the name of the Country: ");
+        CountryDto countryDto = countryService.findOneByName(name);
+        if (countryDto == null)
+        {
+            System.out.println("YOUR COUNTRY IS NULL");
+        }
+        System.out.println(countryDto);
     }
 
     void countryOption5()
     {
-
+        Long id = scannerService.getLong("Enter the ID of the Country: ");
+        countryService.delete(id);
     }
 
     //========================================================================================================================================================
@@ -539,12 +687,21 @@ public class MenuService
     @SuppressWarnings("Duplicates")
     void tradeOption0()
     {
+        String name = scannerService.getString("Enter the name of the Trade: ");
+        TradeDto tradeDto = tradeService.findOneByName(name);
+
+        tradeDto.setName(scannerService.getString("Enter the name of the Trade: "));
+        //Map<String, String> tradeErrors = tradeValidation.
+
 
     }
 
     @SuppressWarnings("Duplicates")
     void tradeOption1()
     {
+
+
+
         System.out.println("-----------------------------------------------------");
     }
 

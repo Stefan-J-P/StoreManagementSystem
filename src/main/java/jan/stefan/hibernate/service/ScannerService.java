@@ -2,6 +2,7 @@ package jan.stefan.hibernate.service;
 
 import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.model.enums.EGuarantee;
+import jan.stefan.hibernate.model.enums.EPayment;
 
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
@@ -108,12 +109,20 @@ public class ScannerService
     }
 
 
-    public EGuarantee getEGuarantee(/*String message*/)
+    public EGuarantee getEGuarantee()
     {
         System.out.println("Enter EGuarantee option: ");
         String text = sc.nextLine();
         return EGuarantee.valueOf(text);
     }
+
+    public EPayment getEpayment()
+    {
+        System.out.println("Enter the Epayment option: ");
+        String text = sc.nextLine();
+        return EPayment.valueOf(text);
+    }
+
 
 /*    public BigDecimal generateDiscount()
     {
@@ -185,11 +194,6 @@ public class ScannerService
             return EGuarantee.values()[n-1];
         }).collect(Collectors.toSet());
     }
-
-
-
-
-
 
     public void close ()
     {

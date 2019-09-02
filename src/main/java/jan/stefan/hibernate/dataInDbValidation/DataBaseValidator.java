@@ -4,6 +4,7 @@ import jan.stefan.hibernate.dto.modelDto.*;
 import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.model.*;
 import jan.stefan.hibernate.repository.repositoryInterfaces.*;
+import jan.stefan.hibernate.service.CustomerService;
 import jan.stefan.hibernate.service.mappers.ModelMapper;
 import lombok.RequiredArgsConstructor;
 
@@ -17,6 +18,7 @@ public class DataBaseValidator
     private final ProductRepository productRepository;
     private final ShopRepository shopRepository;
     private final TradeRepository tradeRepository;
+    //private final CustomerService customerService;
 
     @SuppressWarnings("Duplicates")
     public Category categoryDbValidator(CategoryDto categoryDto)
@@ -78,6 +80,8 @@ public class DataBaseValidator
     @SuppressWarnings("Duplicates")
     public Customer customerDbValidator(CustomerDto customerDto)
     {
+
+        // TU JEST BŁĄD
         if (customerDto == null)
         {
             throw new MyException("DATA BASE VALIDATOR// customerDto object is null");
@@ -87,7 +91,17 @@ public class DataBaseValidator
 
         if (customer.getId() == null)
         {
-            customerFromDb = customerRepository.findOneByEmail(customer.getName()).orElse(null);
+            customerFromDb = customerRepository.findOneByEmail(customer.getEmail()).orElseThrow(() -> new MyException("DATA BASE VALIDATOR: customerDbValidation// customerFromDb EXCEPTION"));
+
+            System.out.println("----------------------------------------------");
+            System.out.println("CUSTOMER FROM DB: after finding email");
+            System.out.println(customerFromDb.getName() + "\t" +
+                                customerFromDb.getSurname()  + "\t" +
+                                customerFromDb.getAge() + "\t" +
+                                customerFromDb.getEmail() + "\t" +
+                                customerFromDb.getCountry()
+            );
+            System.out.println("----------------------------------------------");
 
             if (customerFromDb == null)
             {

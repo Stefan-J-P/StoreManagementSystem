@@ -1,18 +1,18 @@
 package jan.stefan.hibernate.model.validation;
 
-import jan.stefan.hibernate.dto.modelDto.CustomerOrderDto;
+import jan.stefan.hibernate.dto.modelDto.OrderDto;
 import jan.stefan.hibernate.model.validation.generic.Validator;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CustomerOrderValidation implements Validator<CustomerOrderDto>
+public class CustomerOrderValidation implements Validator<OrderDto>
 {
     Map<String, String> errors = new HashMap<>();
 
     @Override
-    public Map<String, String> validate(CustomerOrderDto customerOrderDto)
+    public Map<String, String> validate(OrderDto orderDto)
     {
         errors.clear();
 
@@ -26,19 +26,19 @@ public class CustomerOrderValidation implements Validator<CustomerOrderDto>
         return !errors.isEmpty();
     }
 
-    public boolean isNameValid(CustomerOrderDto customerOrderDto)
+    public boolean isNameValid(OrderDto orderDto)
     {
-        return customerOrderDto.getCustomerDto().getName() != null && customerOrderDto.getCustomerDto().getName().matches("^[A-Z ]+$");
+        return orderDto.getCustomerDto().getName() != null && orderDto.getCustomerDto().getName().matches("^[A-Z ]+$");
     }
 
-    public boolean isSurnameValid(CustomerOrderDto customerOrderDto)
+    public boolean isSurnameValid(OrderDto orderDto)
     {
-        return customerOrderDto.getCustomerDto().getSurname() != null && customerOrderDto.getCustomerDto().getSurname().matches("^[A-Z ]+$");
+        return orderDto.getCustomerDto().getSurname() != null && orderDto.getCustomerDto().getSurname().matches("^[A-Z ]+$");
     }
 
-    public boolean isDateValid(CustomerOrderDto customerOrderDto)
+    public boolean isDateValid(OrderDto orderDto)
     {
-        return customerOrderDto.getDateTime() != null && customerOrderDto.getDateTime().isAfter(LocalDateTime.now());
+        return orderDto.getDateTime() != null && orderDto.getDateTime().isAfter(LocalDateTime.now());
     }
 
 

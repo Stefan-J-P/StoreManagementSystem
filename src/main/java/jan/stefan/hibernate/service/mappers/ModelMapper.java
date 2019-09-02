@@ -153,7 +153,7 @@ public interface ModelMapper
                 .producer(productDto.getProducerDto() == null ? null : fromProducerDtoToProducer(productDto.getProducerDto()))
                 .trade(productDto.getTradeDto() == null ? null : fromTradeDtoToTrade(productDto.getTradeDto()))
                 .guaranteeComponents(productDto.getEGuarantees())
-                .customerOrders(new HashSet<>())
+                .orders(new HashSet<>())
                 .stocks(new HashSet<>())
                 .build();
     }
@@ -221,31 +221,31 @@ public interface ModelMapper
         return paymentDto == null ? null : Payment.builder()
                 .id(paymentDto.getId())
                 .payment(paymentDto.getEPayment())
-                .customerOrders(new HashSet<>())
+                .orders(new HashSet<>())
                 .build();
     }
 
     // CUSTOMER ORDER --------------------------------------------
-    static CustomerOrderDto fromCustomerOrderToCustomerOrderDto(CustomerOrder customerOrder)
+    static OrderDto fromCustomerOrderToCustomerOrderDto(Order order)
     {
-        return customerOrder == null ? null : CustomerOrderDto.builder()
-                .id(customerOrder.getId())
-                .dateTime(customerOrder.getDateTime())
-                .discount(customerOrder.getDiscount())
-                .quantity(customerOrder.getQuantity())
+        return order == null ? null : OrderDto.builder()
+                .id(order.getId())
+                .dateTime(order.getDateTime())
+                .discount(order.getDiscount())
+                .quantity(order.getQuantity())
                 .build();
     }
 
-    static CustomerOrder fromCustomerOrderDtoToCustomerOrder(CustomerOrderDto customerOrderDto)
+    static Order fromCustomerOrderDtoToCustomerOrder(OrderDto orderDto)
     {
-        return customerOrderDto == null ? null : CustomerOrder.builder()
-                .id(customerOrderDto.getId())
-                .dateTime(customerOrderDto.getDateTime())
-                .discount(customerOrderDto.getDiscount())
-                .quantity(customerOrderDto.getQuantity())
-                .customer(customerOrderDto.getCustomerDto() == null ? null : fromCustomerDtoToCustomer(customerOrderDto.getCustomerDto()))
-                .product(customerOrderDto.getProductDto() == null ? null : fromProductDtoToProduct(customerOrderDto.getProductDto()))
-                .payment(customerOrderDto.getPaymentDto() == null ? null : fromPaymentDtoToPayment(customerOrderDto.getPaymentDto()))
+        return orderDto == null ? null : Order.builder()
+                .id(orderDto.getId())
+                .dateTime(orderDto.getDateTime())
+                .discount(orderDto.getDiscount())
+                .quantity(orderDto.getQuantity())
+                .customer(orderDto.getCustomerDto() == null ? null : fromCustomerDtoToCustomer(orderDto.getCustomerDto()))
+                .product(orderDto.getProductDto() == null ? null : fromProductDtoToProduct(orderDto.getProductDto()))
+                .payment(orderDto.getPaymentDto() == null ? null : fromPaymentDtoToPayment(orderDto.getPaymentDto()))
                 .build();
     }
 

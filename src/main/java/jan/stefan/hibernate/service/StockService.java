@@ -63,5 +63,30 @@ public class StockService
                 .orElseThrow(() -> new MyException("STOCK SERVICE: findOneById() cannot find id" + id));
     }
 
+    public StockDto findOneByName(String name)
+    {
+        return stockRepository
+                .findOneByName(name)
+                .map(ModelMapper::fromStockToStockDto)
+                .orElseThrow(() -> new MyException("STOCK SERVICE: findOneById() cannot find name :" + name));
+    }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

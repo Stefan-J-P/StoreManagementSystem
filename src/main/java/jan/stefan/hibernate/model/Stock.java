@@ -16,6 +16,7 @@ public class Stock
     @Id
     @GeneratedValue
     private Long id;
+    private String name;
     private Integer quantity;
 
     @ManyToOne(cascade = CascadeType.PERSIST)

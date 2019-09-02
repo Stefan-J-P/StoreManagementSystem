@@ -18,11 +18,12 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "customer_orders")
-public class CustomerOrder
+public class Order
 {
     @Id
     @GeneratedValue
     private Long id;
+    private Long orderNumber;
     private LocalDateTime dateTime;
     private Integer quantity;
     private BigDecimal discount;

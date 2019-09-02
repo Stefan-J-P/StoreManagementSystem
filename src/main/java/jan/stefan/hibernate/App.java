@@ -4,19 +4,12 @@ package jan.stefan.hibernate;
 import jan.stefan.hibernate.connection.DbConnection;
 
 import jan.stefan.hibernate.dataInDbValidation.DataBaseValidator;
-import jan.stefan.hibernate.dto.modelDto.CountryDto;
-import jan.stefan.hibernate.dto.modelDto.ShopDto;
-import jan.stefan.hibernate.dto.newObjectDto.NewProductDto;
 import jan.stefan.hibernate.menu.MenuPanel;
 import jan.stefan.hibernate.menu.MenuService;
 import jan.stefan.hibernate.menu.MenuStatistics;
 import jan.stefan.hibernate.model.validation.*;
 import jan.stefan.hibernate.repository.implementation.*;
 import jan.stefan.hibernate.service.*;
-
-import javax.persistence.EntityManagerFactory;
-import java.time.LocalDateTime;
-import java.util.Map;
 
 public class App
 {
@@ -36,7 +29,7 @@ public class App
 
         var categoryRepository = new CategoryRepositoryImpl();
         var countryRepository = new CountryRepositoryImpl();
-        var customerOrderRepository = new CustomerOrderRepositoryImpl();
+        var customerOrderRepository = new OrderRepositoryImpl();
 
         var customerRepository = new CustomerRepositoryImpl();
         var myErrorRepository = new MyErrorRepositoryImpl();
@@ -53,7 +46,7 @@ public class App
 
         var categoryService = new CategoryService(categoryRepository);
         var countryService = new CountryService(countryRepository);
-        var customerOrderService = new CustomerOrderService(customerOrderRepository, dataBaseValidation);
+        var customerOrderService = new OrderService(customerOrderRepository, dataBaseValidation);
 
         var myErrorService = new MyErrorService(myErrorRepository);
         var paymentService = new PaymentService(paymentRepository);

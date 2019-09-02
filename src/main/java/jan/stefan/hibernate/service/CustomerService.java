@@ -30,7 +30,12 @@ public class CustomerService
         }
 
         Customer customer = ModelMapper.fromCustomerDtoToCustomer(customerDto);
+        //Customer customerDb = dataBaseValidator.customerDbValidator(customerDto);
         Country result = dataBaseValidator.countryDbValidator(customerDto.getCountryDto());
+        //customer.setName(customerDb.getName());
+        //customer.setSurname(customerDb.getSurname());
+        //customer.setAge(customerDb.getAge());
+        //customer.setEmail(customerDb.getEmail());
         customer.setCountry(result);
 
         return ModelMapper.fromCustomerToCustomerDto(customerRepository
@@ -72,7 +77,8 @@ public class CustomerService
         {
             throw new MyException("CUSTOMER SERVICE: findOneByEmail() : email argument is null");
         }
-        return customerRepository.findOneByEmail(email)
+        return customerRepository
+                .findOneByEmail(email)
                 .map(ModelMapper::fromCustomerToCustomerDto)
                 .orElseThrow(() -> new MyException("CUSTOMER SERVICE: findOneByEmail() : Cannot find email: " + email));
 

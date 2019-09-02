@@ -50,6 +50,12 @@ public class CategoryService
                 .orElseThrow(() -> new MyException("CATEGORY SERVICE: findOneById() cannot find id: " + id));
     }
 
-
+    public CategoryDto findOneByName(String name)
+    {
+        return categoryRepository
+                .findOneByName(name)
+                .map(ModelMapper::fromCategoryToCategoryDto)
+                .orElseThrow(() -> new MyException("CATEGORY SERVICE: findOneById() cannot find name: " + name));
+    }
 
 }

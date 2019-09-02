@@ -50,5 +50,12 @@ public class CountryService
                 .orElseThrow(()-> new MyException("COUNTRY SERVICE: findOneById() Cannot find id: " + id));
     }
 
+    public CountryDto findOneByName(String name)
+    {
+        return countryRepository
+                .findOneByName(name)
+                .map(ModelMapper::fromCountryToCountryDto)
+                .orElseThrow(() -> new MyException("COUNTRY SERVICE: findOneByName() : Cannot find name: " + name));
+    }
 
 }

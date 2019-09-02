@@ -51,4 +51,12 @@ public class TradeService
                 .orElseThrow(() -> new MyException("TRADE SERVICE: findOneById() cannot find id" + id));
     }
 
+    public TradeDto findOneByName(String name)
+    {
+        return tradeRepository
+                .findOneByName(name)
+                .map(ModelMapper::fromTradeToTradeDto)
+                .orElseThrow(() -> new MyException("TRADE SERVICE: findOneById() cannot find name: " + name));
+    }
+
 }

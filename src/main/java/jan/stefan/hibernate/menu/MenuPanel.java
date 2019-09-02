@@ -39,7 +39,7 @@ public class MenuPanel
                         System.out.println("1. ADD ONE CUSTOMER");
                         System.out.println("2. FIND ALL CUSTOMERS");
                         System.out.println("3. FIND ONE CUSTOMER BY ID");
-                        System.out.println("4. FIND ONE CUSTOMER BY NAME");
+                        System.out.println("4. FIND ONE CUSTOMER BY EMAIL");
                         System.out.println("5. DELETE ONE CUSTOMER");
                         System.out.println("6. RETURN TO MAIN MENU");
                         int customerOption = scannerService.getInt("Enter the option for the Customer: ");
@@ -219,9 +219,8 @@ public class MenuPanel
                         System.out.println("1. ADD ONE ORDER");
                         System.out.println("2. FIND ALL ORDERS");
                         System.out.println("3. FIND ONE ORDER BY ID");
-                        System.out.println("4. FIND ONE ORDER BY NAME");
-                        System.out.println("5. DELETE ONE ORDER");
-                        System.out.println("6. RETURN TO MAIN MENU");
+                        System.out.println("4. DELETE ONE ORDER");
+                        System.out.println("5. RETURN TO MAIN MENU");
 
                         int optionOrder = scannerService.getInt("Enter the option for the Order: ");
 
@@ -243,9 +242,6 @@ public class MenuPanel
                                 menuService.orderOption4();
                                 break;
                             case 5:
-                                menuService.orderOption5();
-                                break;
-                            case 6:
                                 break;
                         }
                         break;
