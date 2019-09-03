@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CustomerOrderValidation implements Validator<OrderDto>
+public class OrderValidation implements Validator<OrderDto>
 {
     Map<String, String> errors = new HashMap<>();
 

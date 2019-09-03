@@ -1,18 +1,14 @@
 package jan.stefan.hibernate.menu;
 
 import jan.stefan.hibernate.dto.modelDto.*;
-import jan.stefan.hibernate.model.Category;
-import jan.stefan.hibernate.model.Country;
-import jan.stefan.hibernate.model.Order;
 import jan.stefan.hibernate.model.validation.*;
 import jan.stefan.hibernate.service.*;
+import jdk.swing.interop.SwingInterOpUtils;
 import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
-import java.util.function.DoubleToIntFunction;
-import java.util.spi.AbstractResourceBundleProvider;
 
 @RequiredArgsConstructor
 public class MenuService
@@ -26,7 +22,7 @@ public class MenuService
     private final ProducerValidation producerValidation;
     private final ProductValidation productValidation;
     private final StockValidation stockValidation;
-    private final CustomerOrderValidation customerOrderValidation;
+    private final OrderValidation orderValidation;
     private final CategoryValidation categoryValidation;
     private final CountryValidation countryValidation;
     private final TradeValidation tradeValidation;
@@ -57,11 +53,11 @@ public class MenuService
         System.out.println(myCustomerDto);
         System.out.println("-----------------------------------------------------");
 
-        myCustomerDto.setName(scannerService.getString("Enter customer's name:"));
-        myCustomerDto.setSurname(scannerService.getString("Enter customer's surname:"));
-        myCustomerDto.setEmail(scannerService.getString("Enter customer's email:"));
-        myCustomerDto.setAge(scannerService.getInt("Enter customer's age:"));
-        myCustomerDto.setCountryDto(CountryDto.builder().name(scannerService.getString("Enter the name of customer's country")).build());
+        myCustomerDto.setName(scannerService.getString("Enter customer's NEW name:"));
+        myCustomerDto.setSurname(scannerService.getString("Enter customer's NEW surname:"));
+        myCustomerDto.setEmail(scannerService.getString("Enter customer's NEW email:"));
+        myCustomerDto.setAge(scannerService.getInt("Enter customer's NEW age:"));
+        myCustomerDto.setCountryDto(CountryDto.builder().name(scannerService.getString("Enter the name of customer's NEW country")).build());
 
         Map<String, String> customerErrors = customerValidation.validate(myCustomerDto);
 
@@ -105,21 +101,24 @@ public class MenuService
 
     void customerOption2()
     {
-        var customerDtoList = customerService.findAll();
-        if (customerDtoList.isEmpty())
+        List<CustomerDto> customerDtos = customerService.findAll();
+        if (customerDtos.isEmpty())
         {
             System.out.println("YOUR LIST IS EMPTY");
         }
-        customerDtoList.forEach(System.out::println);
-
-        // System.out.println(customerDtoList.isEmpty() ? customerDtoList : "ssss");
-
+        customerDtos.forEach(System.out::println);
+        System.out.println("YOU HAVE RIGHT NOW: " + customerDtos.size() + " CUSTOMERS");
     }
 
     void customerOption3()
     {
         Long customerId = scannerService.getLong("Enter customer's ID: ");
         CustomerDto customerDto = customerService.findOneById(customerId);
+        if (customerDto == null)
+        {
+            System.out.println("CUSTOMER IS NULL");
+            return;
+        }
         System.out.println(customerDto);
     }
 
@@ -127,8 +126,12 @@ public class MenuService
     {
         String email = scannerService.getString("Enter the customer's email: ");
         CustomerDto customerDto = customerService.findOneByEmail(email);
+        if (customerDto == null)
+        {
+            System.out.println("CUSTOMER IS NULL");
+            return;
+        }
         System.out.println(customerDto);
-
     }
 
     void customerOption5()
@@ -148,8 +151,8 @@ public class MenuService
         System.out.println(myShopDto);
         System.out.println("-----------------------------------------------------");
 
-        myShopDto.setName(scannerService.getString("Enter name of the Shop: "));
-        myShopDto.setCountryDto(CountryDto.builder().name(scannerService.getString("Enter the name of the Country: ")).build());
+        myShopDto.setName(scannerService.getString("Enter the NEW name of the Shop: "));
+        myShopDto.setCountryDto(CountryDto.builder().name(scannerService.getString("Enter the NEW name of the Country: ")).build());
 
         Map<String, String> shopErrors = shopValidation.validate(myShopDto);
 
@@ -187,28 +190,38 @@ public class MenuService
     }
     void shopOption2()
     {
-        List<ShopDto> shopDtoList = shopService.findAll();
-        if (!shopDtoList.isEmpty())
-        {
-            shopDtoList.forEach(System.out::println);
-        }
-        else
+        List<ShopDto> shopDtos = shopService.findAll();
+        if (shopDtos.isEmpty())
         {
             System.out.println("YOUR LIST IS EMPTY!");
+            return;
         }
+        shopDtos.forEach(System.out::println);
+        System.out.println("YOU HAVE RIGHT NOW: " + shopDtos.size() + " SHOPS");
+
     }
     void shopOption3()
     {
         Long shopId = scannerService.getLong("Enter the shop ID: ");
         ShopDto shopDto = shopService.findOneById(shopId);
+        if (shopDto == null)
+        {
+            System.out.println("SHOP IS NULL");
+            return;
+        }
         System.out.println(shopDto);
     }
 
     void shopOption4()
     {
         String shopName = scannerService.getString("Enter the name of the shop");
-        ShopDto myShop = shopService.findOneByName(shopName);
-        System.out.println(myShop);
+        ShopDto shopDto = shopService.findOneByName(shopName);
+        if (shopDto == null)
+        {
+            System.out.println("SHOP IS NULL");
+            return;
+        }
+        System.out.println(shopDto);
     }
 
     void shopOption5()
@@ -228,9 +241,9 @@ public class MenuService
         System.out.println(myProducerDto);
         System.out.println("-----------------------------------------------------");
 
-        myProducerDto.setName(scannerService.getString("Enter the new name of the Producer: "));
-        myProducerDto.setCountryDto(CountryDto.builder().name(scannerService.getString("Enter the name of the new Country: ")).build());
-        myProducerDto.setTradeDto(TradeDto.builder().name(scannerService.getString("Enter the name of the new Trade: ")).build());
+        myProducerDto.setName(scannerService.getString("Enter the NEW name of the Producer: "));
+        myProducerDto.setCountryDto(CountryDto.builder().name(scannerService.getString("Enter the NEW name of the  Country: ")).build());
+        myProducerDto.setTradeDto(TradeDto.builder().name(scannerService.getString("Enter the NEW name of the Trade: ")).build());
 
         Map<String, String> producerErrors = producerValidation.validate(myProducerDto);
 
@@ -269,16 +282,14 @@ public class MenuService
 
     void producerOption2()
     {
-        List<ProducerDto> producerDtoList = producerService.findAll();
-        if (!producerDtoList.isEmpty())
-        {
-            producerDtoList.forEach(System.out::println);
-        }
-        else
+        List<ProducerDto> producerDtos = producerService.findAll();
+        if (producerDtos.isEmpty())
         {
             System.out.println("YOUR LIST IS EMPTY!");
+            return;
         }
-
+        producerDtos.forEach(System.out::println);
+        System.out.println("YOU HAVE RIGHT NOW: " + producerDtos.size() + " PRODUCERS");
     }
 
     void producerOption3()
@@ -312,11 +323,11 @@ public class MenuService
         System.out.println(myProductDto);
         System.out.println("-----------------------------------------------------");
 
-        myProductDto.setName(scannerService.getString("Enter the new name for the Product: "));
-        myProductDto.setCategoryDto(CategoryDto.builder().name(scannerService.getString("Enter the new name for the Category: ")).build());
-        myProductDto.setProducerDto(ProducerDto.builder().name(scannerService.getString("Enter the new name for the Producer")).build());
-        myProductDto.setTradeDto(TradeDto.builder().name(scannerService.getString("Enter the new name for the Trade: ")).build());
-        myProductDto.setPrice(scannerService.getBigDecimal("Enter the new Price: "));
+        myProductDto.setName(scannerService.getString("Enter the NEW name for the Product: "));
+        myProductDto.setCategoryDto(CategoryDto.builder().name(scannerService.getString("Enter the NEW name for the Category: ")).build());
+        myProductDto.setProducerDto(ProducerDto.builder().name(scannerService.getString("Enter the NEW name for the Producer")).build());
+        myProductDto.setTradeDto(TradeDto.builder().name(scannerService.getString("Enter the NEW name for the Trade: ")).build());
+        myProductDto.setPrice(scannerService.getBigDecimal("Enter the NEW Price: "));
         //myProductDto.setEGuarantees(...);
 
         Map<String, String> productErrors = productValidation.validate(myProductDto);
@@ -336,12 +347,13 @@ public class MenuService
     void productOption1()
     {
         ProductDto productDto = new ProductDto();
+
         productDto.setName(scannerService.getString("Enter the name of the Prouct: "));
         productDto.setPrice(scannerService.getBigDecimal("Enter the price: "));
         productDto.setCategoryDto(CategoryDto.builder().name(scannerService.getString("Enter the name of the Category: ")).build());
         productDto.setProducerDto(ProducerDto.builder().name(scannerService.getString("Enter the name of the Producer: ")).build());
         productDto.setTradeDto(TradeDto.builder().name(scannerService.getString("Enter the name of the Category")).build());
-        //productDto.setEGuarantees(scannerService.getGuarantees("Enter values by comma , :"));
+        productDto.setEGuarantees(scannerService.getGuarantees("Enter values by comma , :"));
 
         Map<String, String> productErrors = productValidation.validate(productDto);
 
@@ -362,22 +374,26 @@ public class MenuService
 
     void productOption2()
     {
-        List<ProductDto> productDtoList = productService.findAll();
-        if (!productDtoList.isEmpty())
-        {
-            productDtoList.forEach(System.out::println);
-        }
-        else
+        List<ProductDto> productDtos = productService.findAll();
+        /*
+        if (productDtos.isEmpty())
         {
             System.out.println("YOUR LIST IS EMPTY");
+            return;
         }
-
+        productDtos.forEach(System.out::println);
+        System.out.println("YOU HAVE RIGHT NOW: " + productDtos.size() + " PRODUCTS");  */
     }
 
-    void productOption3()
+    void productOption3() // FIND ONE BY ID
     {
         Long productId = scannerService.getLong("Enter the ID of the Product: ");
         ProductDto productDto = productService.findOneById(productId);
+        /*
+        if (productDto != null)
+        {
+            System.out.println("!!!!!!!!!!");
+        }   */
         System.out.println(productDto);
     }
 
@@ -387,7 +403,6 @@ public class MenuService
         //ProductDto productDto = productService.
 
     }
-
 
     void productOption5()
     {
@@ -411,9 +426,9 @@ public class MenuService
     void stockOption1()
     {
         StockDto stockDto = new StockDto();
-        stockDto.setProductDto(ProductDto.builder().name(scannerService.getString("Enter the name of the Product: ")).build());
-        stockDto.setQuantity(scannerService.getInt("Enter the quantity: "));
-        stockDto.setShopDto(ShopDto.builder().name(scannerService.getString("Enter the name of the Shop: ")).build());
+        stockDto.setProductDto(ProductDto.builder().name(scannerService.getString("Enter the NEW name of the Product: ")).build());
+        stockDto.setQuantity(scannerService.getInt("Enter the NEW quantity: "));
+        stockDto.setShopDto(ShopDto.builder().name(scannerService.getString("Enter the NEW name of the Shop: ")).build());
 
         Map<String, String> stockErrors = stockValidation.validate(stockDto);
 
@@ -436,6 +451,7 @@ public class MenuService
             System.out.println("YOUR LIST IS EMPTY");
         }
         stocks.forEach(System.out::println);
+        System.out.println("YOU HAVE RIGHT NOW: " + stocks.size() + " STOCKS");
     }
 
     void stockOption3()
@@ -459,9 +475,9 @@ public class MenuService
     @SuppressWarnings("Duplicates")
     void orderOption0()
     {
-        Long orderNumber = scannerService.getLong("Enter the order number: ");
+/*        Long orderNumber = scannerService.getLong("Enter the order number: ");
         OrderDto myOrder = orderService.findOneByNumber(orderNumber);
-        System.out.println(myOrder);
+        System.out.println(myOrder);*/
     }
 
     @SuppressWarnings("Duplicates")
@@ -481,12 +497,12 @@ public class MenuService
                 .categoryDto(CategoryDto.builder().name(scannerService.getString("Enter the name of the Category: ")).build())
                 .build());
         orderDto.setQuantity(scannerService.getInt("Enter the number of the products: "));
-        orderDto.setPaymentDto(PaymentDto.builder().ePayment(scannerService.getEpayment()).build());
+        //orderDto.setPaymentDto(PaymentDto.builder().ePayment(scannerService.getEpayment()).build());
 
 
-        Map<String, String> orderErrors = customerOrderValidation.validate(orderDto);
+        Map<String, String> orderErrors = orderValidation.validate(orderDto);
 
-        if (customerOrderValidation.hasErrors())
+        if (orderValidation.hasErrors())
         {
             orderErrors.forEach((k, v) -> System.out.println(k + " " + v));
             myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
@@ -506,18 +522,31 @@ public class MenuService
             System.out.println("YOUR LIST IS EMPTY");
         }
         orderDtos.forEach(System.out::println);
+        System.out.println("YOU HAVE RIGHT NOW: " + orderDtos.size() + " ORDERS");
     }
 
     void orderOption3()
     {
         Long id = scannerService.getLong("Enter the Order ID: ");
         OrderDto orderDto = orderService.findOneById(id);
+        if (orderDto == null)
+        {
+            System.out.println("YOUR ORDER IS NULL");
+            return;
+        }
         System.out.println(orderDto);
     }
     void orderOption4()
     {
         Long id = scannerService.getLong("Enter the Customer's ID: ");
         orderService.delete(id);
+    }
+
+    void orderOption99()
+    {
+        Integer orderNumber = scannerService.getInt("Enter order Number: ");
+        OrderDto orderDto = orderService.findOneByNumber(orderNumber);
+        System.out.println(orderDto);
     }
 
 
@@ -530,10 +559,10 @@ public class MenuService
         CategoryDto categoryDto = categoryService.findOneByName(name);
         System.out.println(categoryDto);
 
-        categoryDto.setName(scannerService.getString("Enter the new name of the Category: "));
+        categoryDto.setName(scannerService.getString("Enter the NEW name of the Category: "));
         Map<String, String> categoryErrors = categoryValidation.validate(categoryDto);
 
-        if (customerOrderValidation.hasErrors())
+        if (orderValidation.hasErrors())
         {
             categoryErrors.forEach((k, v) -> System.out.println(k + " " + v));
             myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
@@ -552,7 +581,7 @@ public class MenuService
 
         Map<String, String> categoryErrors = categoryValidation.validate(categoryDto);
 
-        if (customerOrderValidation.hasErrors())
+        if (orderValidation.hasErrors())
         {
             categoryErrors.forEach((k, v) -> System.out.println(k + " " + v));
             myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
@@ -571,6 +600,7 @@ public class MenuService
             System.out.println("YOUR LIST IS EMPTY");
         }
         categoryDtos.forEach(System.out::println);
+        System.out.println("YOU HAVE RIGHT NOW: " + categoryDtos.size() + " CATEGORIES");
     }
 
     void categoryOption3()
@@ -608,11 +638,11 @@ public class MenuService
     {
         String name = scannerService.getString("Enter the name of the Country: ");
         CountryDto countryDto = countryService.findOneByName(name);
-        countryDto.setName(scannerService.getString("Enter the new name of the Country: "));
+        countryDto.setName(scannerService.getString("Enter the NEW name of the Country: "));
 
         Map<String, String> countryErrors = countryValidation.validate(countryDto);
 
-        if (customerOrderValidation.hasErrors())
+        if (countryValidation.hasErrors())
         {
             countryErrors.forEach((k, v) -> System.out.println(k + " " + v));
             myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
@@ -632,7 +662,7 @@ public class MenuService
 
         Map<String, String> countryErrors = countryValidation.validate(countryDto);
 
-        if (customerOrderValidation.hasErrors())
+        if (countryValidation.hasErrors())
         {
             countryErrors.forEach((k, v) -> System.out.println(k + " " + v));
             myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
@@ -652,6 +682,7 @@ public class MenuService
             System.out.println("YOUR LIST IS NULL");
         }
         countryDtos.forEach(System.out::println);
+        System.out.println("YOU HAVE RIGHT NOW: " + countryDtos.size() + " COUNTRIES");
     }
 
     void countryOption3()
@@ -690,40 +721,80 @@ public class MenuService
         String name = scannerService.getString("Enter the name of the Trade: ");
         TradeDto tradeDto = tradeService.findOneByName(name);
 
-        tradeDto.setName(scannerService.getString("Enter the name of the Trade: "));
-        //Map<String, String> tradeErrors = tradeValidation.
+        tradeDto.setName(scannerService.getString("Enter the NEW name of the Trade: "));
+        Map<String, String> tradeErrors = tradeValidation.validate(tradeDto);
 
-
+        if (tradeValidation.hasErrors())
+        {
+            tradeErrors.forEach((k, v) -> System.out.println(k + " " + v));
+            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
+                    .message("Error while inserting Stock into the table ")
+                    .dateTime(LocalDateTime.now())
+                    .build());
+        }
+        tradeService.addOrUpdate(tradeDto);
     }
 
     @SuppressWarnings("Duplicates")
     void tradeOption1()
     {
+        TradeDto tradeDto = new TradeDto();
+        tradeDto.setName(scannerService.getString("Enter the name of the Trade: "));
 
+        Map<String, String> tradeErrors = tradeValidation.validate(tradeDto);
 
-
-        System.out.println("-----------------------------------------------------");
+        if (tradeValidation.hasErrors())
+        {
+            tradeErrors.forEach((k, v) -> System.out.println(k + " " + v));
+            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
+                    .message("Error while inserting Stock into the table ")
+                    .dateTime(LocalDateTime.now())
+                    .build());
+        }
+        tradeService.addOrUpdate(tradeDto);
     }
 
     void tradeOption2()
     {
-
+        List<TradeDto> tradeDtos = tradeService.findAll();
+        if (tradeDtos.isEmpty())
+        {
+            System.out.println("YOUR LIST IS EMPTY");
+        }
+        tradeDtos.forEach(System.out::println);
+        System.out.println("YOU HAVE RIGHT NOW: " + tradeDtos.size() + " TRADES");
     }
 
     void tradeOption3()
     {
-
+        Long id = scannerService.getLong("Enter the Trade ID: ");
+        TradeDto tradeDto = tradeService.findOneById(id);
+        if (tradeDto == null)
+        {
+            System.out.println("TRADE IS NULL");
+            return;
+        }
+        System.out.println(tradeDto);
     }
 
     void tradeOption4()
     {
-
+        String name = scannerService.getString("Enter the name of the Trade: ");
+        TradeDto tradeDto = tradeService.findOneByName(name);
+        if (tradeDto == null )
+        {
+            System.out.println("TRADE IS NULL");
+            return;
+        }
+        System.out.println(tradeDto);
     }
 
     void tradeOption5()
     {
-
+        Long id = scannerService.getLong("Enter the ID of the Trade: ");
+        tradeService.delete(id);
     }
+
 
 
     /*static <T> String toJson( T t )

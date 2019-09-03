@@ -243,6 +243,9 @@ public class MenuPanel
                                 break;
                             case 5:
                                 break;
+                            case 99:
+                                menuService.orderOption99();
+                                break;
                         }
                         break;
 

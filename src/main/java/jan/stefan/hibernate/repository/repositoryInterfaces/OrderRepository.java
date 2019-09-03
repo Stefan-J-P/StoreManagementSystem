@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface OrderRepository extends GenericRepository<Order, Long>
 {
-    Optional<Order> findOneByNumber(Long number);
+    Optional<Order> findOneByNumber(Integer number);
 
 }
 

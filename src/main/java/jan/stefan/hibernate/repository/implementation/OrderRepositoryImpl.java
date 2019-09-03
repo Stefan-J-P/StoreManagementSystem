@@ -11,7 +11,7 @@ import java.util.Optional;
 
 public class OrderRepositoryImpl extends AbstractGenericRepository<Order, Long> implements OrderRepository
 {
-    public Optional<Order> findOneByNumber(Long number)
+    public Optional<Order> findOneByNumber(Integer number)
     {
 
         if ( number == null )
@@ -28,9 +28,10 @@ public class OrderRepositoryImpl extends AbstractGenericRepository<Order, Long> 
             entityManager = entityManagerFactory.createEntityManager();
             tx = entityManager.getTransaction();
             tx.begin();
+
             item = entityManager
                     .createQuery("select o from Order o where o.orderNumber = :number", Order.class)
-                    .setParameter("orderNumber", number)
+                    .setParameter("number", number)
                     .getResultList()
                     .stream()
                     .findFirst();
@@ -41,6 +42,7 @@ public class OrderRepositoryImpl extends AbstractGenericRepository<Order, Long> 
             if (tx != null) {
                 tx.rollback();
             }
+            e.printStackTrace();
             throw new MyException("ORDER REPOSITORY:  findOneByNumber():  exception");
         } finally {
             if (entityManager != null) {

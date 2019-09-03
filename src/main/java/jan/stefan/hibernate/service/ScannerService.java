@@ -178,21 +178,29 @@ public class ScannerService
     {
         AtomicInteger counter = new AtomicInteger(1);
         Arrays.stream(EGuarantee.values()).forEach(g -> System.out.println(counter.getAndIncrement() + ", " + g));
+
         System.out.println("Enter guarantee values separating them with comma");
         String guaranteeValues = sc.nextLine();
+
+
+        return Arrays
+                .stream(guaranteeValues.split(","))
+                .map(is -> EGuarantee.values()[Integer.parseInt(is) - 1])
+                .collect(Collectors.toSet());
+
         /*
         if (!guaranteeValues.matches("[A-Z_]*,[A-Z_]+"))
         {
             throw new MyException("SCANNER SERVICE: getGuarantees(): Regex exception");
         }   */
-        return Arrays.stream(guaranteeValues.split(",")).map(number -> {
+        /*return Arrays.stream(guaranteeValues.split(",")).map(number -> {
             int n = Integer.parseInt(number);
             if (n < 0 || n >= EGuarantee.values().length )
             {
                 throw new MyException("SCANNER SERVICE: getGuarantees(): No Guarantee as: " + n);
             }
             return EGuarantee.values()[n-1];
-        }).collect(Collectors.toSet());
+        }).collect(Collectors.toSet());*/
     }
 
     public void close ()

@@ -62,7 +62,7 @@ public class OrderService
     }
 
     // DLACZEGO NIE WIDZI TEJ METODY ???
-    public OrderDto findOneByNumber(Long number)
+    public OrderDto findOneByNumber(Integer number)
     {
         return orderRepository
                 .findOneByNumber(number)

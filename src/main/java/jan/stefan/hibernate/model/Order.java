@@ -17,13 +17,13 @@ import java.time.LocalDateTime;
 @Builder
 
 @Entity
-@Table(name = "customer_orders")
+@Table(name = "orders")
 public class Order
 {
     @Id
     @GeneratedValue
     private Long id;
-    private Long orderNumber;
+    private Integer orderNumber;
     private LocalDateTime dateTime;
     private Integer quantity;
     private BigDecimal discount;

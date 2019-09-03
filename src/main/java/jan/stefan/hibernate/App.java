@@ -20,7 +20,7 @@ public class App
         var countryValidadtion = new CountryValidation();
         var categoryValidation = new CategoryValidation();
         var shopValidation = new ShopValidation();
-        var customerOrderValidation = new CustomerOrderValidation();
+        var customerOrderValidation = new OrderValidation();
         var paymentValidation = new PaymentValidation();
         var producerValidation = new ProducerValidation();
         var productValidation = new ProductValidation();

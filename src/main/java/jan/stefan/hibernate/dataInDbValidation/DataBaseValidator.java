@@ -80,8 +80,6 @@ public class DataBaseValidator
     @SuppressWarnings("Duplicates")
     public Customer customerDbValidator(CustomerDto customerDto)
     {
-
-        // TU JEST BŁĄD
         if (customerDto == null)
         {
             throw new MyException("DATA BASE VALIDATOR// customerDto object is null");
@@ -91,24 +89,14 @@ public class DataBaseValidator
 
         if (customer.getId() == null)
         {
-            customerFromDb = customerRepository.findOneByEmail(customer.getEmail()).orElseThrow(() -> new MyException("DATA BASE VALIDATOR: customerDbValidation// customerFromDb EXCEPTION"));
-
-            System.out.println("----------------------------------------------");
-            System.out.println("CUSTOMER FROM DB: after finding email");
-            System.out.println(customerFromDb.getName() + "\t" +
-                                customerFromDb.getSurname()  + "\t" +
-                                customerFromDb.getAge() + "\t" +
-                                customerFromDb.getEmail() + "\t" +
-                                customerFromDb.getCountry()
-            );
-            System.out.println("----------------------------------------------");
+            customerFromDb = customerRepository.findOneByEmail(customer.getEmail()).orElse(null);
 
             if (customerFromDb == null)
             {
                 customerFromDb = customerRepository.saveOrUpdate(customer).orElseThrow(() -> new MyException("DATA BASE VALIDATOR: customerDbValidation// customerFromDb EXCEPTION"));
                 return customerFromDb;
             }
-            return customerFromDb;
+            throw new MyException("username with given email already exists");
         }
         else
         {

@@ -22,7 +22,7 @@ public class Product
     private String name;
     private BigDecimal price;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "guarantees", joinColumns = @JoinColumn(name = "product_id"))
     @Column(name = "guarantee")
     @Enumerated(EnumType.STRING)
