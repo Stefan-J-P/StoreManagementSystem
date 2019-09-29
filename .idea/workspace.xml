@@ -52,18 +52,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>paym</find>
-      <find>producer</find>
-      <find>product</find>
-      <find>CustomerOrd</find>
-      <find>Categ</find>
-      <find>Stock</find>
-      <find>Product</find>
-      <find>scanner</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -149,12 +137,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5725591" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -246,6 +229,14 @@
       <workItem from="1567438394127" duration="150000" />
       <workItem from="1567441479592" duration="7879000" />
       <workItem from="1567526004204" duration="7561000" />
+      <workItem from="1567834269900" duration="895000" />
+      <workItem from="1567966925291" duration="23000" />
+      <workItem from="1567966991093" duration="2215000" />
+      <workItem from="1568041690934" duration="4838000" />
+      <workItem from="1568134474681" duration="1966000" />
+      <workItem from="1569345912353" duration="610000" />
+      <workItem from="1569599094271" duration="741000" />
+      <workItem from="1569777451400" duration="4710000" />
     </task>
     <servers />
   </component>

@@ -549,6 +549,13 @@ public class MenuService
         System.out.println(orderDto);
     }
 
+    void orderOption77()
+    {
+        Integer res = orderService.generateOrderNumber();
+
+        System.out.println("ORDER NUMBER = " + res);
+    }
+
 
     //========================================================================================================================================================
     // CATEGORY -----------------------------------------------

@@ -26,7 +26,7 @@ public class Customer
     private Country country;
 
     @OneToMany(mappedBy = "customer")
-    private Set<Order> orders;
+    private Set<MyOrder> myOrders;
 
 
 }

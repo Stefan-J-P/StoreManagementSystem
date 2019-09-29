@@ -1,15 +1,26 @@
 package jan.stefan.hibernate;
 
 
+import com.google.gson.internal.bind.util.ISO8601Utils;
+import com.mysql.cj.protocol.a.authentication.MysqlOldPasswordPlugin;
 import jan.stefan.hibernate.connection.DbConnection;
 
 import jan.stefan.hibernate.dataInDbValidation.DataBaseValidator;
+import jan.stefan.hibernate.dto.modelDto.CategoryDto;
+import jan.stefan.hibernate.dto.modelDto.OrderDto;
+import jan.stefan.hibernate.dto.modelDto.ProducerDto;
+import jan.stefan.hibernate.dto.modelDto.ProductDto;
 import jan.stefan.hibernate.menu.MenuPanel;
 import jan.stefan.hibernate.menu.MenuService;
 import jan.stefan.hibernate.menu.MenuStatistics;
+import jan.stefan.hibernate.model.MyOrder;
 import jan.stefan.hibernate.model.validation.*;
 import jan.stefan.hibernate.repository.implementation.*;
 import jan.stefan.hibernate.service.*;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 public class App
 {
@@ -59,7 +70,7 @@ public class App
         var producerService = new ProducerService(producerRepository, dataBaseValidation);
         var productService = new ProductService(productRepository, dataBaseValidation);
 
-        var menuStatistics = new MenuStatistics();
+        var menuStatistics = new MenuStatistics(productService);
         var menuService = new MenuService(
                 scannerService,
                 myErrorService,
@@ -89,6 +100,10 @@ public class App
                 menuStatistics
 
         ).mainMenu();
+
+
+
+
         DbConnection.getInstance().close();
     }
 }

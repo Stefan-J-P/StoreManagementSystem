@@ -4,7 +4,7 @@ import jan.stefan.hibernate.dataInDbValidation.DataBaseValidator;
 import jan.stefan.hibernate.dto.modelDto.OrderDto;
 import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.model.Customer;
-import jan.stefan.hibernate.model.Order;
+import jan.stefan.hibernate.model.MyOrder;
 import jan.stefan.hibernate.model.Product;
 import jan.stefan.hibernate.repository.repositoryInterfaces.OrderRepository;
 import jan.stefan.hibernate.service.mappers.ModelMapper;
@@ -23,19 +23,19 @@ public class OrderService
     {
         if (orderDto == null)
         {
-            throw new MyException("CUSTOMER ORDER SERVICE: customerOrderDto object argument is null");
+            throw new MyException("ORDER SERVICE: customerOrderDto object argument is null");
         }
 
-        Order order = ModelMapper.fromCustomerOrderDtoToCustomerOrder(orderDto);
+        MyOrder myOrder = ModelMapper.fromCustomerOrderDtoToCustomerOrder(orderDto);
         Customer customer = dataBaseValidator.customerDbValidator(orderDto.getCustomerDto());
         Product product = dataBaseValidator.productDbValidator(orderDto.getProductDto());
 
-        order.setCustomer(customer);
-        order.setProduct(product);
+        myOrder.setCustomer(customer);
+        myOrder.setProduct(product);
 
         return ModelMapper.fromCustomerOrderToCustomerOrderDto(orderRepository
-                .saveOrUpdate(order)
-                .orElseThrow(() -> new MyException("CUSTOMER ORDER SERVICE: cannot addOrUpdate() customerOrderDto"))
+                .saveOrUpdate(myOrder)
+                .orElseThrow(() -> new MyException("ORDER SERVICE: cannot addOrUpdate() customerOrderDto"))
         );
     }
 
@@ -58,19 +58,23 @@ public class OrderService
         return orderRepository
                 .findById(id)
                 .map(ModelMapper::fromCustomerOrderToCustomerOrderDto)
-                .orElseThrow(() -> new MyException("CUSTOMER ORDER SERVICE: addOrUpdate() cannot find customer order id: " + id));
+                .orElseThrow(() -> new MyException("ORDER SERVICE: addOrUpdate() cannot find customer order id: " + id));
     }
 
-    // DLACZEGO NIE WIDZI TEJ METODY ???
     public OrderDto findOneByNumber(Integer number)
     {
         return orderRepository
                 .findOneByNumber(number)
                 .map(ModelMapper::fromCustomerOrderToCustomerOrderDto)
-                .orElseThrow(() -> new MyException("CUSTOMER ORDER SERVICE: addOrUpdate() cannot find customer order id: " + number));
+                .orElseThrow(() -> new MyException("ORDER SERVICE: findOneByNumber() : cannot find order number: " + number));
     }
 
-
+    public Integer generateOrderNumber()
+    {
+        return orderRepository
+                .findLastOrderNumber()
+                .orElseThrow(() -> new MyException("ORDER: generateOrderNumber() : ERROR: "));
+    }
 
 
 

@@ -23,10 +23,11 @@ public class MenuPanel
                 System.out.println("3. PRODUCER");
                 System.out.println("4. PRODUCT");
                 System.out.println("5. STOCK");
-                System.out.println("6. CUSTOMER ORDER");
+                System.out.println("6. ORDER");
                 System.out.println("7. CATEGORY");
                 System.out.println("8. COUNTRY");
                 System.out.println("9. TRADE");
+                System.out.println("10. STATISTICS");
                 System.out.println("100. CLOSE PROGRAM");
 
                 int optionMenu = scannerService.getInt("Enter the option");
@@ -221,6 +222,9 @@ public class MenuPanel
                         System.out.println("3. FIND ONE ORDER BY ID");
                         System.out.println("4. DELETE ONE ORDER");
                         System.out.println("5. RETURN TO MAIN MENU");
+                        System.out.println("77. GENERATE ORDER NUMBER");
+                        System.out.println("99. FIND ONE ORDER BY ORDER NUMBER");
+
 
                         int optionOrder = scannerService.getInt("Enter the option for the Order: ");
 
@@ -245,6 +249,9 @@ public class MenuPanel
                                 break;
                             case 99:
                                 menuService.orderOption99();
+                                break;
+                            case 77:
+                                menuService.orderOption77();
                                 break;
                         }
                         break;
@@ -360,6 +367,26 @@ public class MenuPanel
                         }
                         break;
 
+                    case 10:
+                        System.out.println("======================== STATISTICS ========================");
+                        System.out.println("0. MAP");
+
+
+                        int optionStat = scannerService.getInt("Enter the option for the Trade: ");
+
+                        switch (optionStat)
+                        {
+                            case 0:
+                                menuStatistics.mostExpensiveProductFromEachCategory();
+                                break;
+
+                            case 6:
+                                break;
+                        }
+                        break;
+
+
+
                     case 100: // CLOSE PROGRAM
                         System.out.println("CLOSING PROGRAM");
                         scannerService.close();
@@ -368,6 +395,7 @@ public class MenuPanel
                 }
             } catch (MyException e)
             {
+                e.printStackTrace();
                 System.out.println("*************************** EXCEPTION ********************************************");
                 System.err.println(e.getMessage());
                 System.out.println("**********************************************************************************");

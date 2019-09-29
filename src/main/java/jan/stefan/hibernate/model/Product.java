@@ -33,7 +33,7 @@ public class Product
     private Producer producer;
 
     @OneToMany(mappedBy = "product")
-    private Set<Order> orders;
+    private Set<MyOrder> myOrders;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "trade_id")

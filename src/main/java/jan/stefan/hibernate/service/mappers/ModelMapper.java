@@ -153,7 +153,7 @@ public interface ModelMapper
                 .producer(productDto.getProducerDto() == null ? null : fromProducerDtoToProducer(productDto.getProducerDto()))
                 .trade(productDto.getTradeDto() == null ? null : fromTradeDtoToTrade(productDto.getTradeDto()))
                 .guaranteeComponents(productDto.getEGuarantees())
-                .orders(new HashSet<>())
+                .myOrders(new HashSet<>())
                 .stocks(new HashSet<>())
                 .build();
     }
@@ -221,24 +221,24 @@ public interface ModelMapper
         return paymentDto == null ? null : Payment.builder()
                 .id(paymentDto.getId())
                 .payment(paymentDto.getEPayment())
-                .orders(new HashSet<>())
+                .myOrders(new HashSet<>())
                 .build();
     }
 
     // CUSTOMER ORDER --------------------------------------------
-    static OrderDto fromCustomerOrderToCustomerOrderDto(Order order)
+    static OrderDto fromCustomerOrderToCustomerOrderDto(MyOrder myOrder)
     {
-        return order == null ? null : OrderDto.builder()
-                .id(order.getId())
-                .dateTime(order.getDateTime())
-                .discount(order.getDiscount())
-                .quantity(order.getQuantity())
+        return myOrder == null ? null : OrderDto.builder()
+                .id(myOrder.getId())
+                .dateTime(myOrder.getDateTime())
+                .discount(myOrder.getDiscount())
+                .quantity(myOrder.getQuantity())
                 .build();
     }
 
-    static Order fromCustomerOrderDtoToCustomerOrder(OrderDto orderDto)
+    static MyOrder fromCustomerOrderDtoToCustomerOrder(OrderDto orderDto)
     {
-        return orderDto == null ? null : Order.builder()
+        return orderDto == null ? null : MyOrder.builder()
                 .id(orderDto.getId())
                 .dateTime(orderDto.getDateTime())
                 .discount(orderDto.getDiscount())

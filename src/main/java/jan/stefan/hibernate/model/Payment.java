@@ -25,6 +25,6 @@ public class Payment
     private EPayment payment;
 
     @OneToMany(mappedBy = "payment")
-    private Set<Order> orders;
+    private Set<MyOrder> myOrders;
 
 }
