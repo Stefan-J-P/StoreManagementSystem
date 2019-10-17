@@ -16,7 +16,7 @@ public class OrderRepositoryImpl extends AbstractGenericRepository<MyOrder, Long
     {
         if ( number == null )
         {
-            throw new MyException("CUSTOMER REPOSITORY IMPL: findOneByNumber() - NAME ARGUMENT IS NULL");
+            throw new MyException("ORDER REPOSITORY IMPL: findOneByNumber() - NAME ARGUMENT IS NULL");
         }
         EntityManager entityManager = null;
         EntityTransaction tx = null;
@@ -66,11 +66,11 @@ public class OrderRepositoryImpl extends AbstractGenericRepository<MyOrder, Long
             tx = entityManager.getTransaction();
             tx.begin();
             item = entityManager
-                    .createQuery("select orderNumber from MyOrder order by orderNumber desc")
+                    .createQuery("select orderNumber from MyOrder order by orderNumber desc", Integer.class)
                     .getResultList()
                     .stream()
                     .findFirst();
-                    //.orElseThrow(() -> new MyException("ORDER REPOSITORY: findLastOrderNumber() : exception"));
+
             tx.commit();
 
         } catch (Exception e)

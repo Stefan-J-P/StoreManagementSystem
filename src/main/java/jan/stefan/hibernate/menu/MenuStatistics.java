@@ -1,6 +1,8 @@
 package jan.stefan.hibernate.menu;
 
 import jan.stefan.hibernate.dto.modelDto.CategoryDto;
+import jan.stefan.hibernate.dto.modelDto.CountryDto;
+import jan.stefan.hibernate.dto.modelDto.ProducerDto;
 import jan.stefan.hibernate.dto.modelDto.ProductDto;
 import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.model.Category;
@@ -34,7 +36,22 @@ public class MenuStatistics
                         e -> e.getValue(),
                         (v1, v2) -> v1, LinkedHashMap::new
                 ));
-        resMap.forEach((k, v) -> System.out.println(k + " " + v));
+
+        Map<CategoryDto, ProductDto> ultimateMap = resMap
+                .entrySet()
+                .stream()
+                .collect(Collectors.toMap(
+                        e -> e.getKey(),
+                        e -> e.getValue()
+                                .stream()
+                                .max(Comparator.comparing(ProductDto::getPrice))
+                                .orElseThrow(() -> new MyException("MENU STATISTICS: theMostExpensiveProductFromEachCategory"))
+                ));
+
+        System.out.println("=================== ULTIMATE MAP ===========================");
+        ultimateMap.forEach((k, v) -> System.out.println(k + " " + v));
+        System.out.println("==========================================================");
+
     }
 
 
@@ -43,6 +60,37 @@ public class MenuStatistics
     // podanej przez użytkownika i wieku z przedziału określanego przez użytkownika.
     // Produkty powinny być posortowane malejąco według ceny.
     // Informacja zawiera nazwę produktu, cenę produktu, kategorię produktu, nazwę producenta oraz kraj w którym wyprodukowano produkt.
+
+    public void productsByCountry(CountryDto countryDto)
+    {
+        List<ProductDto> products = productService.findAll();
+
+        products
+                .stream()
+                .filter(p -> p.getProducerDto().getCountryDto().equals(countryDto))
+                .forEach(System.out::println);
+
+    }
+
+/*    public List<ProductDto> productsByAge(List<ProducerDto> products, Integer age)
+    {
+
+
+    }*/
+
+/*    public List<Product> allProductsFromCountryWithAgeInRange(CountryDto countryDto, Integer age)
+    {
+        List<ProductDto> products = productService.findAll();
+
+
+
+
+
+
+
+    }*/
+
+
 
     //c. Pobranie z bazy danych listy produktów,
     // które obejmuje gwarancja i które w ramach gwarancji mają zapewnione usługi

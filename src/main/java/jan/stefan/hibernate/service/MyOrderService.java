@@ -1,7 +1,7 @@
 package jan.stefan.hibernate.service;
 
 import jan.stefan.hibernate.dataInDbValidation.DataBaseValidator;
-import jan.stefan.hibernate.dto.modelDto.OrderDto;
+import jan.stefan.hibernate.dto.modelDto.MyOrderDto;
 import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.model.Customer;
 import jan.stefan.hibernate.model.MyOrder;
@@ -14,21 +14,21 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
-public class OrderService
+public class MyOrderService
 {
     private final OrderRepository orderRepository;
     private final DataBaseValidator dataBaseValidator;
 
-    public OrderDto addOrUpdate(OrderDto orderDto)
+    public MyOrderDto addOrUpdate(MyOrderDto myOrderDto)
     {
-        if (orderDto == null)
+        if (myOrderDto == null)
         {
             throw new MyException("ORDER SERVICE: customerOrderDto object argument is null");
         }
 
-        MyOrder myOrder = ModelMapper.fromCustomerOrderDtoToCustomerOrder(orderDto);
-        Customer customer = dataBaseValidator.customerDbValidator(orderDto.getCustomerDto());
-        Product product = dataBaseValidator.productDbValidator(orderDto.getProductDto());
+        MyOrder myOrder = ModelMapper.fromCustomerOrderDtoToCustomerOrder(myOrderDto);
+        Customer customer = dataBaseValidator.customerDbValidator(myOrderDto.getCustomerDto());
+        Product product = dataBaseValidator.productDbValidator(myOrderDto.getProductDto());
 
         myOrder.setCustomer(customer);
         myOrder.setProduct(product);
@@ -39,7 +39,7 @@ public class OrderService
         );
     }
 
-    public List<OrderDto> findAll()
+    public List<MyOrderDto> findAll()
     {
         return orderRepository
                 .findAll()
@@ -53,7 +53,7 @@ public class OrderService
         orderRepository.delete(id);
     }
 
-    public OrderDto findOneById(Long id)
+    public MyOrderDto findOneById(Long id)
     {
         return orderRepository
                 .findById(id)
@@ -61,7 +61,7 @@ public class OrderService
                 .orElseThrow(() -> new MyException("ORDER SERVICE: addOrUpdate() cannot find customer order id: " + id));
     }
 
-    public OrderDto findOneByNumber(Integer number)
+    public MyOrderDto findOneByNumber(Integer number)
     {
         return orderRepository
                 .findOneByNumber(number)

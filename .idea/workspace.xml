@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0f94d96-245b-4a71-87dc-f3088a5b90f4" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,13 +62,21 @@
     </option>
   </component>
   <component name="ProjectId" id="1QHxlE6EEBnQhaEfUzCJwiTXftR" />
+  <component name="ProjectViewState">
+    <option name="abbreviatePackageNames" value="true" />
+    <option name="flattenModules" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../zzz/Interview-30-04-2019" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../29_SpringBasics" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -134,13 +141,10 @@
     </recent_temporary>
   </component>
   <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand />
-          <select />
-        </treeState>
-      </serviceView>
+    <option name="viewStates">
+      <list>
+        <serviceView />
+      </list>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -236,7 +240,14 @@
       <workItem from="1568134474681" duration="1966000" />
       <workItem from="1569345912353" duration="610000" />
       <workItem from="1569599094271" duration="741000" />
-      <workItem from="1569777451400" duration="4710000" />
+      <workItem from="1569777451400" duration="4868000" />
+      <workItem from="1569854872910" duration="6077000" />
+      <workItem from="1569951116330" duration="1573000" />
+      <workItem from="1570471408117" duration="32000" />
+      <workItem from="1571050979037" duration="488000" />
+      <workItem from="1571154331632" duration="655000" />
+      <workItem from="1571323357769" duration="5000" />
+      <workItem from="1571323397040" duration="11209000" />
     </task>
     <servers />
   </component>
@@ -287,6 +298,60 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="717" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1571337080777">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="717" y="322" key="#com.intellij.fileTypes.FileTypeChooser/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1571337080777" />
+    <state x="455" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1569862680041">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="455" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1569862680041" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1571330712885">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1571330712885" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1570471438809">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1570471438809" />
+    <state width="1877" height="409" key="GridCell.Tab.0.bottom" timestamp="1571340650373">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="409" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1571340650373" />
+    <state width="1877" height="409" key="GridCell.Tab.0.center" timestamp="1571340650372">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="409" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1571340650372" />
+    <state width="1877" height="409" key="GridCell.Tab.0.left" timestamp="1571340650372">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="409" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1571340650372" />
+    <state width="1877" height="409" key="GridCell.Tab.0.right" timestamp="1571340650373">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="409" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1571340650373" />
+    <state width="1877" height="409" key="GridCell.Tab.1.bottom" timestamp="1571340650373">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="409" key="GridCell.Tab.1.bottom/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1571340650373" />
+    <state width="1877" height="409" key="GridCell.Tab.1.center" timestamp="1571340650373">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="409" key="GridCell.Tab.1.center/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1571340650373" />
+    <state width="1877" height="409" key="GridCell.Tab.1.left" timestamp="1571340650373">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="409" key="GridCell.Tab.1.left/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1571340650373" />
+    <state width="1877" height="409" key="GridCell.Tab.1.right" timestamp="1571340650373">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="409" key="GridCell.Tab.1.right/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1571340650373" />
+    <state x="859" y="409" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1571324802011">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="859" y="409" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1571324802011" />
   </component>
   <component name="masterDetails">
     <states>

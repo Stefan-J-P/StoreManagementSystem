@@ -2,20 +2,16 @@ package jan.stefan.hibernate.service;
 
 import jan.stefan.hibernate.dataInDbValidation.DataBaseValidator;
 import jan.stefan.hibernate.dto.modelDto.*;
-import jan.stefan.hibernate.dto.newObjectDto.NewProductDto;
 import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.model.Category;
 import jan.stefan.hibernate.model.Producer;
 import jan.stefan.hibernate.model.Product;
 import jan.stefan.hibernate.model.Trade;
-import jan.stefan.hibernate.model.validation.ProductValidation;
 import jan.stefan.hibernate.repository.repositoryInterfaces.ProductRepository;
 import jan.stefan.hibernate.service.mappers.ModelMapper;
 import lombok.RequiredArgsConstructor;
 
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor

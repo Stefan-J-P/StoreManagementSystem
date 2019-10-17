@@ -1,26 +1,16 @@
 package jan.stefan.hibernate;
 
 
-import com.google.gson.internal.bind.util.ISO8601Utils;
-import com.mysql.cj.protocol.a.authentication.MysqlOldPasswordPlugin;
 import jan.stefan.hibernate.connection.DbConnection;
 
 import jan.stefan.hibernate.dataInDbValidation.DataBaseValidator;
-import jan.stefan.hibernate.dto.modelDto.CategoryDto;
-import jan.stefan.hibernate.dto.modelDto.OrderDto;
-import jan.stefan.hibernate.dto.modelDto.ProducerDto;
-import jan.stefan.hibernate.dto.modelDto.ProductDto;
 import jan.stefan.hibernate.menu.MenuPanel;
 import jan.stefan.hibernate.menu.MenuService;
 import jan.stefan.hibernate.menu.MenuStatistics;
-import jan.stefan.hibernate.model.MyOrder;
 import jan.stefan.hibernate.model.validation.*;
 import jan.stefan.hibernate.repository.implementation.*;
 import jan.stefan.hibernate.service.*;
-
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import jan.stefan.hibernate.service.dataGenerator.DataManager;
 
 public class App
 {
@@ -57,7 +47,7 @@ public class App
 
         var categoryService = new CategoryService(categoryRepository);
         var countryService = new CountryService(countryRepository);
-        var customerOrderService = new OrderService(customerOrderRepository, dataBaseValidation);
+        var customerOrderService = new MyOrderService(customerOrderRepository, dataBaseValidation);
 
         var myErrorService = new MyErrorService(myErrorRepository);
         var paymentService = new PaymentService(paymentRepository);
@@ -71,6 +61,7 @@ public class App
         var productService = new ProductService(productRepository, dataBaseValidation);
 
         var menuStatistics = new MenuStatistics(productService);
+        var dataManager = new DataManager();
         var menuService = new MenuService(
                 scannerService,
                 myErrorService,
@@ -97,8 +88,8 @@ public class App
         new MenuPanel(
                 scannerService,
                 menuService,
-                menuStatistics
-
+                menuStatistics,
+                dataManager
         ).mainMenu();
 
 

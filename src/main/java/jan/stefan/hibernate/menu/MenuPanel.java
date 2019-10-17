@@ -1,8 +1,12 @@
 package jan.stefan.hibernate.menu;
 
+import jan.stefan.hibernate.dto.modelDto.CountryDto;
 import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.service.ScannerService;
+import jan.stefan.hibernate.service.dataGenerator.DataManager;
 import lombok.RequiredArgsConstructor;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 public class MenuPanel
@@ -10,6 +14,7 @@ public class MenuPanel
     private final ScannerService scannerService;
     private final MenuService menuService;
     private final MenuStatistics menuStatistics;
+    private final DataManager dataManager;
 
     public void mainMenu()
     {
@@ -28,6 +33,7 @@ public class MenuPanel
                 System.out.println("8. COUNTRY");
                 System.out.println("9. TRADE");
                 System.out.println("10. STATISTICS");
+                System.out.println("11. DATA GENERATING");
                 System.out.println("100. CLOSE PROGRAM");
 
                 int optionMenu = scannerService.getInt("Enter the option");
@@ -380,11 +386,37 @@ public class MenuPanel
                                 menuStatistics.mostExpensiveProductFromEachCategory();
                                 break;
 
+                            case 1:
+                                //menuStatistics.allProductsFromCountryWithAgeInRange();
+                                menuStatistics.productsByCountry(CountryDto.builder().name("POLAND").build());
+                                break;
+
                             case 6:
                                 break;
                         }
                         break;
 
+                    case 11:
+                        System.out.println("======================== DATA GENERATOR ========================");
+                        System.out.println("0. GENERATE");
+
+                        int optionGenerate = scannerService.getInt("Enter the option for the generator: ");
+
+                        switch (optionGenerate)
+                        {
+                            case 0:
+                                List<String> names = dataManager.readFile("surnames.txt");
+                                //names.forEach(System.out::println);
+                                String str = dataManager.generateCustomerName(names);
+                                System.out.println(str);
+
+
+                                break;
+
+                            case 99:
+                                break;
+                        }
+                        break;
 
 
                     case 100: // CLOSE PROGRAM
@@ -403,3 +435,16 @@ public class MenuPanel
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

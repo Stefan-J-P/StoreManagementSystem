@@ -1,7 +1,6 @@
 package jan.stefan.hibernate.service.mappers;
 
 import jan.stefan.hibernate.dto.modelDto.*;
-import jan.stefan.hibernate.dto.newObjectDto.NewProductDto;
 import jan.stefan.hibernate.model.*;
 import jan.stefan.hibernate.model.MyError;
 
@@ -158,29 +157,29 @@ public interface ModelMapper
                 .build();
     }
 
-    static ProductDto fromNewProductDtoToProductDto(NewProductDto newProductDto)
+    static ProductDto fromNewProductDtoToProductDto(ProductDto ProductDto)
     {
-        return newProductDto == null ? null : ProductDto.builder()
-                .id(newProductDto.getId())
-                .name(newProductDto.getName())
-                .price(newProductDto.getPrice())
-                .categoryDto(newProductDto.getCategoryDto())
-                .producerDto(newProductDto.getProducerDto())
-                .tradeDto(newProductDto.getTradeDto())
-                .eGuarantees(newProductDto.getEGuarantees())
+        return ProductDto == null ? null : ProductDto.builder()
+                .id(ProductDto.getId())
+                .name(ProductDto.getName())
+                .price(ProductDto.getPrice())
+                .categoryDto(ProductDto.getCategoryDto())
+                .producerDto(ProductDto.getProducerDto())
+                .tradeDto(ProductDto.getTradeDto())
+                .eGuarantees(ProductDto.getEGuarantees())
                 .build();
     }
 
-    static Product fromNewProductDtoToProduct(NewProductDto newProductDto)
+    static Product fromNewProductDtoToProduct(ProductDto ProductDto)
     {
-        return newProductDto == null ? null : Product.builder()
-                .id(newProductDto.getId())
-                .name(newProductDto.getName())
-                .price(newProductDto.getPrice())
-                .category(newProductDto.getCategoryDto() == null ? null : fromCategoryDtoToCategory(newProductDto.getCategoryDto()))
-                .producer(newProductDto.getProducerDto() == null ? null : fromProducerDtoToProducer(newProductDto.getProducerDto()))
-                .trade(newProductDto.getTradeDto() == null ? null : fromTradeDtoToTrade(newProductDto.getTradeDto()))
-                .guaranteeComponents(newProductDto.getEGuarantees())
+        return ProductDto == null ? null : Product.builder()
+                .id(ProductDto.getId())
+                .name(ProductDto.getName())
+                .price(ProductDto.getPrice())
+                .category(ProductDto.getCategoryDto() == null ? null : fromCategoryDtoToCategory(ProductDto.getCategoryDto()))
+                .producer(ProductDto.getProducerDto() == null ? null : fromProducerDtoToProducer(ProductDto.getProducerDto()))
+                .trade(ProductDto.getTradeDto() == null ? null : fromTradeDtoToTrade(ProductDto.getTradeDto()))
+                .guaranteeComponents(ProductDto.getEGuarantees())
                 .build();
     }
 
@@ -226,9 +225,9 @@ public interface ModelMapper
     }
 
     // CUSTOMER ORDER --------------------------------------------
-    static OrderDto fromCustomerOrderToCustomerOrderDto(MyOrder myOrder)
+    static MyOrderDto fromCustomerOrderToCustomerOrderDto(MyOrder myOrder)
     {
-        return myOrder == null ? null : OrderDto.builder()
+        return myOrder == null ? null : MyOrderDto.builder()
                 .id(myOrder.getId())
                 .dateTime(myOrder.getDateTime())
                 .discount(myOrder.getDiscount())
@@ -236,16 +235,16 @@ public interface ModelMapper
                 .build();
     }
 
-    static MyOrder fromCustomerOrderDtoToCustomerOrder(OrderDto orderDto)
+    static MyOrder fromCustomerOrderDtoToCustomerOrder(MyOrderDto myOrderDto)
     {
-        return orderDto == null ? null : MyOrder.builder()
-                .id(orderDto.getId())
-                .dateTime(orderDto.getDateTime())
-                .discount(orderDto.getDiscount())
-                .quantity(orderDto.getQuantity())
-                .customer(orderDto.getCustomerDto() == null ? null : fromCustomerDtoToCustomer(orderDto.getCustomerDto()))
-                .product(orderDto.getProductDto() == null ? null : fromProductDtoToProduct(orderDto.getProductDto()))
-                .payment(orderDto.getPaymentDto() == null ? null : fromPaymentDtoToPayment(orderDto.getPaymentDto()))
+        return myOrderDto == null ? null : MyOrder.builder()
+                .id(myOrderDto.getId())
+                .dateTime(myOrderDto.getDateTime())
+                .discount(myOrderDto.getDiscount())
+                .quantity(myOrderDto.getQuantity())
+                .customer(myOrderDto.getCustomerDto() == null ? null : fromCustomerDtoToCustomer(myOrderDto.getCustomerDto()))
+                .product(myOrderDto.getProductDto() == null ? null : fromProductDtoToProduct(myOrderDto.getProductDto()))
+                .payment(myOrderDto.getPaymentDto() == null ? null : fromPaymentDtoToPayment(myOrderDto.getPaymentDto()))
                 .build();
     }
 

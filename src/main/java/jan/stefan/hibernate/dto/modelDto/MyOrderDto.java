@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class OrderDto
+public class MyOrderDto
 {
     private Long id;
     private LocalDateTime dateTime;

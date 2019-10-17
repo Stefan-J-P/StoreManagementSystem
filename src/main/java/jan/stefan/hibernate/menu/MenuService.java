@@ -3,7 +3,6 @@ package jan.stefan.hibernate.menu;
 import jan.stefan.hibernate.dto.modelDto.*;
 import jan.stefan.hibernate.model.validation.*;
 import jan.stefan.hibernate.service.*;
-import jdk.swing.interop.SwingInterOpUtils;
 import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;
@@ -33,7 +32,7 @@ public class MenuService
     private final ProducerService producerService;
     private final ProductService productService;
     private final StockService stockService;
-    private final OrderService orderService;
+    private final MyOrderService myOrderService;
     private final CategoryService categoryService;
     private final CountryService countryService;
     private final TradeService tradeService;
@@ -483,24 +482,24 @@ public class MenuService
     @SuppressWarnings("Duplicates")
     void orderOption1()
     {
-        OrderDto orderDto = new OrderDto();
-        orderDto.setCustomerDto(CustomerDto.builder()
+        MyOrderDto myOrderDto = new MyOrderDto();
+        myOrderDto.setCustomerDto(CustomerDto.builder()
                 .name(scannerService.getString("Enter the customer's name: "))
                 .surname(scannerService.getString("Enter the customer's surname: "))
                 .email(scannerService.getString("Enter the customers Email: "))
                 .countryDto(CountryDto.builder().name(scannerService.getString("Enter the name of the customer's Country: ")).build())
                 .build());
-        orderDto.setDateTime(LocalDateTime.now());
-        orderDto.setDiscount(scannerService.getBigDecimal("Enter the value of the discount: "));
-        orderDto.setProductDto(ProductDto.builder()
+        myOrderDto.setDateTime(LocalDateTime.now());
+        myOrderDto.setDiscount(scannerService.getBigDecimal("Enter the value of the discount: "));
+        myOrderDto.setProductDto(ProductDto.builder()
                 .name(scannerService.getString("Enter the name of the Product: "))
                 .categoryDto(CategoryDto.builder().name(scannerService.getString("Enter the name of the Category: ")).build())
                 .build());
-        orderDto.setQuantity(scannerService.getInt("Enter the number of the products: "));
+        myOrderDto.setQuantity(scannerService.getInt("Enter the number of the products: "));
         //orderDto.setPaymentDto(PaymentDto.builder().ePayment(scannerService.getEpayment()).build());
 
 
-        Map<String, String> orderErrors = orderValidation.validate(orderDto);
+        Map<String, String> orderErrors = orderValidation.validate(myOrderDto);
 
         if (orderValidation.hasErrors())
         {
@@ -510,48 +509,48 @@ public class MenuService
                     .dateTime(LocalDateTime.now())
                     .build());
         }
-        orderService.addOrUpdate(orderDto);
+        myOrderService.addOrUpdate(myOrderDto);
 
     }
 
     void orderOption2()
     {
-        List<OrderDto> orderDtos = orderService.findAll();
-        if (orderDtos.isEmpty())
+        List<MyOrderDto> myOrderDtos = myOrderService.findAll();
+        if (myOrderDtos.isEmpty())
         {
             System.out.println("YOUR LIST IS EMPTY");
         }
-        orderDtos.forEach(System.out::println);
-        System.out.println("YOU HAVE RIGHT NOW: " + orderDtos.size() + " ORDERS");
+        myOrderDtos.forEach(System.out::println);
+        System.out.println("YOU HAVE RIGHT NOW: " + myOrderDtos.size() + " ORDERS");
     }
 
     void orderOption3()
     {
         Long id = scannerService.getLong("Enter the Order ID: ");
-        OrderDto orderDto = orderService.findOneById(id);
-        if (orderDto == null)
+        MyOrderDto myOrderDto = myOrderService.findOneById(id);
+        if (myOrderDto == null)
         {
             System.out.println("YOUR ORDER IS NULL");
             return;
         }
-        System.out.println(orderDto);
+        System.out.println(myOrderDto);
     }
     void orderOption4()
     {
         Long id = scannerService.getLong("Enter the Customer's ID: ");
-        orderService.delete(id);
+        myOrderService.delete(id);
     }
 
     void orderOption99()
     {
         Integer orderNumber = scannerService.getInt("Enter order Number: ");
-        OrderDto orderDto = orderService.findOneByNumber(orderNumber);
-        System.out.println(orderDto);
+        MyOrderDto myOrderDto = myOrderService.findOneByNumber(orderNumber);
+        System.out.println(myOrderDto);
     }
 
     void orderOption77()
     {
-        Integer res = orderService.generateOrderNumber();
+        Integer res = myOrderService.generateOrderNumber();
 
         System.out.println("ORDER NUMBER = " + res);
     }
