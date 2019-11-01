@@ -1,12 +1,18 @@
 package jan.stefan.hibernate.menu;
 
+import jan.stefan.hibernate.dataInDbValidation.DataBaseValidator;
 import jan.stefan.hibernate.dto.modelDto.CountryDto;
+import jan.stefan.hibernate.dto.modelDto.CustomerDto;
 import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.service.ScannerService;
+import jan.stefan.hibernate.service.dataGenerator.CustomerDataManager;
 import jan.stefan.hibernate.service.dataGenerator.DataManager;
 import lombok.RequiredArgsConstructor;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 public class MenuPanel
@@ -15,6 +21,8 @@ public class MenuPanel
     private final MenuService menuService;
     private final MenuStatistics menuStatistics;
     private final DataManager dataManager;
+    private final CustomerDataManager customerDataManager;
+    private final DataBaseValidator dataBaseValidator;
 
     public void mainMenu()
     {
@@ -34,6 +42,7 @@ public class MenuPanel
                 System.out.println("9. TRADE");
                 System.out.println("10. STATISTICS");
                 System.out.println("11. DATA GENERATING");
+                System.out.println("12. TEST");
                 System.out.println("100. CLOSE PROGRAM");
 
                 int optionMenu = scannerService.getInt("Enter the option");
@@ -398,7 +407,11 @@ public class MenuPanel
 
                     case 11:
                         System.out.println("======================== DATA GENERATOR ========================");
-                        System.out.println("0. GENERATE");
+                        System.out.println("0. READ NAMES FROM TEXT FILE");
+                        System.out.println("1. GENERATE RANDOM DISCOUNT");
+                        System.out.println("2. GENERATE ONE CUSTOMER");
+                        System.out.println("3. GENERATE MANY CUSTOMERS");
+                        System.out.println("4. GENERATE MANY CUSTOMERS AND ADD THEM TO DATA BASE");
 
                         int optionGenerate = scannerService.getInt("Enter the option for the generator: ");
 
@@ -406,14 +419,64 @@ public class MenuPanel
                         {
                             case 0:
                                 List<String> names = dataManager.readFile("surnames.txt");
-                                //names.forEach(System.out::println);
-                                String str = dataManager.generateCustomerName(names);
+                                String str = dataManager.generateRandomStringFromList(names);
                                 System.out.println(str);
-
-
                                 break;
 
+                            case 1:
+                                BigDecimal discount = dataManager.generateRandomDiscount();
+                                System.out.println("------- DISCOUNT --------");
+                                System.out.println("DISCOUNT = " + discount.toPlainString());
+                                BigDecimal price = dataManager.generateRandomPrice();
+                                System.out.println("--------- PRICE ----------");
+                                System.out.println("PRICE = " + price.toPlainString());
+                                break;
+
+                            case 2:
+                                CustomerDto result = customerDataManager.generateOneCustomer("names.txt.", "surnames.txt", "countries.txt");
+                                System.out.println(result);
+
+                            case 3:
+                                Set<CustomerDto> customerDtos = customerDataManager.generateManyCustomers("names.txt.", "surnames.txt", "countries.txt");
+                                customerDtos.forEach(System.out::println);
+
+                            case 4:
+                                Set<CustomerDto> myCustomers = customerDataManager.generateManyCustomers("names.txt.", "surnames.txt", "countries.txt");
+                                List<CustomerDto> customers = myCustomers.stream().collect(Collectors.toList());
+
+                                for (int i = 0; i < customers.size(); ++i)
+                                {
+                                    if (!dataBaseValidator.nameValidate(customers.get(i).getEmail()))
+                                    {
+                                        menuService.customerOption6(customers.get(i));
+                                    }
+                                }
+
                             case 99:
+                                break;
+                        }
+                        break;
+
+                    case 12:
+                        System.out.println("======================== TEST ========================");
+                        System.out.println("1. EMAIL");
+                        System.out.println("2. NAME");
+                        System.out.println("3. SURNAME");
+                        int optionTest = scannerService.getInt("Enter the option for test: ");
+
+                        switch (optionTest)
+                        {
+                            case 1:
+                                String email = scannerService.getString("Enter email: ");
+                                dataManager.emailTest(email);
+                                break;
+                            case 2:
+                                String name = scannerService.getString("Enter the name");
+                                dataManager.nameTest(name);
+                                break;
+                            case 3:
+                                String surname = scannerService.getString("Enter the surname");
+                                dataManager.surnameTest(surname);
                                 break;
                         }
                         break;

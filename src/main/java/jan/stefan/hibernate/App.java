@@ -4,12 +4,14 @@ package jan.stefan.hibernate;
 import jan.stefan.hibernate.connection.DbConnection;
 
 import jan.stefan.hibernate.dataInDbValidation.DataBaseValidator;
+import jan.stefan.hibernate.dto.modelDto.CustomerDto;
 import jan.stefan.hibernate.menu.MenuPanel;
 import jan.stefan.hibernate.menu.MenuService;
 import jan.stefan.hibernate.menu.MenuStatistics;
 import jan.stefan.hibernate.model.validation.*;
 import jan.stefan.hibernate.repository.implementation.*;
 import jan.stefan.hibernate.service.*;
+import jan.stefan.hibernate.service.dataGenerator.CustomerDataManager;
 import jan.stefan.hibernate.service.dataGenerator.DataManager;
 
 public class App
@@ -51,6 +53,7 @@ public class App
 
         var myErrorService = new MyErrorService(myErrorRepository);
         var paymentService = new PaymentService(paymentRepository);
+        var customerDto = new CustomerDto();
 
         var stockService = new StockService(stockRepository, dataBaseValidation);
         var tradeService = new TradeService(tradeRepository);
@@ -60,8 +63,10 @@ public class App
         var producerService = new ProducerService(producerRepository, dataBaseValidation);
         var productService = new ProductService(productRepository, dataBaseValidation);
 
+        var dataBaseValidator = new DataBaseValidator(categoryRepository, countryRepository, customerRepository, producerRepository, productRepository, shopRepository, tradeRepository);
         var menuStatistics = new MenuStatistics(productService);
-        var dataManager = new DataManager();
+        var dataManager = new DataManager(customerDto, customerService, dataBaseValidation);
+        var customerDataManager = new CustomerDataManager(dataBaseValidation, dataManager, customerService);
         var menuService = new MenuService(
                 scannerService,
                 myErrorService,
@@ -89,7 +94,9 @@ public class App
                 scannerService,
                 menuService,
                 menuStatistics,
-                dataManager
+                dataManager,
+                customerDataManager,
+                dataBaseValidator
         ).mainMenu();
 
 

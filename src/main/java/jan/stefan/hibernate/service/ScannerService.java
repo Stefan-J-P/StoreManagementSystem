@@ -124,7 +124,7 @@ public class ScannerService
     }
 
 
-/*    public BigDecimal generateDiscount()
+ /*   public BigDecimal generateDiscount()
     {
         try
         {
@@ -132,8 +132,6 @@ public class ScannerService
             BigDecimal max = new BigDecimal(0.5);
             BigDecimal rnd = min.add(new BigDecimal(Math.random()).multiply(max.subtract(min)));
 
-            //return rnd.setScale(2, BigDecimal.ROUND_HALF_UP);
-            //return rnd.setScale(2, 2);
             return  rnd;
         } catch (Exception e)
         {

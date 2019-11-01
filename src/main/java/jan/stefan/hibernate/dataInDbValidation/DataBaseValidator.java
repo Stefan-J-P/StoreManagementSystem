@@ -5,11 +5,14 @@ import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.model.*;
 import jan.stefan.hibernate.repository.repositoryInterfaces.*;
 import jan.stefan.hibernate.service.CustomerService;
+import jan.stefan.hibernate.service.dataGenerator.DataManager;
 import jan.stefan.hibernate.service.mappers.ModelMapper;
 import lombok.RequiredArgsConstructor;
 
+import java.util.Optional;
+
 @RequiredArgsConstructor
-public class DataBaseValidator
+public class DataBaseValidator implements stringValidator
 {
     private final CategoryRepository categoryRepository;
     private final CountryRepository countryRepository;
@@ -18,7 +21,6 @@ public class DataBaseValidator
     private final ProductRepository productRepository;
     private final ShopRepository shopRepository;
     private final TradeRepository tradeRepository;
-    //private final CustomerService customerService;
 
     @SuppressWarnings("Duplicates")
     public Category categoryDbValidator(CategoryDto categoryDto)
@@ -220,14 +222,41 @@ public class DataBaseValidator
     }
 
 
+    @Override
+    public boolean emailValidate(String str)
+    {
+        Optional<Customer> customer = customerRepository.findOneByEmail(str);
+        Customer c1 = new Customer();
+        if (customer.isPresent())
+        {
+            c1 = customer.get();
+        }
+        return str.equals(c1.getEmail());
+    }
 
+    @Override
+    public boolean nameValidate(String str)
+    {
+        Optional<Customer> customer = customerRepository.findOneByName(str);
+        Customer c1 = new Customer();
+        if (customer.isPresent())
+        {
+            c1 = customer.get();
+        }
+        return str.equals(c1.getName());
+    }
 
-
-
-
-
-
-
+    @Override
+    public boolean surnameValidate(String str)
+    {
+        Optional<Customer> customer = customerRepository.findOneBySurname(str);
+        Customer c1 = new Customer();
+        if (customer.isPresent())
+        {
+            c1 = customer.get();
+        }
+        return str.equals(c1.getSurname());
+    }
 }
 
 

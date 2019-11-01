@@ -139,6 +139,11 @@ public class MenuService
         customerService.delete(id);
     }
 
+    void customerOption6(CustomerDto customerDto)
+    {
+        customerService.addOrUpdate(customerDto);
+    }
+
     //========================================================================================================================================================
     // SHOP METHODS -------------------------------------------
     @SuppressWarnings("Duplicates")
