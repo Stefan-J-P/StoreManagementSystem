@@ -5,152 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0f94d96-245b-4a71-87dc-f3088a5b90f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/modelDto/statModelDto/ProductByCustomersCountryDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/jan/stefan/hibernate/MyOrderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4ca591b9-3004-4255-8043-a4d11aede05d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4ca591b9-3004-4255-8043-a4d11aede05d.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/producersMachines.txt" beforeDir="false" afterPath="$PROJECT_DIR$/producersMachines.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/modelDto/CustomerDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/modelDto/CustomerDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/modelDto/MyOrderDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/modelDto/MyOrderDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuStatistics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/enums/EGuarantee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/enums/EGuarantee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/enums/EPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/enums/EPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/generic/AbstractGenericRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/generic/AbstractGenericRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/OrderRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/OrderRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/JsonConverter/CustomerJsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/JsonConverter/CustomerJsonConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/MyOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/MyOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/dataGenerator/CustomerDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/dataGenerator/CustomerDataManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/mappers/ModelMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/mappers/ModelMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/jan/stefan/hibernate/CustomerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/jan/stefan/hibernate/CustomerServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/StoreManagementSystem.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/connection/DbConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/connection/DbConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dataInDbValidation/DataBaseValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dataInDbValidation/DataBaseValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dataInDbValidation/stringValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dataInDbValidation/stringValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/CategoryDto$CategoryDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/CategoryDto$CategoryDtoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/CategoryDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/CategoryDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/CountryDto$CountryDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/CountryDto$CountryDtoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/CountryDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/CountryDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/CustomerDto$CustomerDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/CustomerDto$CustomerDtoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/CustomerDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/CustomerDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/MyErrorDto$MyErrorDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/MyErrorDto$MyErrorDtoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/MyErrorDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/MyErrorDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/MyOrderDto$MyOrderDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/MyOrderDto$MyOrderDtoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/MyOrderDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/MyOrderDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/PaymentDto$PaymentDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/PaymentDto$PaymentDtoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/PaymentDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/PaymentDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/ProducerDto$ProducerDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/ProducerDto$ProducerDtoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/ProducerDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/ProducerDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/ProductDto$ProductDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/ProductDto$ProductDtoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/ProductDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/ProductDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/ShopDto$ShopDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/ShopDto$ShopDtoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/ShopDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/ShopDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/StockDto$StockDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/StockDto$StockDtoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/StockDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/StockDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/TradeDto$TradeDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/TradeDto$TradeDtoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/TradeDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/dto/modelDto/TradeDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/exceptions/MyException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/exceptions/MyException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/menu/MenuPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/menu/MenuPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/menu/MenuService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/menu/MenuService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/menu/MenuStatistics.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/menu/MenuStatistics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Category$CategoryBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Category$CategoryBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Category.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Country$CountryBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Country$CountryBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Country.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Country.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Customer$CustomerBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Customer$CustomerBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/MyError$MyErrorBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/MyError$MyErrorBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/MyError.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/MyError.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/MyOrder$MyOrderBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/MyOrder$MyOrderBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/MyOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/MyOrder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Payment$PaymentBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Payment$PaymentBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Payment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Payment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Producer$ProducerBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Producer$ProducerBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Producer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Producer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Product$ProductBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Product$ProductBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Shop$ShopBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Shop$ShopBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Shop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Shop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Stock$StockBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Stock$StockBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Stock.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Stock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Trade$TradeBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Trade$TradeBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Trade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/Trade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/enums/EGuarantee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/enums/EGuarantee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/enums/EPayment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/enums/EPayment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/CategoryValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/CategoryValidation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/CountryValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/CountryValidation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/CustomerValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/CustomerValidation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/OrderValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/OrderValidation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/PaymentValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/PaymentValidation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/ProducerValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/ProducerValidation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/ProductValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/ProductValidation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/ShopValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/ShopValidation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/StockValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/StockValidation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/TradeValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/TradeValidation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/generic/AbstractValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/generic/AbstractValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/generic/Validator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/model/validation/generic/Validator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/generic/AbstractGenericRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/generic/AbstractGenericRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/generic/GenericRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/generic/GenericRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/CategoryRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/CategoryRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/CountryRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/CountryRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/CustomerRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/CustomerRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/MyErrorRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/MyErrorRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/OrderRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/OrderRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/PaymentRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/PaymentRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/ProducerRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/ProducerRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/ProductRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/ProductRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/ShopRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/ShopRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/StockRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/StockRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/TradeRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/implementation/TradeRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/CategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/CategoryRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/CountryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/CountryRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/CustomerRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/MyErrorRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/MyErrorRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/OrderRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/OrderRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/PaymentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/PaymentRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/ProducerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/ProducerRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/ProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/ProductRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/ShopRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/ShopRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/StockRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/StockRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/TradeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/repository/repositoryInterfaces/TradeRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/CategoryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/CountryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/CountryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/CustomerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/DataGenerationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/DataGenerationService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/JsonConverter/CustomerJsonConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/JsonConverter/CustomerJsonConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/JsonConverter/JsonConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/JsonConverter/JsonConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/MyErrorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/MyErrorService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/MyOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/MyOrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/PaymentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/PaymentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/ProducerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/ProducerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/ScannerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/ScannerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/ShopService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/ShopService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/StockService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/StockService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/TradeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/TradeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/dataGenerator/CustomerDataManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/dataGenerator/CustomerDataManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/dataGenerator/DataManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/dataGenerator/DataManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/mappers/ModelMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/jan/stefan/hibernate/service/mappers/ModelMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/jan/stefan/hibernate/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/jan/stefan/hibernate/AppTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/jan/stefan/hibernate/CustomerServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/jan/stefan/hibernate/CustomerServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_/media/stef/MyData/PROGRAMOWANIE/stef-projects/java-spring-projects/StoreManagementSystem" value="1QHxlE6EEBnQhaEfUzCJwiTXftR" />
+    </persistenceIdMap>
+  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="169" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -176,6 +49,10 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -187,31 +64,39 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/PROGRAMOWANIE/km-programs/java/java-basics/22_Hibernate&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.40344828&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/PROGRAMOWANIE/km-programs/java/java-basics/22_Hibernate",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Facets",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.40344828",
+    "settings.editor.selected.configurable": "preferences.editor",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\PROGRAMOWANIE\Java\StoreManagementSystem\src" />
@@ -307,8 +192,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
       </set>
     </attachedChunks>
   </component>
@@ -503,6 +388,7 @@
       <workItem from="1732223415862" duration="99000" />
       <workItem from="1740151683052" duration="178000" />
       <workItem from="1741942071212" duration="3011000" />
+      <workItem from="1781006826699" duration="986000" />
     </task>
     <servers />
   </component>
@@ -528,5 +414,9 @@
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
