@@ -18,6 +18,7 @@ public class MyOrderDto
     private LocalDateTime dateTime;
     private Integer quantity;
     private BigDecimal discount;
+    private Integer orderNumber;
 
     private CustomerDto customerDto;
     private ProductDto productDto;

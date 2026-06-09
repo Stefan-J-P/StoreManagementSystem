@@ -30,6 +30,7 @@ public class App
         var stockValidation = new StockValidation();
         var tradeValidation = new TradeValidation();
 
+
         var categoryRepository = new CategoryRepositoryImpl();
         var countryRepository = new CountryRepositoryImpl();
         var customerOrderRepository = new OrderRepositoryImpl();
@@ -44,6 +45,7 @@ public class App
 
         var stockRepository = new StockRepositoryImpl();
         var tradeRepository = new TradeRepositoryImpl();
+        var orderRepository = new OrderRepositoryImpl();
 
         var dataBaseValidation = new DataBaseValidator(categoryRepository, countryRepository, customerRepository, producerRepository, productRepository, shopRepository, tradeRepository);
 
@@ -58,13 +60,15 @@ public class App
         var stockService = new StockService(stockRepository, dataBaseValidation);
         var tradeService = new TradeService(tradeRepository);
 
+
         var customerService = new CustomerService(customerRepository, dataBaseValidation);
         var shopService = new ShopService(shopRepository, dataBaseValidation);
         var producerService = new ProducerService(producerRepository, dataBaseValidation);
         var productService = new ProductService(productRepository, dataBaseValidation);
 
         var dataBaseValidator = new DataBaseValidator(categoryRepository, countryRepository, customerRepository, producerRepository, productRepository, shopRepository, tradeRepository);
-        var menuStatistics = new MenuStatistics(productService);
+        var myOrderService = new MyOrderService(orderRepository,dataBaseValidator);
+        var menuStatistics = new MenuStatistics(productService, myOrderService, countryService, customerService);
         var dataManager = new DataManager(customerDto, customerService, dataBaseValidation);
         var customerDataManager = new CustomerDataManager(dataBaseValidation, dataManager, customerService);
         var menuService = new MenuService(

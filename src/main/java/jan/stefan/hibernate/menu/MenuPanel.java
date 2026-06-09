@@ -1,16 +1,25 @@
 package jan.stefan.hibernate.menu;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import jan.stefan.hibernate.dataInDbValidation.DataBaseValidator;
+import jan.stefan.hibernate.dto.modelDto.CategoryDto;
 import jan.stefan.hibernate.dto.modelDto.CountryDto;
 import jan.stefan.hibernate.dto.modelDto.CustomerDto;
+import jan.stefan.hibernate.dto.modelDto.TradeDto;
 import jan.stefan.hibernate.exceptions.MyException;
+import jan.stefan.hibernate.model.Customer;
+import jan.stefan.hibernate.service.JsonConverter.CustomerJsonConverter;
+import jan.stefan.hibernate.service.JsonConverter.CustomerListJson;
 import jan.stefan.hibernate.service.ScannerService;
 import jan.stefan.hibernate.service.dataGenerator.CustomerDataManager;
 import jan.stefan.hibernate.service.dataGenerator.DataManager;
+import jan.stefan.hibernate.service.mappers.ModelMapper;
 import lombok.RequiredArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -397,7 +406,7 @@ public class MenuPanel
 
                             case 1:
                                 //menuStatistics.allProductsFromCountryWithAgeInRange();
-                                menuStatistics.productsByCountry(CountryDto.builder().name("POLAND").build());
+                                //menuStatistics.productsByCountry(CountryDto.builder().name("POLAND").build());
                                 break;
 
                             case 6:
@@ -412,6 +421,9 @@ public class MenuPanel
                         System.out.println("2. GENERATE ONE CUSTOMER");
                         System.out.println("3. GENERATE MANY CUSTOMERS");
                         System.out.println("4. GENERATE MANY CUSTOMERS AND ADD THEM TO DATA BASE");
+                        System.out.println("5. GENERATE JSON FILE WITH CUSTOMERS");
+                        System.out.println("6. GENERATE CATEGORIES");
+                        System.out.println("7. GENERATE TRADES");
 
                         int optionGenerate = scannerService.getInt("Enter the option for the generator: ");
 
@@ -450,6 +462,34 @@ public class MenuPanel
                                     {
                                         menuService.customerOption6(customers.get(i));
                                     }
+                                }
+                            case 5:
+                                Set<CustomerDto> generatedCustomers = customerDataManager.generateManyCustomers("names.txt.", "surnames.txt", "countries.txt");
+                                List<CustomerDto> customersList = generatedCustomers.stream().collect(Collectors.toList());
+
+                                String json = new Gson().toJson(customersList);
+                                final String jSonFilename = "customers.json";
+                                CustomerListJson customerListJson = new CustomerListJson(jSonFilename);
+                                customerListJson.toJson(customersList);
+
+                            case 6: // GENERATE CATEGORIES (read them from text file)
+                                List<String> categories = dataManager.readFile("category.txt");
+                                CategoryDto categoryDto = new CategoryDto();
+                                //categories.forEach(System.out::println);
+                                for (int i = 0; i < categories.size(); ++i)
+                                {
+                                    categoryDto.setName(categories.get(i));
+                                    menuService.categoryOptionAdd(categoryDto);
+                                }
+
+                            case 7: // GENERATE TRADE (read them from text file)
+                                List<String> trades = dataManager.readFile("category.txt");
+                                TradeDto tradeDto = new TradeDto();
+                                //categories.forEach(System.out::println);
+                                for (int i = 0; i < trades.size(); ++i)
+                                {
+                                    tradeDto.setName(trades.get(i));
+                                    menuService.tradeOptionAdd(tradeDto);
                                 }
 
                             case 99:

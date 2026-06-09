@@ -1,6 +1,11 @@
 package jan.stefan.hibernate.model;
+import jan.stefan.hibernate.dto.modelDto.CustomerDto;
+import jan.stefan.hibernate.service.JsonConverter.CustomerJsonConverter;
 import lombok.*;
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Data
@@ -27,6 +32,5 @@ public class Customer
 
     @OneToMany(mappedBy = "customer")
     private Set<MyOrder> myOrders;
-
 
 }

@@ -16,6 +16,8 @@ public class CustomerDataManager
     private final DataManager dataManager;
     private final CustomerService customerService;
 
+    // GENERATOR JSON
+    // http://jsongen.pykaso.net/
     public void addEmptyCustomerToDataBase()
     {
         customerService.addOrUpdate(CustomerDto.builder().build());
@@ -75,7 +77,7 @@ public class CustomerDataManager
     public Set<CustomerDto> generateManyCustomers(String namesFile, String surnamesFile, String countryFile)
     {
         //List<CustomerDto> customers = new ArrayList<>();
-        CustomerDto customer = new CustomerDto();
+        CustomerDto customer;
         Set<CustomerDto> customers = new HashSet<>();
 
         for (int i = 0; i < 100; ++i)

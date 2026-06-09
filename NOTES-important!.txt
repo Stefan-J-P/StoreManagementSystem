@@ -1,0 +1,238 @@
+
+
+https://www.sqlshack.com/learn-sql-join-multiple-tables/
+
+
+https://javarevisited.blogspot.com/2012/11/how-to-join-three-tables-in-sql-query-mysql-sqlserver.html
+
+https://stackoverflow.com/questions/26533719/join-three-tables-with-2-different-columns
+
+
+
+SELECT * FROM myorders m
+    JOIN customers c ON m.customer_id = c.id
+    JOIN products p on m.product_id = p.id
+    JOIN countries k ON c.country_id = k.id WHERE k.name = 'GERMANY' AND c.age BETWEEN 40 AND 60;
+
+
+
+
+
+
+
+
+
+// --------------- CATEGORIES ---------------------
+ID	NAME
+
+127 ELECTRONICS
+128 TOOLS
+129 MACHINES
+130 SPORT
+131 FURNITURE
+132 HOME
+133 FOOD
+
+
+// --------------- COUNTRIES ---------------------
+ID	NAME
+
+1,	SWEDEN
+3,	CHINA
+5,	CHECH
+7,	GERMANY
+9,	CHILE
+12,	FINLAND
+15,	BRAZIL
+18,	SPAIN
+21,	JAPAN
+23,	NETHERLANDS
+26,	USA
+28,	ARGENTINA
+30,	TURKEY
+32,	DANEMARK
+35,	URUGUAY
+38,	NORWAY
+41,	SLOVAKIA
+46,	POLAND
+49,	AUSTRIA
+53,	ITALY
+55,	FRANCE
+58,	CANADA
+60,	RUSSIA
+72,	UK
+83,	BELGIUM
+98,	PORTUGAL
+99,	KOREA
+
+// --------------- PRODUCERS ---------------------
+ID NAME			COUNTRY ID
+1, BOSCH		7
+2, MAKITA		21
+3, METABO		7
+4, DELL			26
+5, FUJITSU		21
+6, SIEMENS		7
+7, SAMSUNG		99
+8, AMICA		46
+9, SCOTT		26
+10, SPALDING	26
+11, SHIMANO		21
+12, SONY		21
+13, APPLE		26
+14, MICROSOFT	26
+15, STANLEY		26
+16, PHILIPS		23
+17, IKEA		1
+18, BRW			46
+19, DRUTEX		46
+20, EKOOKNA		46
+21, FOODS		58
+22, NIKE		26
+23, FILA		26
+24, ADIDAS		26
+25, PUMA		26
+26, REEBOK		26
+
+
+// --------------- PRODUCTS ---------------------
+
+ID	NAME			PRICE		CAT ID	PROD ID
+1,	DISHWASHER		2000.00		132		1
+2,	WASHMACHINE		1750.00		132		7
+3,	FRIDGE,			1400.00,	132,	8
+4,	DRILL,			270.00,		128,	2
+5,	HAMMER,			12.00,		128,	3
+6,	SCREWDRIVER,	15.00,		128,	1
+7,	LAPTOP,			2500.00,	127,	4
+8,	SMARTPHONE,		700.00,		127,	7
+9,	HEADPHONES,		150.00,		127,	16
+10,	TABLE,			120.00,		131,	17
+11,	CHAIR,			70.00,		131,	18
+12,	LAMP,			30.00,		131,	17
+13,	WINDOW,			750.00,		132,	20
+14,	WINDOW,			700.00,		132,	19
+15,	MAPLE_SYROP,	20.00,		133,	21
+16,	BALL,			78.00,		130,	10
+17,	SNICKERS,		300.00,		130,	22
+18,	TROUSERS,		250.00,		130,	24
+19,	SMARTPHONE,		1500.00,	127,	13
+20,	LAPTOP,			2650.00,	127,	5
+
+
+
+
+
+
+2,   65, eddie.kowalski@wp.pl,		EDDIE,KOWALSKI,		1
+4,   22, tracy.oberhauser@wp.pl,	TRACY,OBERHAUSER,	3
+6,   56, tracy.ramirez@wp.pl,		TRACY,RAMIREZ,		5
+8,   42, joey.lorenzo@wp.pl,		JOEY,LORENZO,		7
+10,  39, annie.kowalski@wp.pl,		ANNIE,KOWALSKI,		9
+11,  43, ross.lewis@wp.pl,			ROSS,LEWIS,			5
+13,  49, julia.kebekus@wp.pl,		JULIA,KEBEKUS,		12
+14,  33, michael.ramirez@wp.pl,		MICHAEL,RAMIREZ,	1
+16,  65, vladimir.macdonald@wp.pl,	VLADIMIR,MACDONALD,	15
+17,  25, stephen.kebekus@wp.pl,		STEPHEN,KEBEKUS,	12
+19,  36, thomas.rossi@wp.pl,		THOMAS,ROSSI,		18
+20,  38, michael.petrovich@wp.pl,	MICHAEL,PETROVICH,	18
+22,  36, eddie.marquez@wp.pl,		EDDIE,MARQUEZ,		21
+24,  18, stephen.kebekus@wp.pl,		STEPHEN,KEBEKUS,	23
+25,  48, phoebe.klitschko@wp.pl,	PHOEBE,KLITSCHKO,	9
+27,  38, jessica.vinalez@wp.pl,		JESSICA,VINALEZ,	26
+29,  50, julia.petrovich@wp.pl,		JULIA,PETROVICH,	28
+31,  57, robert.ramirez@wp.pl,		ROBERT,RAMIREZ,	30
+33,  53, phoebe.kowalski@wp.pl,		PHOEBE,KOWALSKI,	32
+34,  47, chandler.macdonald@wp.pl,	CHANDLER,MACDONALD,	21
+36,  19, phoebe.miller@wp.pl,		PHOEBE,MILLER,		35
+37,  59, thomas.smith@wp.pl,		THOMAS,SMITH,		18
+39,  34, monica.klitschko@wp.pl,	MONICA,KLITSCHKO,	38
+40,  58, joey.jordan@wp.pl,			JOEY,JORDAN,		35
+42,  70, john.lewis@wp.pl,			JOHN,LEWIS,			41
+43,  30, annie.lewis@wp.pl,			ANNIE,LEWIS,		38
+44,  37, monica.perry@wp.pl,		MONICA,PERRY,		32
+45,  45, monica.miller@wp.pl,MONICA,MILLER,9
+47,  22, monica.perry@wp.pl,MONICA,PERRY,46
+48,  23, phoebe.vinalez@wp.pl,PHOEBE,VINALEZ,1
+50,  37, eddie.rossi@wp.pl,EDDIE,ROSSI,49
+51,  44, annie.smith@wp.pl,ANNIE,SMITH,30
+52,  63, chandler.rossi@wp.pl,CHANDLER,ROSSI,1
+54,  41, stephen.rossi@wp.pl,STEPHEN,ROSSI,53
+56,  51, eddie.bird@wp.pl,EDDIE,BIRD,55
+57,  53, julia.nowak@wp.pl,JULIA,NOWAK,7
+59,  48, julia.miller@wp.pl,JULIA,MILLER,58
+61,  35, ervin.petrovich@wp.pl,ERVIN,PETROVICH,60
+62,  66, phoebe.perry@wp.pl,PHOEBE,PERRY,46
+63,  23, john.kebekus@wp.pl,JOHN,KEBEKUS,41
+64,  25, thomas.kowalski@wp.pl,THOMAS,KOWALSKI,58
+65,  66, ross.kowalski@wp.pl,ROSS,KOWALSKI,41
+66,  69, joey.hansen@wp.pl,JOEY,HANSEN,32
+67,  69, robert.perry@wp.pl,ROBERT,PERRY,18
+68,  51, chandler.rossi@wp.pl,CHANDLER,ROSSI,28
+69,  35, joey.nowak@wp.pl,JOEY,NOWAK,35
+70,  49, ross.klitschko@wp.pl,ROSS,KLITSCHKO,53
+71,  41, vladimir.perry@wp.pl,VLADIMIR,PERRY,46
+73,  28, chandler.hansen@wp.pl,CHANDLER,HANSEN,72
+74,  31, mary.klitschko@wp.pl,MARY,KLITSCHKO,23
+75,  60, ross.perry@wp.pl,ROSS,PERRY,49
+76,  23, jessica.marquez@wp.pl,JESSICA,MARQUEZ,58
+77,  30, chandler.perry@wp.pl,CHANDLER,PERRY,21
+78,  56, richard.vinalez@wp.pl,RICHARD,VINALEZ,1
+79,  32, phoebe.hansen@wp.pl,PHOEBE,HANSEN,35
+80,  70, richard.rossi@wp.pl,RICHARD,ROSSI,55
+81,  54, tracy.bird@wp.pl,TRACY,BIRD,32
+82,  57, stephen.smith@wp.pl,STEPHEN,SMITH,18
+84,  35, tracy.ramirez@wp.pl,TRACY,RAMIREZ,83
+85,  40, eddie.nowak@wp.pl,EDDIE,NOWAK,53
+86,  38, vladimir.johnson@wp.pl,VLADIMIR,JOHNSON,83
+87,  36, annie.perry@wp.pl,ANNIE,PERRY,46
+88,  38, thomas.nowak@wp.pl,THOMAS,NOWAK,30
+89,  21, joey.oberhauser@wp.pl,JOEY,OBERHAUSER,49
+90,  48, ross.miller@wp.pl,ROSS,MILLER,26
+91,  37, phoebe.klitschko@wp.pl,PHOEBE,KLITSCHKO,28
+92,  30, vladimir.rossi@wp.pl,VLADIMIR,ROSSI,35
+93,  34, julia.ramirez@wp.pl,JULIA,RAMIREZ,12
+94,  62, thomas.lewis@wp.pl,THOMAS,LEWIS,58
+95,  52, vladimir.jordan@wp.pl,VLADIMIR,JORDAN,35
+96,  36, rachel.bird@wp.pl,RACHEL,BIRD,18
+97,  55, eddie.kebekus@wp.pl,EDDIE,KEBEKUS,49
+99,  34, jessica.smith@wp.pl,JESSICA,SMITH,98
+100, 68, annie.johnson@wp.pl,ANNIE,JOHNSON,41
+101, 59, chandler.klitschko@wp.pl,CHANDLER,KLITSCHKO,21
+102, 36, monica.miller@wp.pl,MONICA,MILLER,32
+103, 63, monica.kowalski@wp.pl,MONICA,KOWALSKI,53
+104, 37, eddie.nowak@wp.pl,EDDIE,NOWAK,41
+105, 54, tracy.perry@wp.pl,TRACY,PERRY,58
+106, 24, joey.smith@wp.pl,JOEY,SMITH,41
+107, 21, annie.johnson@wp.pl,ANNIE,JOHNSON,30
+108, 41, chandler.rossi@wp.pl,CHANDLER,ROSSI,23
+109, 19, richard.johnson@wp.pl,RICHARD,JOHNSON,21
+110, 30, michael.lorenzo@wp.pl,MICHAEL,LORENZO,46
+111, 25, ervin.lorenzo@wp.pl,ERVIN,LORENZO,12
+112, 21, ervin.hansen@wp.pl,ERVIN,HANSEN,58
+113, 51, thomas.lewis@wp.pl,THOMAS,LEWIS,12
+114, 25, julia.vinalez@wp.pl,JULIA,VINALEZ,72
+115, 19, ross.macdonald@wp.pl,ROSS,MACDONALD,9
+116, 68, tracy.klitschko@wp.pl,TRACY,KLITSCHKO,5
+117, 53, monica.lewis@wp.pl,MONICA,LEWIS,41
+118, 42, robert.klitschko@wp.pl,ROBERT,KLITSCHKO,26
+119, 69, ervin.marquez@wp.pl,ERVIN,MARQUEZ,12
+120, 39,  monica.kowalski@wp.pl,MONICA,KOWALSKI,60
+121, 32, ervin.hansen@wp.pl,ERVIN,HANSEN,1
+122, 32, julia.kebekus@wp.pl,JULIA,KEBEKUS,72
+123, 24, joey.oberhauser@wp.pl,JOEY,OBERHAUSER,21
+124, 60, phoebe.vinalez@wp.pl,PHOEBE,VINALEZ,26
+125, 32, annie.vinalez@wp.pl,ANNIE,VINALEZ,7
+126, 52, ross.lorenzo@wp.pl,ROSS,LORENZO,23  
+
+
+
+
+
+
+
+
+
+
+
+

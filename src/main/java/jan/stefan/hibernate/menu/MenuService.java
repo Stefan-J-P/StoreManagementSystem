@@ -564,6 +564,22 @@ public class MenuService
     //========================================================================================================================================================
     // CATEGORY -----------------------------------------------
     @SuppressWarnings("Duplicates")
+
+    void categoryOptionAdd(CategoryDto categoryDto)
+    {
+        Map<String, String> categoryErrors = categoryValidation.validate(categoryDto);
+
+        if (orderValidation.hasErrors())
+        {
+            categoryErrors.forEach((k, v) -> System.out.println(k + " " + v));
+            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
+                    .message("Error while inserting Stock into the table ")
+                    .dateTime(LocalDateTime.now())
+                    .build());
+        }
+        categoryService.addOrUpdate(categoryDto);
+    }
+
     void categoryOption0()
     {
         String name = scannerService.getString("Enter name of the Category: ");
@@ -726,6 +742,22 @@ public class MenuService
 
     //========================================================================================================================================================
     // TRADE --------------------------------------------------
+    @SuppressWarnings("Duplicates")
+    void tradeOptionAdd(TradeDto tradeDto)
+    {
+        Map<String, String> tradeErrors = tradeValidation.validate(tradeDto);
+
+        if (orderValidation.hasErrors())
+        {
+            tradeErrors.forEach((k, v) -> System.out.println(k + " " + v));
+            myErrorService.addOrUpdateOneMyError(MyErrorDto.builder()
+                    .message("Error while inserting Stock into the table ")
+                    .dateTime(LocalDateTime.now())
+                    .build());
+        }
+        tradeService.addOrUpdate(tradeDto);
+    }
+
     @SuppressWarnings("Duplicates")
     void tradeOption0()
     {

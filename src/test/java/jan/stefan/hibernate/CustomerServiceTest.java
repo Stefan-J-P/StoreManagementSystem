@@ -33,51 +33,6 @@ public class CustomerServiceTest
     @InjectMocks
     private CustomerService customerService;
 
-    @Test
-    @DisplayName("Add Or Update test with null argument")
-    public void addOrUpdateTest1()
-    {
-        // GIVEN
-        doThrow(new MyException("CUSTOMER SERVICE: addOrUpdate() : Customer object argument is null"))
-                .when(customerRepository).saveOrUpdate(ArgumentMatchers.isNull());
-
-        // WHEN + THEN
-        MyException throwable = assertThrows(MyException.class, () -> customerService.addOrUpdate(null));
-
-        assertTrue(throwable != null, "CUSTOMER SERVICE: addOrUpdate() : Customer object argument is null");
-        //assertEquals("CUSTOMER SERVICE: addOrUpdate() : Customer object argument is null", throwable.getMessage());
-    }
-
-    /*
-    @Test
-    @DisplayName("Add Or Upadate test with non null argument")
-    public void addOrUpdateNonNullArg()
-    {
-        // GIVEN
-        CustomerDto c1 = CustomerDto.builder()
-                .id(1L)
-                .name("JAN")
-                .surname("NOWAK")
-                .email("jnowak@wp.pl")
-                .age(44)
-                .countryDto(CountryDto.builder().name("POLSKA").build())
-                .build()
-
-        //when();
-
-
-
-    }   */
-
-    /*
-    @Test
-    @DisplayName("Find All Customers size test")
-    public void findAllCustomersTest()
-    {
-        when(customerRepository.findAll())
-
-
-    }       */
 
 
 

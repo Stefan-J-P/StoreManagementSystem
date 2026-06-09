@@ -38,7 +38,8 @@ public abstract class AbstractGenericRepository<T, ID extends Serializable> impl
             tx.commit();
 
         } catch (Exception e) {
-            if (tx != null) {
+            if (tx != null)
+            {
                 tx.rollback();
             }
             e.printStackTrace();
@@ -70,7 +71,8 @@ public abstract class AbstractGenericRepository<T, ID extends Serializable> impl
             tx.commit();
 
         } catch (Exception e) {
-            if (tx != null) {
+            if (tx != null)
+            {
                 tx.rollback();
             }
             e.printStackTrace();
@@ -101,7 +103,8 @@ public abstract class AbstractGenericRepository<T, ID extends Serializable> impl
             tx.commit();
 
         } catch (Exception e) {
-            if (tx != null) {
+            if (tx != null)
+            {
                 tx.rollback();
             }
         } finally {

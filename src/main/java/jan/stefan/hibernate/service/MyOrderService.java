@@ -1,6 +1,7 @@
 package jan.stefan.hibernate.service;
 
 import jan.stefan.hibernate.dataInDbValidation.DataBaseValidator;
+import jan.stefan.hibernate.dto.modelDto.CountryDto;
 import jan.stefan.hibernate.dto.modelDto.MyOrderDto;
 import jan.stefan.hibernate.exceptions.MyException;
 import jan.stefan.hibernate.model.Customer;
@@ -26,14 +27,14 @@ public class MyOrderService
             throw new MyException("ORDER SERVICE: customerOrderDto object argument is null");
         }
 
-        MyOrder myOrder = ModelMapper.fromCustomerOrderDtoToCustomerOrder(myOrderDto);
+        MyOrder myOrder = ModelMapper.fromMyOrderDtoToMyOrder(myOrderDto);
         Customer customer = dataBaseValidator.customerDbValidator(myOrderDto.getCustomerDto());
         Product product = dataBaseValidator.productDbValidator(myOrderDto.getProductDto());
 
         myOrder.setCustomer(customer);
         myOrder.setProduct(product);
 
-        return ModelMapper.fromCustomerOrderToCustomerOrderDto(orderRepository
+        return ModelMapper.fromMyOrderToMyOrderDto(orderRepository
                 .saveOrUpdate(myOrder)
                 .orElseThrow(() -> new MyException("ORDER SERVICE: cannot addOrUpdate() customerOrderDto"))
         );
@@ -44,7 +45,7 @@ public class MyOrderService
         return orderRepository
                 .findAll()
                 .stream()
-                .map(ModelMapper::fromCustomerOrderToCustomerOrderDto)
+                .map(ModelMapper::fromMyOrderToMyOrderDto)
                 .collect(Collectors.toList());
     }
 
@@ -57,7 +58,7 @@ public class MyOrderService
     {
         return orderRepository
                 .findById(id)
-                .map(ModelMapper::fromCustomerOrderToCustomerOrderDto)
+                .map(ModelMapper::fromMyOrderToMyOrderDto)
                 .orElseThrow(() -> new MyException("ORDER SERVICE: addOrUpdate() cannot find customer order id: " + id));
     }
 
@@ -65,7 +66,7 @@ public class MyOrderService
     {
         return orderRepository
                 .findOneByNumber(number)
-                .map(ModelMapper::fromCustomerOrderToCustomerOrderDto)
+                .map(ModelMapper::fromMyOrderToMyOrderDto)
                 .orElseThrow(() -> new MyException("ORDER SERVICE: findOneByNumber() : cannot find order number: " + number));
     }
 
@@ -75,6 +76,18 @@ public class MyOrderService
                 .findLastOrderNumber()
                 .orElseThrow(() -> new MyException("ORDER: generateOrderNumber() : ERROR: "));
     }
+
+
+    public List<MyOrderDto> getProductsByCustomerAndCountry(CountryDto countryDto, int ageFrom, int ageTo)
+    {
+        return orderRepository
+                .getProductsByCustomersCountry(countryDto, ageFrom, ageTo)
+                .stream()
+                .map(ModelMapper::fromMyOrderToMyOrderDto)
+                .collect(Collectors.toList());
+
+    }
+
 
 
 

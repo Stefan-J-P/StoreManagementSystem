@@ -1,0 +1,118 @@
+select * from myorders;
+
+SELECT * FROM myorders m JOIN customers c ON m.customer_id = c.id JOIN countries k ON c.country_id = k.id WHERE k.name = 'CHECH' AND c.age BETWEEN 40 AND 60;
+SELECT * FROM myorders m JOIN customers c ON m.customer_id = c.id JOIN countries k ON c.country_id = k.id WHERE k.name = 'CHINA';
+SELECT * FROM customers c JOIN countries k ON c.country_id = k.id order by c.id LIMIT 12;
+
+
+
+# B --> PRODUCTS BY CUSTOMER'S COUNTRY ===========================================================
+SELECT * FROM myorders m
+    JOIN customers c ON m.customer_id = c.id
+    JOIN products p on m.product_id = p.id
+    JOIN countries k ON c.country_id = k.id WHERE k.name = 'CHECH' AND c.age BETWEEN 18 AND 60;
+# FROM product ORDER BY price DESC ---------------------------------------------------------------
+# -- sortowanie malejaco po cenie LIMIT 2; -- bierzemy pierwsze dwa elementy
+SELECT * FROM myorders m
+    JOIN customers c ON m.customer_id = c.id
+    JOIN products p on m.product_id = p.id
+    JOIN countries k ON c.country_id = k.id WHERE k.name = 'SPAIN' AND c.age BETWEEN 18 AND 60
+    ORDER BY p.price DESC;
+
+SELECT * FROM myorders m
+    INNER JOIN
+    (SELECT m.product_id )
+
+
+
+
+
+
+SELECT * FROM myorders m, customers c, products p, countries k
+    WHERE k.name = 'USA' AND c.age BETWEEN 18 AND 60
+    ORDER BY p.price DESC;
+
+
+# Podgląd tymczasowy
+SELECT m.orderNumber, c.id, c.name, c.surname, c.age, c.country_id, c2.name FROM myorders m
+    JOIN customers c on m.customer_id = c.id
+    JOIN countries c2 on c.country_id = c2.id
+    WHERE c2.name = 'CHECH';
+
+SELECT c.id, c.name, c.age, c2.name FROM customers c
+    JOIN countries c2 on c.country_id = c2.id
+    WHERE c2.name = 'SWEDEN';
+
+
+
+
+
+
+
+
+
+# C --> PRODUCTS BY GUARANTEE SERVICE ================================================================
+SELECT * FROM products p JOIN guarantees g on p.id = g.product_id;
+SELECT * FROM products p JOIN guarantees g on p.id = g.product_id where g.guarantee = 'EXCHANGE';
+
+# D -->
+SELECT * FROM products p
+    JOIN producers pr on p.Producer = pr.id
+    JOIN stocks s on p.id = s.product_id
+    JOIN shops sh on s.shop_id = sh.id
+    WHERE NOT (sh.country_id <=> pr.country_id);
+
+# E -->
+SELECT * FROM products p JOIN trades t on p.trade_id = t.id WHERE t.tradeName = 'ELECTRONICS';
+SELECT * FROM products p JOIN trades t on p.trade_id = t.id;
+
+
+# F -->  where startDate > ? and startDate < ?";
+SELECT * FROM myorders;
+SELECT * FROM myorders m WHERE m.dateTime > ? AND m.dateTime < ?;
+SELECT * FROM myorders m WHERE m.dateTime > '2020-01-01 00:00:00' AND m.dateTime < '2020-03-29 00:00:00';
+
+SELECT * FROM myorders m
+    JOIN products p on m.product_id = p.id
+    WHERE m.dateTime > '2020-01-01 00:00:00' AND m.dateTime < '2020-03-29 00:00:00'
+    AND p.price > 100 AND p.price < 200;
+
+# G -->
+SELECT * FROM myorders m
+    JOIN products p on m.product_id = p.id
+    JOIN customers c on m.customer_id = c.id
+    JOIN producers pr on p.Producer = pr.id
+    WHERE c.name = 'EDDIE' AND c.surname = 'KOWALSKI' AND pr.country_id = 7;
+
+# Podgląd danych
+SELECT m.id, m.orderNumber, c.id ,c.name, c.surname, c.country_id FROM myorders m JOIN customers c on m.customer_id = c.id;
+SELECT m.orderNumber, m.product_id, p.Producer, p2.country_id FROM myorders m
+    JOIN products p on m.product_id = p.id
+    JOIN producers p2 on p.Producer = p2.id;
+
+
+
+# H -->
+SELECT * FROM myorders m
+    JOIN products p on m.product_id = p.id
+    JOIN producers pr on p.Producer = pr.id
+    JOIN customers c on c.id = m.customer_id
+    WHERE pr.country_id = c.country_id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

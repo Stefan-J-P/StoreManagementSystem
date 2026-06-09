@@ -225,7 +225,7 @@ public interface ModelMapper
     }
 
     // CUSTOMER ORDER --------------------------------------------
-    static MyOrderDto fromCustomerOrderToCustomerOrderDto(MyOrder myOrder)
+    static MyOrderDto fromMyOrderToMyOrderDto(MyOrder myOrder)
     {
         return myOrder == null ? null : MyOrderDto.builder()
                 .id(myOrder.getId())
@@ -235,7 +235,7 @@ public interface ModelMapper
                 .build();
     }
 
-    static MyOrder fromCustomerOrderDtoToCustomerOrder(MyOrderDto myOrderDto)
+    static MyOrder fromMyOrderDtoToMyOrder(MyOrderDto myOrderDto)
     {
         return myOrderDto == null ? null : MyOrder.builder()
                 .id(myOrderDto.getId())
