@@ -1,0 +1,114 @@
+# ═══════════════════════════════════════════════════════════════════
+# application.yml  –  PRODUCTION-ORIENTED DEFAULT CONFIGURATION
+#
+# Active profile: none (base config, merged with active profile)
+# All sensitive values resolved from environment variables.
+# Safe defaults are provided for local development convenience only.
+# In production, ALL ${} variables must be set explicitly.
+# ═══════════════════════════════════════════════════════════════════
+
+spring:
+  application:
+    name: store-management-system
+
+  # ─── Datasource ──────────────────────────────────────────────────
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:store_management}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      pool-name: StoreManagementPool
+      maximum-pool-size: ${DB_POOL_MAX:10}
+      minimum-idle: ${DB_POOL_MIN:2}
+      connection-timeout: 20000     # ms – fail fast if pool exhausted
+      idle-timeout: 300000          # ms – 5 min, release idle connections
+      max-lifetime: 1200000         # ms – 20 min, recycle before server timeout
+
+  # ─── JPA / Hibernate ─────────────────────────────────────────────
+  jpa:
+    # CRITICAL: Flyway owns the schema. Hibernate must NEVER alter it.
+    # "validate" will fail on startup if the schema does not match entities.
+    open-in-view: false    # Disable OSIV – lazy loading must stay within @Transactional
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+        default_schema: public
+        jdbc:
+          batch_size: 20       # Enable batching for bulk inserts/updates
+        order_inserts: true    # Required for batching with identity generation
+        order_updates: true
+
+  # ─── Flyway ──────────────────────────────────────────────────────
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    # baseline-on-migrate: false – fresh databases must start from V1, no baselining
+    baseline-on-migrate: false
+    # validate-on-migrate: strict in production – reject checksum mismatches
+    validate-on-migrate: true
+    out-of-order: false    # Never apply migrations out of version order
+
+  # ─── Jackson ─────────────────────────────────────────────────────
+  jackson:
+    default-property-inclusion: non_null    # Omit null fields from JSON responses
+    serialization:
+      write-dates-as-timestamps: false       # ISO-8601 string format for dates
+    deserialization:
+      fail-on-unknown-properties: false      # Tolerate extra JSON fields from clients
+
+  # ─── MVC ─────────────────────────────────────────────────────────
+  mvc:
+    throw-exception-if-no-handler-found: true  # Enable 404 via GlobalExceptionHandler
+
+  web:
+    resources:
+      add-mappings: false   # Disable static resource serving (REST API only)
+
+# ─── Server ────────────────────────────────────────────────────────
+server:
+  port: ${SERVER_PORT:8080}
+  # Do not expose internal details in error responses
+  error:
+    include-message: never
+    include-binding-errors: never
+    include-stacktrace: never
+    include-exception: false
+
+# ─── Spring Boot Actuator ──────────────────────────────────────────
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        # Only expose safe, non-sensitive endpoints by default.
+        # Do NOT expose: env, beans, heapdump, threaddump, shutdown, loggers
+        include: health, info, metrics
+  endpoint:
+    health:
+      show-details: when-authorized      # Full health only for authenticated users
+      show-components: when-authorized
+  info:
+    env:
+      enabled: true    # Allows info.* properties to appear in /actuator/info
+
+# ─── Springdoc / OpenAPI ───────────────────────────────────────────
+# Disabled by default in production / base profile.
+# Enable in application-dev.yml only.
+springdoc:
+  swagger-ui:
+    enabled: false
+  api-docs:
+    enabled: false
+
+# ─── Logging ───────────────────────────────────────────────────────
+logging:
+  level:
+    root: INFO
+    io.github.stefanjp.storemanagement: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+

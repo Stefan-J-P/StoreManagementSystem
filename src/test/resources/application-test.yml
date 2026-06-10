@@ -1,0 +1,69 @@
+# ═══════════════════════════════════════════════════════════════════
+# application-test.yml  –  INTEGRATION TEST CONFIGURATION
+#
+# Location: src/test/resources/application-test.yml
+#
+# Activation: Add @ActiveProfiles("test") to @SpringBootTest classes,
+#             or to a shared IntegrationTestBase base class.
+#
+# Database strategy:
+#   Uses Testcontainers JDBC URL to automatically start a real
+#   PostgreSQL 15 container for each test run. No manual container
+#   lifecycle management required.
+#
+#   TC JDBC URL format:
+#     jdbc:tc:postgresql:{image-tag}:///{database-name}
+#
+#   Requirements:
+#     - org.testcontainers:postgresql in test scope (pom.xml)
+#     - driver-class-name must be set to ContainerDatabaseDriver
+#     - No username/password required (TC provides internal defaults)
+#     - Flyway runs against the container automatically
+#
+# This file EXTENDS application.yml. Only test-specific overrides here.
+# ═══════════════════════════════════════════════════════════════════
+
+spring:
+  # ─── Datasource ──────────────────────────────────────────────────
+  # Testcontainers JDBC URL replaces the environment-variable-based
+  # production datasource. A fresh PostgreSQL 15 container is started
+  # automatically when the first connection is acquired.
+  datasource:
+    url: jdbc:tc:postgresql:15:///store_management_test
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    # username/password: omitted – Testcontainers provides internal defaults
+
+  # ─── JPA / Hibernate ─────────────────────────────────────────────
+  jpa:
+    hibernate:
+      # validate: Flyway runs migrations, Hibernate checks schema matches entities.
+      # If V1 SQL and @Entity annotations are consistent, startup succeeds.
+      ddl-auto: validate
+    show-sql: false          # Keep test output clean; enable only when debugging
+    properties:
+      hibernate:
+        format_sql: false
+
+  # ─── Flyway ──────────────────────────────────────────────────────
+  flyway:
+    enabled: true
+    # Validate checksums in tests – ensures migration scripts are production-ready
+    validate-on-migrate: true
+
+# ─── Springdoc / OpenAPI ─────────────────────────────────────────
+# Never needed during test execution
+springdoc:
+  swagger-ui:
+    enabled: false
+  api-docs:
+    enabled: false
+
+# ─── Logging ─────────────────────────────────────────────────────
+logging:
+  level:
+    root: WARN                                           # Suppress framework noise in test output
+    io.github.stefanjp.storemanagement: INFO            # Application logs visible
+    org.flywaydb: INFO                                  # Migration steps visible
+    org.testcontainers: INFO                            # Container startup visible
+    com.github.dockerjava: WARN                         # Suppress Docker client noise
+

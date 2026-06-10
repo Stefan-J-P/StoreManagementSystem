@@ -1,171 +1,310 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-<!--project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"-->
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>jan.stefan.hibernate</groupId>
+    <!-- ═══════════════════════════════════════════════════════════
+         PARENT – Spring Boot BOM manages all dependency versions
+         ═══════════════════════════════════════════════════════════ -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         COORDINATES
+         ═══════════════════════════════════════════════════════════ -->
+    <groupId>io.github.stefanjp</groupId>
     <artifactId>store-management-system</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <name>store-management-system</name>
+    <description>Store Management System – Spring Boot 3 REST API (modernization of legacy Hibernate app)</description>
+    <url>https://github.com/stefanjp/StoreManagementSystem</url>
 
+    <!-- ═══════════════════════════════════════════════════════════
+         PROPERTIES – centralise version overrides
+         ═══════════════════════════════════════════════════════════ -->
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>11</java.version>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <java.version>21</java.version>
+        <!--
+            springdoc-openapi is NOT managed by the Spring Boot BOM.
+            Check https://springdoc.org/#springboot-support for the version
+            compatible with the Spring Boot version used above.
+        -->
+        <springdoc.version>2.8.8</springdoc.version>
+        <!--
+            Testcontainers BOM is managed by Spring Boot 3.1+ parent,
+            but the version below keeps it visible and overridable.
+        -->
+        <testcontainers.version>1.20.4</testcontainers.version>
     </properties>
 
+    <!-- ═══════════════════════════════════════════════════════════
+         DEPENDENCIES
+         ═══════════════════════════════════════════════════════════ -->
     <dependencies>
-        <!-- ***************   TESTS  *************** -->
+
+        <!-- ─── WEB ─────────────────────────────────────────────── -->
+
+        <!--
+            spring-boot-starter-web
+            Provides: embedded Tomcat, Spring MVC, REST support, Jackson JSON.
+            Required by: every @RestController in the application.
+        -->
         <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-launcher</artifactId>
-            <version>1.6.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.6.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.vintage</groupId>
-            <artifactId>junit-vintage-engine</artifactId>
-            <version>5.6.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <version>5.6.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>3.4.4</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-junit-jupiter</artifactId>
-            <version>3.4.4</version>
-            <scope>test</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- **************** OTHER ***************** -->
+        <!-- ─── DATA ACCESS ─────────────────────────────────────── -->
+
+        <!--
+            spring-boot-starter-data-jpa
+            Provides: Spring Data JPA, JpaRepository, @Transactional, Hibernate ORM.
+            Replaces: manual HibernateUtil, EntityManagerFactory, and
+                      AbstractGenericRepository from the legacy codebase.
+        -->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.20</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+
+        <!-- ─── VALIDATION ──────────────────────────────────────── -->
+
+        <!--
+            spring-boot-starter-validation
+            Provides: Jakarta Bean Validation (JSR-380), Hibernate Validator.
+            Required by: @Valid on @RequestBody DTOs, @NotBlank/@Email/@Size constraints.
+            Note: Spring Boot does NOT auto-enable validation without this starter.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <!-- ─── OPERATIONS ──────────────────────────────────────── -->
+
+        <!--
+            spring-boot-starter-actuator
+            Provides: /actuator/health, /actuator/info, /actuator/metrics endpoints.
+            Required by: production health checks, load balancer probes, monitoring.
+            Configured in application.yml to expose only health, info, metrics.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!-- ─── DATABASE ─────────────────────────────────────────── -->
+
+        <!--
+            postgresql
+            Provides: PostgreSQL JDBC driver.
+            Scope runtime: not needed at compile time.
+            Version: managed by Spring Boot BOM – no <version> tag needed.
+            Replaces: mysql-connector-java from the legacy pom.xml.
+        -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- ─── SCHEMA MIGRATION ─────────────────────────────────── -->
+
+        <!--
+            flyway-core
+            Provides: Flyway core migration engine.
+            Replaces: hibernate.hbm2ddl.auto=update (unsafe in production).
+            Schema managed by SQL files in src/main/resources/db/migration/.
+        -->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
+
+        <!--
+            flyway-database-postgresql
+            REQUIRED for Flyway 10+ PostgreSQL support.
+            Flyway 10 (bundled with Spring Boot 3.3+) split database drivers
+            into separate modules. Without this artifact Flyway cannot connect
+            to PostgreSQL and the application will fail to start.
+            Version: managed by Spring Boot BOM alongside flyway-core.
+        -->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-database-postgresql</artifactId>
+        </dependency>
+
+        <!-- ─── API DOCUMENTATION ────────────────────────────────── -->
+
+        <!--
+            springdoc-openapi-starter-webmvc-ui
+            Provides: OpenAPI 3.0 spec generation + Swagger UI.
+            NOT managed by Spring Boot BOM → explicit version required.
+            Auto-generates docs from @RestController / @Operation annotations.
+            Disabled in application.yml; enabled in application-dev.yml only.
+            Swagger UI URL (dev only): http://localhost:8080/swagger-ui.html
+        -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>${springdoc.version}</version>
+        </dependency>
+
+        <!-- ─── UTILITIES ────────────────────────────────────────── -->
+
+        <!--
+            lombok
+            Provides: compile-time annotation processor (@Getter, @Builder, …).
+            optional=true → NOT included in the final JAR, NOT transitive.
+            Excluded from spring-boot-maven-plugin repackaging (see <build>).
+        -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
-            <scope>provided</scope>
+            <optional>true</optional>
         </dependency>
+
+        <!-- ─── TESTING ──────────────────────────────────────────── -->
+
+        <!--
+            spring-boot-starter-test
+            Provides: JUnit 5, Mockito, AssertJ, MockMvc, @SpringBootTest.
+            Replaces: manually declared junit-platform-launcher, junit-jupiter-*,
+                      mockito-core, mockito-junit-jupiter, hamcrest-all.
+        -->
         <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-            <version>1.3</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!--
+            testcontainers:postgresql
+            Provides: PostgreSQL container for integration tests.
+            Tests run against real PostgreSQL (same as production engine),
+            eliminating H2/HSQLDB dialect mismatches.
+            Used via TC JDBC URL in application-test.yml:
+              url: jdbc:tc:postgresql:15:///store_management_test
+        -->
         <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.2.11</version>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${testcontainers.version}</version>
+            <scope>test</scope>
         </dependency>
+
+        <!--
+            testcontainers:junit-jupiter
+            Provides: @Testcontainers, @Container annotations for JUnit 5.
+            Required when using @Container on static fields with @SpringBootTest.
+            Not needed when using only the TC JDBC URL approach.
+        -->
         <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-core</artifactId>
-            <version>2.2.11</version>
-        </dependency>
-        <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-impl</artifactId>
-            <version>2.2.11</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.activation</groupId>
-            <artifactId>activation</artifactId>
-            <version>1.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.javassist</groupId>
-            <artifactId>javassist</artifactId>
-            <version>3.23.1-GA</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.8.5</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>5.4.17.Final</version>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${testcontainers.version}</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
 
+    <!-- ═══════════════════════════════════════════════════════════
+         BUILD
+         ═══════════════════════════════════════════════════════════ -->
     <build>
-        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-            <plugins>
-                <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
-                <plugin>
-                    <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.1.0</version>
-                </plugin>
-                <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
-                <plugin>
-                    <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.0.2</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.0</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.22.1</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.0.2</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-install-plugin</artifactId>
-                    <version>2.5.2</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-deploy-plugin</artifactId>
-                    <version>2.8.2</version>
-                </plugin>
-                <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
-                <plugin>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <version>3.7.1</version>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-project-info-reports-plugin</artifactId>
-                    <version>3.0.0</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.0</version>
-                    <configuration>
-                        <source>${java.version}</source>
-                        <target>${java.version}</target>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+        <plugins>
+
+            <!--
+                spring-boot-maven-plugin
+                Repackages the JAR into a self-contained executable ("fat jar").
+                Lombok is excluded so it is not bundled into the final artifact.
+            -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <!--
+                maven-compiler-plugin
+                Java 21. Annotation processor path ensures Lombok runs
+                before javac sees the source files.
+                spring-boot-starter-parent already sets source/target to
+                ${java.version}; this block explicitly adds Lombok's processor.
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+
+            <!--
+                maven-surefire-plugin
+                Runs unit tests (*Test.java) during the test phase.
+                spring-boot-starter-parent already configures JUnit 5 provider.
+                Explicit include patterns documented for clarity.
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                        <include>**/*Tests.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+            <!--
+                maven-failsafe-plugin
+                Runs integration tests (*IT.java) during the verify phase.
+                Separates slow IT tests from fast unit tests.
+                  mvn test        → unit tests only
+                  mvn verify      → unit tests + integration tests
+                  mvn verify -DskipITs → skip integration tests
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <includes>
+                        <include>**/*IT.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+        </plugins>
     </build>
+
 </project>
