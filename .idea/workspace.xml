@@ -6,6 +6,113 @@
   <component name="ChangeListManager">
     <list default="true" id="e0f94d96-245b-4a71-87dc-f3088a5b90f4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/connection/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/connection/DbConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dataInDbValidation/DataBaseValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/dataInDbValidation/DataBaseValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dataInDbValidation/stringValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/dataInDbValidation/stringValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/modelDto/CategoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/dto/modelDto/CategoryDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/modelDto/CountryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/dto/modelDto/CountryDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/modelDto/CustomerDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/dto/modelDto/CustomerDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/modelDto/MyErrorDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/dto/modelDto/MyErrorDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/modelDto/MyOrderDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/dto/modelDto/MyOrderDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/modelDto/PaymentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/dto/modelDto/PaymentDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/modelDto/ProducerDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/dto/modelDto/ProducerDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/modelDto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/dto/modelDto/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/modelDto/ShopDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/dto/modelDto/ShopDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/modelDto/StockDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/dto/modelDto/StockDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/modelDto/TradeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/dto/modelDto/TradeDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/dto/modelDto/statModelDto/ProductByCustomersCountryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/dto/modelDto/statModelDto/ProductByCustomersCountryDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/exceptions/MyException.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/exceptions/MyException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/menu/MenuPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/menu/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/menu/MenuStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/menu/MenuStatistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/Country.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/MyError.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/MyError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/MyOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/MyOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/Producer.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/Producer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/Stock.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/Stock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/Trade.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/Trade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/enums/EGuarantee.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/enums/EGuarantee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/enums/EPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/enums/EPayment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/CategoryValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/validation/CategoryValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/CountryValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/validation/CountryValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/CustomerValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/validation/CustomerValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/OrderValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/validation/OrderValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/PaymentValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/validation/PaymentValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/ProducerValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/validation/ProducerValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/ProductValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/validation/ProductValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/ShopValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/validation/ShopValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/StockValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/validation/StockValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/TradeValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/validation/TradeValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/generic/AbstractValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/validation/generic/AbstractValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/model/validation/generic/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/model/validation/generic/Validator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/generic/AbstractGenericRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/generic/AbstractGenericRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/generic/GenericRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/generic/GenericRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/CategoryRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/implementation/CategoryRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/CountryRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/implementation/CountryRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/CustomerRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/implementation/CustomerRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/MyErrorRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/implementation/MyErrorRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/OrderRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/implementation/OrderRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/PaymentRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/implementation/PaymentRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/ProducerRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/implementation/ProducerRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/ProductRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/implementation/ProductRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/ShopRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/implementation/ShopRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/StockRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/implementation/StockRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/implementation/TradeRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/implementation/TradeRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/CountryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/CountryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/MyErrorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/MyErrorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/PaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/PaymentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/ProducerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/ProducerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/ShopRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/ShopRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/StockRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/StockRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/TradeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/repository/repositoryInterfaces/TradeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CountryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/CountryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/DataGenerationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/DataGenerationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/JsonConverter/CategoryJsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/JsonConverter/CategoryJsonConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/JsonConverter/CountryJsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/JsonConverter/CountryJsonConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/JsonConverter/CustomerJsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/JsonConverter/CustomerJsonConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/JsonConverter/CustomerListJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/JsonConverter/CustomerListJson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/JsonConverter/JsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/JsonConverter/JsonConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/JsonConverter/MyOrderJsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/JsonConverter/MyOrderJsonConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/JsonConverter/PaymentJsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/JsonConverter/PaymentJsonConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/JsonConverter/ProducerJsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/JsonConverter/ProducerJsonConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/JsonConverter/ProductJsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/JsonConverter/ProductJsonConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/JsonConverter/ShopJsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/JsonConverter/ShopJsonConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/JsonConverter/StockJsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/JsonConverter/StockJsonConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/JsonConverter/TradeJsonConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/JsonConverter/TradeJsonConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/MyErrorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/MyErrorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/MyOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/MyOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ProducerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/ProducerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ScannerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/ScannerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/ShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/StockService.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/StockService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/TradeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/TradeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/dataGenerator/CategoriesDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/dataGenerator/CategoriesDataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/dataGenerator/CountriesDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/dataGenerator/CountriesDataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/dataGenerator/CustomerDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/dataGenerator/CustomerDataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/dataGenerator/DataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/dataGenerator/DataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/dataGenerator/MyOrdersDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/dataGenerator/MyOrdersDataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/dataGenerator/ProducersDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/dataGenerator/ProducersDataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/dataGenerator/ProductsDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/dataGenerator/ProductsDataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/dataGenerator/ShopsDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/dataGenerator/ShopsDataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/dataGenerator/StocksDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/dataGenerator/StocksDataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/dataGenerator/TradesDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/dataGenerator/TradesDataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/jan/stefan/hibernate/service/mappers/ModelMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/java/jan/stefan/hibernate/service/mappers/ModelMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +159,65 @@
     <commands />
     <urls />
   </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.6189244255971085" />
+      <entry key="MS500" value="5.107764293228559" />
+      <entry key="S2" value="9.83141690138177" />
+      <entry key="S5" value="12.020851127109223" />
+      <entry key="S10" value="12.947788536912123" />
+      <entry key="S30" value="13.634163941792151" />
+      <entry key="S60" value="13.816067011883305" />
+      <entry key="M2" value="14.033417337652406" />
+      <entry key="M5" value="16.41651185485572" />
+      <entry key="M10" value="20.61693090757207" />
+      <entry key="M15" value="23.23864557808435" />
+      <entry key="M30" value="26.89577555727973" />
+      <entry key="H1" value="29.235513799093102" />
+      <entry key="H2" value="30.560124908780715" />
+      <entry key="H4" value="31.265044555233775" />
+      <entry key="D1" value="31.87536772732349" />
+      <entry key="W1" value="31.982142271565806" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="2.7361658324214974E-123" />
+      <entry key="S5" value="9.437500032989436E-50" />
+      <entry key="S10" value="3.0720514372304117E-25" />
+      <entry key="S30" value="6.74749898178745E-9" />
+      <entry key="S60" value="8.214316150348397E-5" />
+      <entry key="M2" value="0.009063286462618508" />
+      <entry key="M5" value="0.1523751979332487" />
+      <entry key="M10" value="0.39035265841703787" />
+      <entry key="M15" value="0.5341190824369766" />
+      <entry key="M30" value="0.7308345109783589" />
+      <entry key="H1" value="0.854888595653468" />
+      <entry key="H2" value="0.9246018579115381" />
+      <entry key="H4" value="0.9615621965902871" />
+      <entry key="D1" value="0.9934886200090861" />
+      <entry key="W1" value="0.9990671965460722" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.5781204043751362" />
+      <entry key="MS500" value="5.070439495665858" />
+      <entry key="S2" value="9.813526134448898" />
+      <entry key="S5" value="12.012264799719187" />
+      <entry key="S10" value="12.943199494118788" />
+      <entry key="S30" value="13.632561884250363" />
+      <entry key="S60" value="13.815336935281705" />
+      <entry key="M2" value="14.04197864400381" />
+      <entry key="M5" value="16.56808251338662" />
+      <entry key="M10" value="21.006377367467906" />
+      <entry key="M15" value="23.771957035508894" />
+      <entry key="M30" value="27.626066818401522" />
+      <entry key="H1" value="30.09008675162331" />
+      <entry key="H2" value="31.48455656941861" />
+      <entry key="H4" value="32.22651837151893" />
+      <entry key="D1" value="32.86884114473964" />
+      <entry key="W1" value="32.98120728451622" />
+    </decayedShown>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -77,7 +243,7 @@
     "WebServerToolWindowFactoryState": "false",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "cleanup/remove-legacy-source-root",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
     "junie.onboarding.icon.badge.shown": "true",
