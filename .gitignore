@@ -1,1 +1,65 @@
+# --------------------------------------------------
+# Build output (Maven / Java)
+# --------------------------------------------------
 /target/
+/out/
+
+# --------------------------------------------------
+# Maven plugin helper files
+# --------------------------------------------------
+/dependency-reduced-pom.xml
+/pom.xml.tag
+/pom.xml.releaseBackup
+/pom.xml.versionsBackup
+/release.properties
+/.mvn/timing.properties
+
+# --------------------------------------------------
+# JVM crash logs / runtime logs
+# --------------------------------------------------
+*.log
+/logs/
+/hs_err_pid*
+/replay_pid*
+
+# --------------------------------------------------
+# IntelliJ IDEA / JetBrains
+# Keep project source of truth in pom.xml, not IDE metadata
+# --------------------------------------------------
+/.idea/
+*.iml
+
+# --------------------------------------------------
+# Other IDE metadata sometimes created on Linux setups
+# --------------------------------------------------
+/.classpath
+/.project
+/.settings/
+
+# --------------------------------------------------
+# Local environment and machine-specific overrides
+# --------------------------------------------------
+.env
+.env.*
+!.env.example
+*.local
+/src/main/resources/application-local.properties
+/src/main/resources/application-local.yml
+/src/main/resources/application-local.yaml
+
+# --------------------------------------------------
+# Temporary/editor swap files
+# --------------------------------------------------
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# --------------------------------------------------
+# Linux filesystem noise
+# --------------------------------------------------
+.directory
+.Trash-*
+.fuse_hidden*
+.nfs*
