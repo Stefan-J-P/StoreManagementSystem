@@ -1,0 +1,57 @@
+# ═══════════════════════════════════════════════════════════════════
+# application-dev.yml  –  LOCAL DEVELOPMENT OVERRIDES
+#
+# Activation:
+#   IDE:   Add VM argument: -Dspring.profiles.active=dev
+#   CLI:   java -jar app.jar --spring.profiles.active=dev
+#   Maven: mvn spring-boot:run -Dspring-boot.run.profiles=dev
+#   Env:   SPRING_PROFILES_ACTIVE=dev
+#
+# This file EXTENDS application.yml.
+# Only values that differ from the base config are set here.
+# ═══════════════════════════════════════════════════════════════════
+
+spring:
+  # ─── JPA / Hibernate ─────────────────────────────────────────────
+  jpa:
+    show-sql: true                     # Print SQL to console in dev
+    properties:
+      hibernate:
+        format_sql: true               # Format multi-line SQL for readability
+
+  # ─── Flyway ──────────────────────────────────────────────────────
+  flyway:
+    # Relax validation during active development.
+    # Schema may diverge from the last applied migration while iterating.
+    validate-on-migrate: false
+
+# ─── Springdoc / OpenAPI ─────────────────────────────────────────
+# Enable Swagger UI in dev only. Never expose in production.
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    # Sort operations and tags alphabetically in the UI
+    operations-sorter: alpha
+    tags-sorter: alpha
+    # Allow direct request execution from the UI (Try it out button)
+    try-it-out-enabled: true
+    # Display request duration in Swagger UI
+    display-request-duration: true
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+
+# ─── Logging ─────────────────────────────────────────────────────
+logging:
+  level:
+    # Application code at DEBUG level for full visibility
+    io.github.stefanjp.storemanagement: DEBUG
+    # Log every SQL statement executed by Hibernate
+    org.hibernate.SQL: DEBUG
+    # Log the actual bind parameter values (shows ? substitution)
+    # WARNING: this can log sensitive data – dev only
+    org.hibernate.orm.jdbc.bind: TRACE
+    # Flyway migration steps at INFO (default, explicit for clarity)
+    org.flywaydb: INFO
+

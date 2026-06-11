@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0f94d96-245b-4a71-87dc-f3088a5b90f4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/jan/stefan/hibernate/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/test/java/jan/stefan/hibernate/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/jan/stefan/hibernate/CustomerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/test/java/jan/stefan/hibernate/CustomerServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/jan/stefan/hibernate/MyOrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/test/java/jan/stefan/hibernate/MyOrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/jan/stefan/hibernate/StatisticsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/legacy/src/test/java/jan/stefan/hibernate/StatisticsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +27,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="169" />
+    <option name="cachedIndexableFilesCount" value="187" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -52,6 +58,65 @@
     <commands />
     <urls />
   </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="2.3702337958711786" />
+      <entry key="MS500" value="4.060634174751135" />
+      <entry key="S2" value="4.731206503604957" />
+      <entry key="S5" value="4.889413322074802" />
+      <entry key="S10" value="4.944180622390887" />
+      <entry key="S30" value="4.981275266344866" />
+      <entry key="S60" value="4.990623168603813" />
+      <entry key="M2" value="4.999236317422177" />
+      <entry key="M5" value="6.074910468249079" />
+      <entry key="M10" value="12.821000982647803" />
+      <entry key="M15" value="20.775625565222164" />
+      <entry key="M30" value="37.93767102053154" />
+      <entry key="H1" value="53.38415967220068" />
+      <entry key="H2" value="63.92196090170783" />
+      <entry key="H4" value="70.10511373125102" />
+      <entry key="D1" value="75.79776296014958" />
+      <entry key="W1" value="76.82690088011798" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="3.6382451901254585E-240" />
+      <entry key="S5" value="1.6763194556818626E-96" />
+      <entry key="S10" value="1.294727560408699E-48" />
+      <entry key="S30" value="1.0899154215462588E-16" />
+      <entry key="S60" value="1.043990199652513E-8" />
+      <entry key="M2" value="1.0219934767813424E-4" />
+      <entry key="M5" value="0.02622427858030182" />
+      <entry key="M10" value="0.18897588682344085" />
+      <entry key="M15" value="0.3898315593597774" />
+      <entry key="M30" value="0.8519875856951332" />
+      <entry key="H1" value="1.2929834523680057" />
+      <entry key="H2" value="1.6042028113405715" />
+      <entry key="H4" value="1.7901130655797768" />
+      <entry key="D1" value="1.963217151830595" />
+      <entry key="W1" value="1.9946992790569191" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="2.2384173332152226" />
+      <entry key="MS500" value="4.015434058634541" />
+      <entry key="S2" value="4.718076057753114" />
+      <entry key="S5" value="4.883988670008984" />
+      <entry key="S10" value="4.941438450159384" />
+      <entry key="S30" value="4.980354471089682" />
+      <entry key="S60" value="4.990161932328958" />
+      <entry key="M2" value="4.999106793740709" />
+      <entry key="M5" value="6.100950573640273" />
+      <entry key="M10" value="13.009588417914951" />
+      <entry key="M15" value="21.164945242959707" />
+      <entry key="M30" value="38.789103134639596" />
+      <entry key="H1" value="54.676719594448535" />
+      <entry key="H2" value="65.52589999794951" />
+      <entry key="H4" value="71.8950793490052" />
+      <entry key="D1" value="77.76095311102743" />
+      <entry key="W1" value="78.82159623876422" />
+    </decayedShown>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -63,39 +128,39 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/PROGRAMOWANIE/km-programs/java/java-basics/22_Hibernate",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Facets",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.40344828",
-    "settings.editor.selected.configurable": "preferences.editor",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;cleanup/remove-legacy-source-root&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/PROGRAMOWANIE/km-programs/java/java-basics/22_Hibernate&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Facets&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.40344828&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\PROGRAMOWANIE\Java\StoreManagementSystem\src" />
@@ -388,6 +453,7 @@
       <workItem from="1740151683052" duration="178000" />
       <workItem from="1741942071212" duration="3011000" />
       <workItem from="1781006826699" duration="3891000" />
+      <workItem from="1781172384839" duration="1829000" />
     </task>
     <servers />
   </component>
