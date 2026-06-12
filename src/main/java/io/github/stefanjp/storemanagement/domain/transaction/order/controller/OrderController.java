@@ -2,6 +2,8 @@ package io.github.stefanjp.storemanagement.domain.transaction.order.controller;
 
 import io.github.stefanjp.storemanagement.domain.transaction.order.dto.OrderCreateRequest;
 import io.github.stefanjp.storemanagement.domain.transaction.order.dto.OrderResponse;
+import io.github.stefanjp.storemanagement.domain.transaction.order.dto.PlaceOrderRequest;
+import io.github.stefanjp.storemanagement.domain.transaction.order.dto.PlaceOrderResponse;
 import io.github.stefanjp.storemanagement.domain.transaction.order.service.OrderService;
 import jakarta.validation.Valid;
 import java.util.List;
@@ -26,6 +28,12 @@ public class OrderController {
     @ResponseStatus(HttpStatus.CREATED)
     public OrderResponse create(@Valid @RequestBody OrderCreateRequest request) {
         return orderService.create(request);
+    }
+
+    @PostMapping("/place")
+    @ResponseStatus(HttpStatus.CREATED)
+    public PlaceOrderResponse placeOrder(@Valid @RequestBody PlaceOrderRequest request) {
+        return orderService.placeOrder(request);
     }
 
     @GetMapping
