@@ -13,6 +13,8 @@ import io.github.stefanjp.storemanagement.domain.transaction.order.dto.PlaceOrde
 import io.github.stefanjp.storemanagement.domain.transaction.order.dto.PlaceOrderResponse;
 import io.github.stefanjp.storemanagement.domain.transaction.order.entity.Order;
 import io.github.stefanjp.storemanagement.domain.transaction.order.entity.OrderStatus;
+import io.github.stefanjp.storemanagement.domain.transaction.order.event.OrderCreatedEvent;
+import io.github.stefanjp.storemanagement.domain.transaction.order.messaging.OrderEventProducer;
 import io.github.stefanjp.storemanagement.domain.transaction.order.repository.OrderRepository;
 import io.github.stefanjp.storemanagement.domain.transaction.orderitem.entity.OrderItem;
 import io.github.stefanjp.storemanagement.domain.transaction.orderitem.repository.OrderItemRepository;
@@ -34,6 +36,7 @@ public class OrderService {
     private final PaymentRepository paymentRepository;
     private final ProductRepository productRepository;
     private final OrderItemRepository orderItemRepository;
+    private final OrderEventProducer orderEventProducer;
 
     @Transactional
     public OrderResponse create(OrderCreateRequest request) {
@@ -51,6 +54,14 @@ public class OrderService {
                 .build();
 
         Order saved = orderRepository.save(order);
+        orderEventProducer.publishOrderCreated(new OrderCreatedEvent(
+                saved.getId(),
+                customer.getId(),
+                payment.getId(),
+                saved.getOrderDate(),
+                saved.getStatus().name(),
+                BigDecimal.ZERO
+        ));
         return toResponse(saved);
     }
 
@@ -100,6 +111,15 @@ public class OrderService {
                     lineTotal
             ));
         }
+
+        orderEventProducer.publishOrderCreated(new OrderCreatedEvent(
+                savedOrder.getId(),
+                customer.getId(),
+                payment.getId(),
+                savedOrder.getOrderDate(),
+                savedOrder.getStatus().name(),
+                totalAmount
+        ));
 
         return new PlaceOrderResponse(
                 savedOrder.getId(),

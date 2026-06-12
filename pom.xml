@@ -63,6 +63,16 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--
+            spring-boot-starter-amqp
+            Provides: RabbitTemplate, AMQP abstractions, RabbitMQ auto-configuration.
+            Required by: OrderCreated event publisher integration.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
         <!-- ─── DATA ACCESS ─────────────────────────────────────── -->
 
         <!--

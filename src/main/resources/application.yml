@@ -25,6 +25,13 @@ spring:
       idle-timeout: 300000          # ms – 5 min, release idle connections
       max-lifetime: 1200000         # ms – 20 min, recycle before server timeout
 
+  # ─── RabbitMQ ────────────────────────────────────────────────────
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
+
   # ─── JPA / Hibernate ─────────────────────────────────────────────
   jpa:
     # CRITICAL: Flyway owns the schema. Hibernate must NEVER alter it.
