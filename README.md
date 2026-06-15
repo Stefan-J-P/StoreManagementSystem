@@ -34,3 +34,30 @@ mvn spring-boot:run
 docker compose down
 ```
 
+# Keycloak Local Development Setup
+
+1. Start the local infrastructure, including Keycloak
+
+```bash
+docker compose up -d
+```
+
+2. Open Keycloak in the browser
+
+http://localhost:8081
+
+3. Default admin credentials
+
+```text
+username: admin
+password: admin
+```
+
+4. Start the Spring Boot application
+
+```bash
+mvn spring-boot:run
+```
+
+Keycloak is exposed locally for OAuth2 / OIDC development, while PostgreSQL and RabbitMQ remain available with their existing configuration.
+

@@ -32,6 +32,13 @@ spring:
     username: ${RABBITMQ_USERNAME:guest}
     password: ${RABBITMQ_PASSWORD:guest}
 
+  # ─── OAuth2 Resource Server / Keycloak ───────────────────────────
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${KEYCLOAK_ISSUER_URI:http://localhost:8081/realms/store-management}
+
   # ─── JPA / Hibernate ─────────────────────────────────────────────
   jpa:
     # CRITICAL: Flyway owns the schema. Hibernate must NEVER alter it.

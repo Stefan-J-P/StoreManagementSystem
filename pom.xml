@@ -64,6 +64,26 @@
         </dependency>
 
         <!--
+            spring-boot-starter-security
+            Provides: Spring Security core infrastructure and auto-configuration.
+            Required by: the application security filter chain.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!--
+            spring-boot-starter-oauth2-resource-server
+            Provides: JWT decoding and OAuth2 resource server support.
+            Required by: Keycloak / OIDC integration.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+        </dependency>
+
+        <!--
             spring-boot-starter-amqp
             Provides: RabbitTemplate, AMQP abstractions, RabbitMQ auto-configuration.
             Required by: OrderCreated event publisher integration.
