@@ -1,0 +1,39 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: store-postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: store_management
+      POSTGRES_USER: store_user
+      POSTGRES_PASSWORD: store_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - store-network
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: store-rabbitmq
+    restart: unless-stopped
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - store-network
+
+volumes:
+  postgres_data:
+  rabbitmq_data:
+
+networks:
+  store-network:
+    driver: bridge
+
